@@ -10,33 +10,89 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BrinquedosRouteImport } from './routes/brinquedos'
+import { Route as BrinquedosAquaticosRouteImport } from './routes/brinquedos-aquaticos'
+import { Route as BrinquedosInflaveisRouteImport } from './routes/brinquedos-inflaveis'
+import { Route as JogosParaFestaRouteImport } from './routes/jogos-para-festa'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BrinquedosRoute = BrinquedosRouteImport.update({
+  id: '/brinquedos',
+  path: '/brinquedos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BrinquedosAquaticosRoute = BrinquedosAquaticosRouteImport.update({
+  id: '/brinquedos-aquaticos',
+  path: '/brinquedos-aquaticos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BrinquedosInflaveisRoute = BrinquedosInflaveisRouteImport.update({
+  id: '/brinquedos-inflaveis',
+  path: '/brinquedos-inflaveis',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JogosParaFestaRoute = JogosParaFestaRouteImport.update({
+  id: '/jogos-para-festa',
+  path: '/jogos-para-festa',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/brinquedos': typeof BrinquedosRoute
+  '/brinquedos-aquaticos': typeof BrinquedosAquaticosRoute
+  '/brinquedos-inflaveis': typeof BrinquedosInflaveisRoute
+  '/jogos-para-festa': typeof JogosParaFestaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/brinquedos': typeof BrinquedosRoute
+  '/brinquedos-aquaticos': typeof BrinquedosAquaticosRoute
+  '/brinquedos-inflaveis': typeof BrinquedosInflaveisRoute
+  '/jogos-para-festa': typeof JogosParaFestaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/brinquedos': typeof BrinquedosRoute
+  '/brinquedos-aquaticos': typeof BrinquedosAquaticosRoute
+  '/brinquedos-inflaveis': typeof BrinquedosInflaveisRoute
+  '/jogos-para-festa': typeof JogosParaFestaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/brinquedos'
+    | '/brinquedos-aquaticos'
+    | '/brinquedos-inflaveis'
+    | '/jogos-para-festa'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/brinquedos'
+    | '/brinquedos-aquaticos'
+    | '/brinquedos-inflaveis'
+    | '/jogos-para-festa'
+  id:
+    | '__root__'
+    | '/'
+    | '/brinquedos'
+    | '/brinquedos-aquaticos'
+    | '/brinquedos-inflaveis'
+    | '/jogos-para-festa'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BrinquedosRoute: typeof BrinquedosRoute
+  BrinquedosAquaticosRoute: typeof BrinquedosAquaticosRoute
+  BrinquedosInflaveisRoute: typeof BrinquedosInflaveisRoute
+  JogosParaFestaRoute: typeof JogosParaFestaRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +104,43 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/brinquedos': {
+      id: '/brinquedos'
+      path: '/brinquedos'
+      fullPath: '/brinquedos'
+      preLoaderRoute: typeof BrinquedosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/brinquedos-aquaticos': {
+      id: '/brinquedos-aquaticos'
+      path: '/brinquedos-aquaticos'
+      fullPath: '/brinquedos-aquaticos'
+      preLoaderRoute: typeof BrinquedosAquaticosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/brinquedos-inflaveis': {
+      id: '/brinquedos-inflaveis'
+      path: '/brinquedos-inflaveis'
+      fullPath: '/brinquedos-inflaveis'
+      preLoaderRoute: typeof BrinquedosInflaveisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/jogos-para-festa': {
+      id: '/jogos-para-festa'
+      path: '/jogos-para-festa'
+      fullPath: '/jogos-para-festa'
+      preLoaderRoute: typeof JogosParaFestaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BrinquedosRoute: BrinquedosRoute,
+  BrinquedosAquaticosRoute: BrinquedosAquaticosRoute,
+  BrinquedosInflaveisRoute: BrinquedosInflaveisRoute,
+  JogosParaFestaRoute: JogosParaFestaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
