@@ -154,3 +154,72 @@
     color: var(--color-foreground);
   }
 }
+
+/* site-import tokens: begin (generated; re-import replaces this block) */
+/* Imported clone roles use prefixed Tailwind utilities
+   (bg-site-import-primary, text-site-import-foreground, …); edit the
+   --site-import-* variables to restyle the clone. Unprefixed roles theme new UI. */
+:root {
+  --background: oklch(0.97267 0.02838 84.59);
+  --site-import-background: oklch(0.97267 0.02838 84.59);
+  --foreground: oklch(0.33352 0.08243 275.52);
+  --site-import-foreground: oklch(0.33352 0.08243 275.52);
+  --primary: oklch(0.22953 0.07025 274.8);
+  --site-import-primary: oklch(0.22953 0.07025 274.8);
+  --primary-foreground: oklch(0.985 0 0);
+  --site-import-primary-foreground: oklch(0.985 0 0);
+  --accent: oklch(0.57094 0.20541 28.28);
+  --site-import-accent: oklch(0.57094 0.20541 28.28);
+  --border: oklch(1 0 0);
+  --site-import-border: oklch(1 0 0);
+  --muted-foreground: oklch(0.51117 0.07308 278.71);
+  --site-import-muted-foreground: oklch(0.51117 0.07308 278.71);
+  --card: oklch(0.9634 0.01928 240.73);
+  --site-import-card: oklch(0.9634 0.01928 240.73);
+  --muted: oklch(1 0 0 / 0.25);
+  --site-import-muted: oklch(1 0 0 / 0.25);
+}
+/* Design tokens captured from the imported site, registered as Tailwind
+   utilities (bg-<name>, text-<name>, font-<name>). var() values live in
+   the imported stylesheet's :root. */
+@theme inline {
+  --font-sans: Lexend, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --color-site-import-background: var(--site-import-background);
+  --color-site-import-foreground: var(--site-import-foreground);
+  --color-site-import-primary: var(--site-import-primary);
+  --color-site-import-primary-foreground: var(--site-import-primary-foreground);
+  --color-site-import-accent: var(--site-import-accent);
+  --color-site-import-border: var(--site-import-border);
+  --color-site-import-muted-foreground: var(--site-import-muted-foreground);
+  --color-site-import-card: var(--site-import-card);
+  --color-site-import-muted: var(--site-import-muted);
+  --color-bg: var(--bg);
+  --color-bg-2: var(--bg-2);
+  --color-blue: var(--blue);
+  --color-blue-d: var(--blue-d);
+  --color-card: var(--card);
+  --font-font: var(--font);
+  --color-green: var(--green);
+  --color-green-d: var(--green-d);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-lilac: var(--lilac);
+  --color-line: var(--line);
+  --color-mint: var(--mint);
+  --color-orange: var(--orange);
+  --color-peach: var(--peach);
+  --color-purple: var(--purple);
+  --color-purple-d: var(--purple-d);
+  --color-red: var(--red);
+  --color-red-d: var(--red-d);
+  --color-sky: var(--sky);
+  --color-wa: var(--wa);
+  --color-wa-d: var(--wa-d);
+  --color-yellow: var(--yellow);
+  --color-yellow-d: var(--yellow-d);
+}
+@theme reference {
+  --shadow-lg: 10px 10px 0 #14183d;
+}
+/* site-import tokens: end */
