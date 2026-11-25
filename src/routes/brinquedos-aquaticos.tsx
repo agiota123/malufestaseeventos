@@ -1,22 +1,100 @@
-import { useEffect } from "react";
+import { useEffect, createContext, useContext, type MouseEvent } from "react";
 import { useState } from "react";
 import { useRef } from "react";
 import { createFileRoute } from "@tanstack/react-router";
+import repairCSS from "../styles/import-repairs.css?raw";
 import capturedCSS from "../styles/pages/brinquedos-aquaticos.css?raw";
 
 export const Route = createFileRoute("/brinquedos-aquaticos")({
-  head: () => ({ meta: [{ title: "Aluguel de Brinquedos Aquáticos em Brasília | Tio Titi" }] }),
+  head: () => ({ meta: [{"title": "Aluguel de Brinquedos Aquáticos em Brasília | Tio Titi"}, {"name": "description", "content": "Aluguel de Brinquedos Aquáticos em Brasília | Tio Titi para festas no DF e Entorno, com entrega, montagem e monitor incluso."}, {"property": "og:title", "content": "Aluguel de Brinquedos Aquáticos em Brasília | Tio Titi"}, {"property": "og:description", "content": "Aluguel de Brinquedos Aquáticos em Brasília | Tio Titi para festas no DF e Entorno, com entrega, montagem e monitor incluso."}, {"property": "og:type", "content": "website"}, {"name": "twitter:card", "content": "summary_large_image"}] }),
   staticData: { importedDocument: { html: { "className": "js", "lang": "pt-BR" }, body: {  } } },
   component: Index,
 });
 
+
+type QuoteItem = { name: string; href: string; image: string; quantity: number };
+const QuoteContext = createContext<{
+  items: QuoteItem[];
+  add: (event: MouseEvent<HTMLButtonElement>) => void;
+  addCombo: (event: MouseEvent<HTMLButtonElement>) => void;
+}>({ items: [], add: () => {}, addCombo: () => {} });
+
 function Index() {
+
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [items, setItems] = useState<QuoteItem[]>([]);
+  const [ready, setReady] = useState(false);
+  const returnFocus = useRef<HTMLElement | null>(null);
+  const total = items.reduce((sum, item) => sum + item.quantity, 0);
+  useEffect(() => {
+    try {
+      const saved: unknown = JSON.parse(sessionStorage.getItem("tio-titi-quote") || "[]");
+      if (Array.isArray(saved)) setItems(saved.filter((item): item is QuoteItem =>
+        typeof item?.name === "string" && typeof item?.href === "string" &&
+        item.href.startsWith("/brinquedos/") && typeof item?.image === "string" &&
+        item.image.startsWith("/site-assets/") && Number.isInteger(item.quantity) && item.quantity > 0));
+    } catch { /* A new list is usable even when browser storage is unavailable. */ }
+    setReady(true);
+  }, []);
+  useEffect(() => {
+    if (ready) { try { sessionStorage.setItem("tio-titi-quote", JSON.stringify(items)); } catch {} }
+  }, [items, ready]);
+  const closeDrawer = () => { setDrawerOpen(false); returnFocus.current?.focus(); };
+  const openDrawer = (event: MouseEvent<HTMLButtonElement>) => {
+    returnFocus.current = event.currentTarget;
+    setMobileOpen(false); setOpenMenu0(null); setDrawerOpen(true);
+  };
+  useEffect(() => {
+    if (!drawerOpen && !mobileOpen) return;
+    const original = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    if (drawerOpen) document.querySelector<HTMLButtonElement>('[aria-label="Fechar lista"]')?.focus();
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setDrawerOpen(false); setMobileOpen(false); setOpenMenu0(null);
+        returnFocus.current?.focus();
+      }
+      if (event.key === "Tab" && drawerOpen) {
+        const controls = Array.from(document.querySelectorAll<HTMLElement>('#drawer a, #drawer button'));
+        const first = controls.at(0), last = controls.at(-1);
+        if (event.shiftKey && document.activeElement === first && last) { event.preventDefault(); last.focus(); }
+        if (!event.shiftKey && document.activeElement === last && first) { event.preventDefault(); first.focus(); }
+      }
+    };
+    document.addEventListener("keydown", onKey);
+    return () => { document.body.style.overflow = original; document.removeEventListener("keydown", onKey); };
+  }, [drawerOpen, mobileOpen]);
+  const addItems = (incoming: QuoteItem[]) => setItems(current => {
+    const next = [...current];
+    for (const item of incoming) if (!next.some(existing => existing.href === item.href)) next.push(item);
+    return next;
+  });
+  const add = (event: MouseEvent<HTMLButtonElement>) => {
+    const card = event.currentTarget.closest("article");
+    const link = card?.querySelector<HTMLAnchorElement>("h3 a");
+    const image = card?.querySelector<HTMLImageElement>("img");
+    if (!link || !image) return;
+    addItems([{ name: link.textContent?.trim() || "", href: link.getAttribute("href") || "", image: image.getAttribute("src") || "", quantity: 1 }]);
+  };
+  const addCombo = (event: MouseEvent<HTMLButtonElement>) => {
+    const card = event.currentTarget.closest("article");
+    if (!card) return;
+    const images = card.querySelectorAll<HTMLImageElement>(".combo__imgs img");
+    addItems(Array.from(card.querySelectorAll<HTMLAnchorElement>("li a")).map((link, index) => ({
+      name: link.textContent?.trim() || "", href: link.getAttribute("href") || "",
+      image: images.item(index)?.getAttribute("src") || "", quantity: 1,
+    })));
+  };
+  const changeQuantity = (href: string, delta: number) => setItems(current => current.map(item =>
+    item.href === href ? { ...item, quantity: Math.max(1, item.quantity + delta) } : item));
+
   const [openMenu0, setOpenMenu0] = useState(null as string | null);
   const menuRoot0 = useRef<Element | null>(null);
   const menuRoot1 = useRef<Element | null>(null);
   useEffect(() => {
     if (!openMenu0) return;
-    const closeOutside = (event: MouseEvent) => {
+    const closeOutside = (event: globalThis.MouseEvent) => {
       if (event.target instanceof Node && ![menuRoot0.current, menuRoot1.current].some(root => root?.contains(event.target as Node))) setOpenMenu0(null);
     };
     const closeOnEscape = (event: KeyboardEvent) => { if (event.key === "Escape") setOpenMenu0(null); };
@@ -26,9 +104,9 @@ function Index() {
   }, [openMenu0]);
   useImportedLayout();
   return (
-    <>
-      <style>{capturedCSS}</style>
-    <style>{"@layer imported-inline{@media(max-width:767px){[data-import-mobile-style=\"0\"]{transform:none!important;}}}"}</style>
+    <QuoteContext.Provider value={{ items, add, addCombo }}>
+      <style>{capturedCSS + repairCSS}</style>
+    <style>{"@layer imported-inline{@media(max-width:960px){[data-import-mobile-style=\"0\"]{transform:none!important;}}}"}</style>
       <a className="skip-link [padding:10px_16px]" href="#conteudo">Pular para o conteúdo</a>
       <svg style={{ position: "absolute" }} width="0" height="0" aria-hidden="true">
         <defs>
@@ -186,7 +264,7 @@ function Index() {
           <a className="logo" aria-label="Tio Titi – página inicial" href="/">
             <img src="/site-assets/7055a544d0bca36e.webp" width="400" height="247" alt="Tio Titi Festas Infantis – aluguel de brinquedos em Brasília" />
           </a>
-          <nav className="nav" id="nav" aria-label="Menu principal">
+          <nav className={mobileOpen ? "nav is-open" : "nav"} id="nav" aria-label="Menu principal">
             <ul className="nav__list">
               <li>
                 <a className="nav__link" href="/">Início</a>
@@ -254,9 +332,9 @@ function Index() {
                 <a className="nav__link" href="/contato">Contato</a>
               </li>
             </ul>
-            <div className="nav__cta"><button className="btn btn--blue" type="button"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-list" } as any)} /></svg> Minha lista de orçamento</button><a className="btn btn--wa" href="https://wa.me/5561974006898?text=Ol%C3%A1%2C%20Tio%20Titi!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20a%20minha%20festa.%20%F0%9F%8E%88" rel="noopener" target="_blank"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-whatsapp" } as any)} /></svg> Falar no WhatsApp</a></div>
+            <div className="nav__cta"><button className="btn btn--blue" type="button" onClick={openDrawer}><svg className="icon" aria-hidden="true"><use {...({ href: "#i-list" } as any)} /></svg> Minha lista de orçamento</button><a className="btn btn--wa" href="https://wa.me/5561974006898?text=Ol%C3%A1%2C%20Tio%20Titi!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20a%20minha%20festa.%20%F0%9F%8E%88" rel="noopener" target="_blank"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-whatsapp" } as any)} /></svg> Falar no WhatsApp</a></div>
           </nav>
-          <div className="header-actions"><button className="btn-lista" type="button"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-list" } as any)} /></svg><span className="lbl">Minha lista</span><span className={"\x73r-only"}> de orçamento</span><span className="badge-count" aria-hidden="true">0</span></button><a className="btn btn--wa btn--sm header-wa" href="https://wa.me/5561974006898?text=Ol%C3%A1%2C%20Tio%20Titi!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20a%20minha%20festa.%20%F0%9F%8E%88" rel="noopener" target="_blank"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-whatsapp" } as any)} /></svg> WhatsApp</a><button className="menu-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Abrir menu"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-menu" } as any)} /></svg></button></div>
+          <div className="header-actions"><button className="btn-lista" type="button" onClick={openDrawer}><svg className="icon" aria-hidden="true"><use {...({ href: "#i-list" } as any)} /></svg><span className="lbl">Minha lista</span><span className={"\x73r-only"}> de orçamento</span><span className="badge-count" data-counted={total > 0} aria-hidden="true">{total}</span></button><a className="btn btn--wa btn--sm header-wa" href="https://wa.me/5561974006898?text=Ol%C3%A1%2C%20Tio%20Titi!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20a%20minha%20festa.%20%F0%9F%8E%88" rel="noopener" target="_blank"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-whatsapp" } as any)} /></svg> WhatsApp</a><button className="menu-toggle" type="button" onClick={event => { returnFocus.current = event.currentTarget; setMobileOpen(open => !open); setOpenMenu0(null); }} aria-expanded={mobileOpen} aria-controls="nav" aria-label={mobileOpen ? "Fechar menu" : "Abrir menu"}><svg className="icon" aria-hidden="true"><use {...({ href: "#i-menu" } as any)} /></svg></button></div>
         </div>
       </header>
       <main id="conteudo">
@@ -357,31 +435,40 @@ function Index() {
         </div>
       </div>
       <ImportedFooter />
-      <aside className="drawer flex-col fixed w-[min(420px,100%)] [bottom:0] [box-shadow:var(--shadow-lg)] [right:0] [top:0] [z-index:81]" id="drawer" aria-hidden="true" inert aria-label="Minha lista de orçamento">
+      <aside className={(drawerOpen ? "drawer is-open " : "drawer ") + "flex-col fixed w-[min(420px,100%)] [bottom:0] [box-shadow:var(--shadow-lg)] [right:0] [top:0] [z-index:81]"} id="drawer" aria-hidden={!drawerOpen} inert={!drawerOpen} aria-label="Minha lista de orçamento">
         <div className="drawer__head items-center flex justify-between [padding:18px_20px]">
-          <span className="drawer__title items-center flex gap-[8px] uppercase [font-size:1.15rem] [font-weight:900]"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-list" } as any)} /></svg> Minha lista <small style={{ fontWeight: "400", color: "var(--ink-3)" }}>0 brinquedos</small></span>
-          <button className="icon-btn grid h-[34px] place-items-center w-[34px] [cursor:pointer]" type="button" aria-label="Fechar lista">
+          <span className="drawer__title items-center flex gap-[8px] uppercase [font-size:1.15rem] [font-weight:900]"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-list" } as any)} /></svg> Minha lista <small>{total} {total === 1 ? "brinquedo" : "brinquedos"}</small></span>
+          <button className="icon-btn grid h-[34px] place-items-center w-[34px] [cursor:pointer]" type="button" aria-label="Fechar lista" onClick={closeDrawer}>
             <svg className="icon" aria-hidden="true">
               <use {...({ href: "#i-x" } as any)} />
             </svg>
           </button>
         </div>
         <div className="flex-1 [overflow-y:auto] [padding:18px_20px]" id="drawer-list">
-          <div className="cart-empty text-center [padding:24px_12px]"><div className="dd-ico c-yellow [margin:0_auto_12px]"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-list" } as any)} /></svg></div><b>Sua lista está vazia</b>Navegue pelos brinquedos e clique em "Adicionar à lista" para montar seu orçamento.</div>
+          {items.length ? <ul className="cart-list">{items.map(item => <li className="cart-item" key={item.href}>
+            <img src={item.image} alt="" width="64" height="64" />
+            <div><a className="cart-item__name" href={item.href}>{item.name}</a></div>
+            <div className="cart-item__ctrl"><span className="qty">
+              <button type="button" onClick={() => changeQuantity(item.href, -1)} aria-label="Diminuir quantidade"><svg className="icon" aria-hidden="true"><use href="#i-minus" /></svg></button>
+              <output aria-live="polite">{item.quantity}</output>
+              <button type="button" onClick={() => changeQuantity(item.href, 1)} aria-label="Aumentar quantidade"><svg className="icon" aria-hidden="true"><use href="#i-plus" /></svg></button>
+            </span><button type="button" className="icon-btn" onClick={() => setItems(current => current.filter(existing => existing.href !== item.href))} aria-label={`Remover ${item.name}`}><svg className="icon" aria-hidden="true"><use href="#i-trash" /></svg></button></div>
+          </li>)}</ul> : <div className="cart-empty text-center [padding:24px_12px]"><div className="dd-ico c-yellow [margin:0_auto_12px]"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-list" } as any)} /></svg></div><b>Sua lista está vazia</b>Navegue pelos brinquedos e clique em "Adicionar à lista" para montar seu orçamento.</div>}
         </div>
         <div className="drawer__foot grid gap-[10px] [padding:16px_20px_calc(16px_+_env(safe-area-inset-bottom))]"><a className="btn btn--block [width:100%]" href="/orcamento"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-send" } as any)} /></svg> Pedir orçamento desta lista</a><a className="btn btn--ghost btn--block [width:100%]" href="/brinquedos">Continuar escolhendo</a><p>Você informa data, horário e local na próxima etapa.</p></div>
       </aside>
-      <div className="drawer-backdrop fixed invisible [inset:0] [z-index:80]" />
+      <div className={drawerOpen ? "drawer-backdrop is-open fixed [inset:0] [z-index:80]" : "drawer-backdrop fixed invisible [inset:0] [z-index:80]"} onClick={closeDrawer} aria-hidden="true" />
       <a className="wa-float h-[60px] place-items-center w-[60px] [box-shadow:4px_4px_0_var(--ink)]" aria-label="Conversar com a Tio Titi no WhatsApp" href="https://wa.me/5561974006898?text=Ol%C3%A1%2C%20Tio%20Titi!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20a%20minha%20festa.%20%F0%9F%8E%88" rel="noopener" target="_blank">
         <svg className="icon" aria-hidden="true">
           <use {...({ href: "#i-whatsapp" } as any)} />
         </svg>
       </a>
-    </>
+    </QuoteContext.Provider>
   );
 }
 
 function ImportedSectionBrinquedosAquTicos() {
+  const { items, add, addCombo } = useContext(QuoteContext);
   return (
     <section className="section relative" style={{ paddingTop: "16px" }} id="lista" aria-labelledby="lista-t">
       <div className="wrap">
@@ -403,11 +490,11 @@ function ImportedSectionBrinquedosAquTicos() {
               </div>
               <div className="items-center flex gap-[8px] justify-between pt-[10px] [margin-top:auto]">
                 <span className="toy-card__link items-center inline-flex gap-[4px] uppercase whitespace-nowrap [font-size:.76rem] [font-weight:800] [letter-spacing:.03em]">Ver detalhes <svg className="icon" aria-hidden="true"><use {...({ href: "#i-arrow" } as any)} /></svg></span>
-                <button className="add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]" type="button">
+                <button className={(items.some(item => item.name === "Futebol de Sabão 2 em 1") ? "is-added " : "") + "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"} type="button" onClick={add}>
                   <svg className="icon" aria-hidden="true">
                     <use {...({ href: "#i-plus" } as any)} />
                   </svg>
-                  <span className="lbl">Adicionar</span>
+                  <span className="lbl">{items.some(item => item.name === "Futebol de Sabão 2 em 1") ? "Na lista" : "Adicionar"}</span>
                   <span className={"\x73r-only"}> Futebol de Sabão 2 em 1 à lista</span>
                 </button>
               </div>
@@ -428,11 +515,11 @@ function ImportedSectionBrinquedosAquTicos() {
               </div>
               <div className="items-center flex gap-[8px] justify-between pt-[10px] [margin-top:auto]">
                 <span className="toy-card__link items-center inline-flex gap-[4px] uppercase whitespace-nowrap [font-size:.76rem] [font-weight:800] [letter-spacing:.03em]">Ver detalhes <svg className="icon" aria-hidden="true"><use {...({ href: "#i-arrow" } as any)} /></svg></span>
-                <button className="add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]" type="button">
+                <button className={(items.some(item => item.name === "Golzinho de Sabão") ? "is-added " : "") + "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"} type="button" onClick={add}>
                   <svg className="icon" aria-hidden="true">
                     <use {...({ href: "#i-plus" } as any)} />
                   </svg>
-                  <span className="lbl">Adicionar</span>
+                  <span className="lbl">{items.some(item => item.name === "Golzinho de Sabão") ? "Na lista" : "Adicionar"}</span>
                   <span className={"\x73r-only"}> Golzinho de Sabão à lista</span>
                 </button>
               </div>
@@ -454,11 +541,11 @@ function ImportedSectionBrinquedosAquTicos() {
               </div>
               <div className="items-center flex gap-[8px] justify-between pt-[10px] [margin-top:auto]">
                 <span className="toy-card__link items-center inline-flex gap-[4px] uppercase whitespace-nowrap [font-size:.76rem] [font-weight:800] [letter-spacing:.03em]">Ver detalhes <svg className="icon" aria-hidden="true"><use {...({ href: "#i-arrow" } as any)} /></svg></span>
-                <button className="add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]" type="button">
+                <button className={(items.some(item => item.name === "Toboágua") ? "is-added " : "") + "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"} type="button" onClick={add}>
                   <svg className="icon" aria-hidden="true">
                     <use {...({ href: "#i-plus" } as any)} />
                   </svg>
-                  <span className="lbl">Adicionar</span>
+                  <span className="lbl">{items.some(item => item.name === "Toboágua") ? "Na lista" : "Adicionar"}</span>
                   <span className={"\x73r-only"}> Toboágua à lista</span>
                 </button>
               </div>
@@ -479,11 +566,11 @@ function ImportedSectionBrinquedosAquTicos() {
               </div>
               <div className="items-center flex gap-[8px] justify-between pt-[10px] [margin-top:auto]">
                 <span className="toy-card__link items-center inline-flex gap-[4px] uppercase whitespace-nowrap [font-size:.76rem] [font-weight:800] [letter-spacing:.03em]">Ver detalhes <svg className="icon" aria-hidden="true"><use {...({ href: "#i-arrow" } as any)} /></svg></span>
-                <button className="add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]" type="button">
+                <button className={(items.some(item => item.name === "Toboágua Médio") ? "is-added " : "") + "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"} type="button" onClick={add}>
                   <svg className="icon" aria-hidden="true">
                     <use {...({ href: "#i-plus" } as any)} />
                   </svg>
-                  <span className="lbl">Adicionar</span>
+                  <span className="lbl">{items.some(item => item.name === "Toboágua Médio") ? "Na lista" : "Adicionar"}</span>
                   <span className={"\x73r-only"}> Toboágua Médio à lista</span>
                 </button>
               </div>
@@ -505,11 +592,11 @@ function ImportedSectionBrinquedosAquTicos() {
               </div>
               <div className="items-center flex gap-[8px] justify-between pt-[10px] [margin-top:auto]">
                 <span className="toy-card__link items-center inline-flex gap-[4px] uppercase whitespace-nowrap [font-size:.76rem] [font-weight:800] [letter-spacing:.03em]">Ver detalhes <svg className="icon" aria-hidden="true"><use {...({ href: "#i-arrow" } as any)} /></svg></span>
-                <button className="add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]" type="button">
+                <button className={(items.some(item => item.name === "Tobopiscina") ? "is-added " : "") + "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"} type="button" onClick={add}>
                   <svg className="icon" aria-hidden="true">
                     <use {...({ href: "#i-plus" } as any)} />
                   </svg>
-                  <span className="lbl">Adicionar</span>
+                  <span className="lbl">{items.some(item => item.name === "Tobopiscina") ? "Na lista" : "Adicionar"}</span>
                   <span className={"\x73r-only"}> Tobopiscina à lista</span>
                 </button>
               </div>
@@ -530,11 +617,11 @@ function ImportedSectionBrinquedosAquTicos() {
               </div>
               <div className="items-center flex gap-[8px] justify-between pt-[10px] [margin-top:auto]">
                 <span className="toy-card__link items-center inline-flex gap-[4px] uppercase whitespace-nowrap [font-size:.76rem] [font-weight:800] [letter-spacing:.03em]">Ver detalhes <svg className="icon" aria-hidden="true"><use {...({ href: "#i-arrow" } as any)} /></svg></span>
-                <button className="add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]" type="button">
+                <button className={(items.some(item => item.name === "Tobopiscina Médio") ? "is-added " : "") + "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"} type="button" onClick={add}>
                   <svg className="icon" aria-hidden="true">
                     <use {...({ href: "#i-plus" } as any)} />
                   </svg>
-                  <span className="lbl">Adicionar</span>
+                  <span className="lbl">{items.some(item => item.name === "Tobopiscina Médio") ? "Na lista" : "Adicionar"}</span>
                   <span className={"\x73r-only"}> Tobopiscina Médio à lista</span>
                 </button>
               </div>
@@ -556,11 +643,11 @@ function ImportedSectionBrinquedosAquTicos() {
               </div>
               <div className="items-center flex gap-[8px] justify-between pt-[10px] [margin-top:auto]">
                 <span className="toy-card__link items-center inline-flex gap-[4px] uppercase whitespace-nowrap [font-size:.76rem] [font-weight:800] [letter-spacing:.03em]">Ver detalhes <svg className="icon" aria-hidden="true"><use {...({ href: "#i-arrow" } as any)} /></svg></span>
-                <button className="add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]" type="button">
+                <button className={(items.some(item => item.name === "Vitória Régia e Tapete Aladdin") ? "is-added " : "") + "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"} type="button" onClick={add}>
                   <svg className="icon" aria-hidden="true">
                     <use {...({ href: "#i-plus" } as any)} />
                   </svg>
-                  <span className="lbl">Adicionar</span>
+                  <span className="lbl">{items.some(item => item.name === "Vitória Régia e Tapete Aladdin") ? "Na lista" : "Adicionar"}</span>
                   <span className={"\x73r-only"}> Vitória Régia e Tapete Aladdin à lista</span>
                 </button>
               </div>
@@ -581,11 +668,11 @@ function ImportedSectionBrinquedosAquTicos() {
               </div>
               <div className="items-center flex gap-[8px] justify-between pt-[10px] [margin-top:auto]">
                 <span className="toy-card__link items-center inline-flex gap-[4px] uppercase whitespace-nowrap [font-size:.76rem] [font-weight:800] [letter-spacing:.03em]">Ver detalhes <svg className="icon" aria-hidden="true"><use {...({ href: "#i-arrow" } as any)} /></svg></span>
-                <button className="add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]" type="button">
+                <button className={(items.some(item => item.name === "Canhão de Espuma") ? "is-added " : "") + "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"} type="button" onClick={add}>
                   <svg className="icon" aria-hidden="true">
                     <use {...({ href: "#i-plus" } as any)} />
                   </svg>
-                  <span className="lbl">Adicionar</span>
+                  <span className="lbl">{items.some(item => item.name === "Canhão de Espuma") ? "Na lista" : "Adicionar"}</span>
                   <span className={"\x73r-only"}> Canhão de Espuma à lista</span>
                 </button>
               </div>

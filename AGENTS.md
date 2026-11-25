@@ -28,3 +28,7 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Imported website architecture
+- Keep imported page markup, menu and toy-list state inside each route; preserve source wrappers and keep repair styles separate to maintain capture fidelity.
+- Share the temporary quote list between imported pages through session storage after hydration; this preserves selection during navigation without adding backend functionality to a website import.
