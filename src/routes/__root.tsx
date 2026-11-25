@@ -82,11 +82,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Tio Titi Festas Infantis" },
-      { name: "description", content: "Aluguel de brinquedos para festas em Brasília e no Entorno." },
-      { name: "author", content: "Tio Titi" },
-      { property: "og:title", content: "Tio Titi Festas Infantis" },
-      { property: "og:description", content: "Aluguel de brinquedos para festas em Brasília e no Entorno." },
+      { title: "MA.lu Festas e Eventos" },
+      { name: "description", content: "Salão de festas com buffet e brinquedos." },
+      { name: "author", content: "MA.lu" },
+      { property: "og:title", content: "MA.lu Festas e Eventos" },
+      { property: "og:description", content: "Salão de festas com buffet e brinquedos." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -116,7 +116,7 @@ declare module "@tanstack/react-router" {
 function RootShell({ children }: { children: ReactNode }) {
   const importedDocument = useImportedMatches({ select: matches => matches.at(-1)?.staticData.importedDocument });
   return (
-    <html lang="en" {...importedDocument?.html}>
+    <html lang="pt-BR" {...importedDocument?.html}>
       <head>
         <style href="site-import-inline" precedence="imported-inline">{"@layer imported-inline;"}</style>
         <HeadContent />

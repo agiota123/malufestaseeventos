@@ -223,3 +223,24 @@
   --shadow-lg: 10px 10px 0 #14183d;
 }
 /* site-import tokens: end */
+
+/* MA.lu brand */
+:root {
+  --malu-pink: oklch(0.62 0.24 355);
+  --malu-cyan: oklch(0.72 0.14 215);
+  --malu-yellow: oklch(0.84 0.16 85);
+  --malu-purple: oklch(0.55 0.22 300);
+  --malu-ink: oklch(0.25 0.06 290);
+  --malu-cream: oklch(0.98 0.015 350);
+  --malu-wa: oklch(0.68 0.17 150);
+}
+@theme inline {
+  --color-malu-pink: var(--malu-pink);
+  --color-malu-cyan: var(--malu-cyan);
+  --color-malu-yellow: var(--malu-yellow);
+  --color-malu-purple: var(--malu-purple);
+  --color-malu-ink: var(--malu-ink);
+  --color-malu-cream: var(--malu-cream);
+  --color-malu-wa: var(--malu-wa);
+  --font-display: "Baloo 2", system-ui, sans-serif;
+}
