@@ -1,0 +1,365 @@
+{
+  "origin": "http://localhost:8080",
+  "route": "/",
+  "viewport": {
+    "width": 1280,
+    "height": 1800
+  },
+  "controls": [
+    {
+      "trigger": "dropdown",
+      "visible": true,
+      "text": "Infláveis\nTobogãs, tobopiscinas, futebol de sabão e circuitos para todas as idades.\nAquáticos\nToboágua, tobopiscina, futebol de sabão e espuma para refrescar a festa.\nJogos e eletrônicos\nFliperama, air game, totó, futmesa, sinuca e basquete para todas as idades.\nPara os pequenos (1 a 6 anos)\nCarrossel, piscina de bolinhas e tobogãs baixos para festas de 1 a 6 anos.\nVER TODOS OS 22 BRINQUEDOS",
+      "class": "dropdown",
+      "aria": null
+    },
+    {
+      "trigger": "drawer",
+      "visible": true,
+      "text": "MINHA LISTA\n0 BRINQUEDOS\nSua lista está vazia\nNavegue pelos brinquedos e clique em \"Adicionar à lista\" para montar seu orçamento.\nPEDIR ORÇAMENTO DESTA LISTA\nCONTINUAR ESCOLHENDO\n\nVocê informa data, horário e local na próxima etapa.",
+      "class": "drawer flex-col fixed w-[min(420px,100%)] [bottom:0] [box-shadow:var(--shadow-lg)] [right:0] [top:0] [z-index:81]",
+      "aria": "true"
+    },
+    {
+      "trigger": "populated-drawer",
+      "visible": true,
+      "text": "MINHA LISTA\n0 BRINQUEDOS\nSua lista está vazia\nNavegue pelos brinquedos e clique em \"Adicionar à lista\" para montar seu orçamento.\nPEDIR ORÇAMENTO DESTA LISTA\nCONTINUAR ESCOLHENDO\n\nVocê informa data, horário e local na próxima etapa.",
+      "class": "drawer flex-col fixed w-[min(420px,100%)] [bottom:0] [box-shadow:var(--shadow-lg)] [right:0] [top:0] [z-index:81]",
+      "aria": "true"
+    }
+  ],
+  "title": "Aluguel de Brinquedos em Brasília DF | Tio Titi desde 1998",
+  "buttons": [
+    {
+      "text": "Brinquedos ",
+      "aria": null,
+      "cls": "nav__link"
+    },
+    {
+      "text": " Minha lista de orçamento",
+      "aria": null,
+      "cls": "btn btn--blue"
+    },
+    {
+      "text": "Minha lista de orçamento0",
+      "aria": null,
+      "cls": "btn-lista"
+    },
+    {
+      "text": "",
+      "aria": "Abrir menu",
+      "cls": "menu-toggle"
+    },
+    {
+      "text": "Adicionar Futebol de Sabão 2 em 1 à lista",
+      "aria": null,
+      "cls": "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"
+    },
+    {
+      "text": "Adicionar Tobopiscina à lista",
+      "aria": null,
+      "cls": "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"
+    },
+    {
+      "text": "Adicionar Cama Elástica (Pula-Pula) à lista",
+      "aria": null,
+      "cls": "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"
+    },
+    {
+      "text": "Adicionar Tobogã Safári 2 em 1 à lista",
+      "aria": null,
+      "cls": "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"
+    },
+    {
+      "text": "Adicionar Toboágua à lista",
+      "aria": null,
+      "cls": "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"
+    },
+    {
+      "text": "Adicionar Fliperama Multijogos à lista",
+      "aria": null,
+      "cls": "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"
+    },
+    {
+      "text": "Adicionar Carrossel Fusquinha à lista",
+      "aria": null,
+      "cls": "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"
+    },
+    {
+      "text": "Adicionar Tobogã Tradicional à lista",
+      "aria": null,
+      "cls": "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"
+    },
+    {
+      "text": " Adicionar combo à lista",
+      "aria": null,
+      "cls": "btn btn--block [margin-top:auto] [width:100%]"
+    },
+    {
+      "text": " Adicionar combo à lista",
+      "aria": null,
+      "cls": "btn btn--block [margin-top:auto] [width:100%]"
+    },
+    {
+      "text": " Adicionar combo à lista",
+      "aria": null,
+      "cls": "btn btn--block [margin-top:auto] [width:100%]"
+    },
+    {
+      "text": "",
+      "aria": "Fechar lista",
+      "cls": "icon-btn grid h-[34px] place-items-center w-[34px] [cursor:pointer]"
+    }
+  ],
+  "links": [
+    {
+      "text": "InfláveisTobogãs, tobopiscinas, futebol de sabão e circuitos para todas as idades.",
+      "href": "http://localhost:8080/brinquedos-inflaveis"
+    },
+    {
+      "text": "AquáticosToboágua, tobopiscina, futebol de sabão e espuma para refrescar a festa.",
+      "href": "http://localhost:8080/brinquedos-aquaticos"
+    },
+    {
+      "text": "Jogos e eletrônicosFliperama, air game, totó, futmesa, sinuca e basquete para todas as idades.",
+      "href": "http://localhost:8080/jogos-para-festa"
+    },
+    {
+      "text": "Para os pequenos (1 a 6 anos)Carrossel, piscina de bolinhas e tobogãs baixos para festas de 1 a 6 anos.",
+      "href": "http://localhost:8080/brinquedos-para-criancas-pequenas"
+    },
+    {
+      "text": "Ver todos os 22 brinquedos ",
+      "href": "http://localhost:8080/brinquedos"
+    }
+  ],
+  "sections": [
+    {
+      "text": "DESDE 1998 ALEGRANDO FESTAS NO DF\nAluguel de brinquedos para festas em Brasília\n\nTobogãs, infláveis, futebol de sabão, brinquedos aquáticos e jogos com monitor incluso, entrega, montagem e desmontagem. Monte sua lista e receba o orçamento no WhatsApp",
+      "rect": {
+        "top": 115,
+        "height": 941.203125
+      },
+      "opacity": "1",
+      "images": [
+        {
+          "src": "http://localhost:8080/site-assets/5e1f9c807519a1cc.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/09cebf861076a12d.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/a7d17f669387338d.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/bc0394c6a221ed55.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/5e1f9c807519a1cc.webp",
+          "loaded": false
+        }
+      ]
+    },
+    {
+      "text": "OS QUERIDINHOS\nBrinquedos mais pedidos para festas no DF\n\nOs favoritos da criançada (e dos pais). Clique em Adicionar para montar sua lista de orçamento.\n\nMAIS PEDIDO\nFutebol de Sabão 2 em 1\n\nCampo inflável 2 em 1: futebol e bolão gigante, com muita ",
+      "rect": {
+        "top": 160.28125,
+        "height": 1543.15625
+      },
+      "opacity": "1",
+      "images": [
+        {
+          "src": "http://localhost:8080/site-assets/8d628c4190afeea4.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/4d0db2c46fb2ed9c.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/64576cc39ba8d9c0.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/7baf92f9f0028c5a.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/1598656e479a082d.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/2487870ef86bd3e9.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/dae7b2fbfd051e24.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/96d76b5231819ea2.webp",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "text": "CATEGORIAS\nEncontre o brinquedo ideal para a sua festa\n\nDo primeiro aniversário à festa teen, temos opções para cada idade, espaço e estação do ano.\n\nBrinquedos infláveis\n\nTobogãs, tobopiscinas, futebol de sabão e circuitos para todas as idades.\n\n11 ",
+      "rect": {
+        "top": 159.4375,
+        "height": 882.71875
+      },
+      "opacity": "1",
+      "images": [
+        {
+          "src": "http://localhost:8080/site-assets/7baf92f9f0028c5a.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/478696cc864515ed.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/2487870ef86bd3e9.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/bc0394c6a221ed55.webp",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "text": "ORÇAMENTO FÁCIL\nComo funciona o orçamento\n\nMonte a festa dos sonhos em 3 passos, sem cadastro e sem compromisso.\n\n1\nEscolha os brinquedos\n\nNavegue pelo catálogo e clique em “Adicionar à lista” nos brinquedos que você quer na festa.\n\n2\nInforme os dado",
+      "rect": {
+        "top": 160.15625,
+        "height": 746.21875
+      },
+      "opacity": "1",
+      "images": []
+    },
+    {
+      "text": "SOBRE A TIO TITI\nDiversão que voa alto, com segurança\n\nA Tio Titi atua no aluguel de brinquedos para festas em Brasília desde 1998. São mais de 28 anos criando sorrisos e momentos cheios de alegria em aniversários, escolas, condomínios e empresas.\n\nM",
+      "rect": {
+        "top": 160.375,
+        "height": 796.59375
+      },
+      "opacity": "1",
+      "images": [
+        {
+          "src": "http://localhost:8080/site-assets/d7ddf73a9a404ea5.webp",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "text": "COMBOS\nNão sabe o que escolher? Comece por um combo\n\nSeleções prontas por idade e estilo de festa. Adicione com um clique e ajuste como quiser.\n\n1 A 5 ANOS\nFesta dos Pequenos\n\nBrinquedos baixos, coloridos e com movimentos suaves. Perfeito para o prim",
+      "rect": {
+        "top": 159.96875,
+        "height": 1098.53125
+      },
+      "opacity": "1",
+      "images": [
+        {
+          "src": "http://localhost:8080/site-assets/dae7b2fbfd051e24.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/00435f0f0f43d9c6.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/3ae30e57b5d3c365.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/96d76b5231819ea2.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/64576cc39ba8d9c0.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/ad7d95de35fb9930.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/4d0db2c46fb2ed9c.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/8d628c4190afeea4.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/911a5f2d5295117a.webp",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "text": "DEPOIMENTOS\nQuem alugou, aprovou!\n\nO carinho de quem já fez festa com a gente é o nosso maior orgulho.\n\nÓtimo atendimento, o brinquedo que aluguei estava em perfeito estado, meu priminho amou e sem contar que o futebol de sabão fez a alegria dos adul",
+      "rect": {
+        "top": 159.5,
+        "height": 1045.25
+      },
+      "opacity": "1",
+      "images": []
+    },
+    {
+      "text": "ONDE ATENDEMOS\nLevamos a festa até você, em todo o DF\n\nNossa base fica em Vicente Pires e atendemos Brasília, todas as regiões administrativas e cidades do Entorno.\n\nVicente Pires\nTaguatinga\nÁguas Claras\nGuará\nAsa Sul\nAsa Norte\nSudoeste\nLago Sul\nCeil",
+      "rect": {
+        "top": 160.75,
+        "height": 733.140625
+      },
+      "opacity": "1",
+      "images": []
+    },
+    {
+      "text": "TIRE SUAS DÚVIDAS\nDúvidas frequentes\nComo funciona o orçamento pelo site?\nQuanto custa alugar um brinquedo?\nQuanto tempo dura a locação dos brinquedos?\nO monitor está incluído no valor?\nQuais regiões vocês atendem?\n\nVer todas as perguntas frequentes ",
+      "rect": {
+        "top": 159.890625,
+        "height": 792.21875
+      },
+      "opacity": "1",
+      "images": []
+    },
+    {
+      "text": "Bora deixar a festa inesquecível?\n\nMonte sua lista de brinquedos e receba o orçamento pelo WhatsApp. Atendemos Brasília e todo o Entorno.\n\nPEDIR ORÇAMENTO\nWHATSAPP",
+      "rect": {
+        "top": 726.109375,
+        "height": 407.875
+      },
+      "opacity": "1",
+      "images": []
+    },
+    {
+      "text": "Desde 1998 levando diversão, segurança e alegria para festas infantis e eventos em Brasília e no Entorno.\n\nBRINQUEDOS\nInfláveis\nAquáticos\nJogos e eletrônicos\nPara crianças pequenas\nTodos os brinquedos\nCombos para festa\nTIO TITI\nSobre nós\nEmpresas, es",
+      "rect": {
+        "top": 1304.859375,
+        "height": 495.4375
+      },
+      "opacity": "1",
+      "images": [
+        {
+          "src": "http://localhost:8080/site-assets/7055a544d0bca36e.webp",
+          "loaded": true
+        }
+      ]
+    }
+  ],
+  "scrollBottom": {
+    "y": 8032,
+    "height": 9832,
+    "header": "site-header is-scrolled"
+  },
+  "accordion": true,
+  "addResult": "Adicionar\nFutebol de Sabão 2 em 1 à lista",
+  "drawerAfterAdd": "MINHA LISTA\n0 BRINQUEDOS\nSua lista está vazia\nNavegue pelos brinquedos e clique em \"Adicionar à lista\" para montar seu orçamento.\nPEDIR ORÇAMENTO DESTA LISTA\nCONTINUAR ESCOLHENDO\n\nVocê informa data, horário e local na próxima etapa.",
+  "media": 0,
+  "errors": []
+}

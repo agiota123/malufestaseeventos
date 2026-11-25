@@ -1,0 +1,225 @@
+{
+  "origin": "http://localhost:8080",
+  "route": "/jogos-para-festa",
+  "viewport": {
+    "width": 1280,
+    "height": 1800
+  },
+  "controls": [
+    {
+      "trigger": "dropdown",
+      "visible": true,
+      "text": "Infláveis\nTobogãs, tobopiscinas, futebol de sabão e circuitos para todas as idades.\nAquáticos\nToboágua, tobopiscina, futebol de sabão e espuma para refrescar a festa.\nJogos e eletrônicos\nFliperama, air game, totó, futmesa, sinuca e basquete para todas as idades.\nPara os pequenos (1 a 6 anos)\nCarrossel, piscina de bolinhas e tobogãs baixos para festas de 1 a 6 anos.\nVER TODOS OS 22 BRINQUEDOS",
+      "class": "dropdown",
+      "aria": null
+    },
+    {
+      "trigger": "drawer",
+      "visible": true,
+      "text": "MINHA LISTA\n0 BRINQUEDOS\nSua lista está vazia\nNavegue pelos brinquedos e clique em \"Adicionar à lista\" para montar seu orçamento.\nPEDIR ORÇAMENTO DESTA LISTA\nCONTINUAR ESCOLHENDO\n\nVocê informa data, horário e local na próxima etapa.",
+      "class": "drawer flex-col fixed w-[min(420px,100%)] [bottom:0] [box-shadow:var(--shadow-lg)] [right:0] [top:0] [z-index:81]",
+      "aria": "true"
+    },
+    {
+      "trigger": "populated-drawer",
+      "visible": true,
+      "text": "MINHA LISTA\n0 BRINQUEDOS\nSua lista está vazia\nNavegue pelos brinquedos e clique em \"Adicionar à lista\" para montar seu orçamento.\nPEDIR ORÇAMENTO DESTA LISTA\nCONTINUAR ESCOLHENDO\n\nVocê informa data, horário e local na próxima etapa.",
+      "class": "drawer flex-col fixed w-[min(420px,100%)] [bottom:0] [box-shadow:var(--shadow-lg)] [right:0] [top:0] [z-index:81]",
+      "aria": "true"
+    }
+  ],
+  "title": "Aluguel de Jogos para Festa em Brasília | Fliperama e mais",
+  "buttons": [
+    {
+      "text": "Brinquedos ",
+      "aria": null,
+      "cls": "nav__link"
+    },
+    {
+      "text": " Minha lista de orçamento",
+      "aria": null,
+      "cls": "btn btn--blue"
+    },
+    {
+      "text": "Minha lista de orçamento0",
+      "aria": null,
+      "cls": "btn-lista"
+    },
+    {
+      "text": "",
+      "aria": "Abrir menu",
+      "cls": "menu-toggle"
+    },
+    {
+      "text": "Adicionar Fliperama Multijogos à lista",
+      "aria": null,
+      "cls": "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"
+    },
+    {
+      "text": "Adicionar Air Game (Air Hockey) à lista",
+      "aria": null,
+      "cls": "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"
+    },
+    {
+      "text": "Adicionar Totó / Pebolim à lista",
+      "aria": null,
+      "cls": "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"
+    },
+    {
+      "text": "Adicionar Futmesa à lista",
+      "aria": null,
+      "cls": "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"
+    },
+    {
+      "text": "Adicionar Desafio do Basquete à lista",
+      "aria": null,
+      "cls": "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"
+    },
+    {
+      "text": "Adicionar Sinuca Infantil à lista",
+      "aria": null,
+      "cls": "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"
+    },
+    {
+      "text": "",
+      "aria": "Fechar lista",
+      "cls": "icon-btn grid h-[34px] place-items-center w-[34px] [cursor:pointer]"
+    }
+  ],
+  "links": [
+    {
+      "text": "InfláveisTobogãs, tobopiscinas, futebol de sabão e circuitos para todas as idades.",
+      "href": "http://localhost:8080/brinquedos-inflaveis"
+    },
+    {
+      "text": "AquáticosToboágua, tobopiscina, futebol de sabão e espuma para refrescar a festa.",
+      "href": "http://localhost:8080/brinquedos-aquaticos"
+    },
+    {
+      "text": "Jogos e eletrônicosFliperama, air game, totó, futmesa, sinuca e basquete para todas as idades.",
+      "href": "http://localhost:8080/jogos-para-festa#"
+    },
+    {
+      "text": "Para os pequenos (1 a 6 anos)Carrossel, piscina de bolinhas e tobogãs baixos para festas de 1 a 6 anos.",
+      "href": "http://localhost:8080/brinquedos-para-criancas-pequenas"
+    },
+    {
+      "text": "Ver todos os 22 brinquedos ",
+      "href": "http://localhost:8080/brinquedos"
+    }
+  ],
+  "sections": [
+    {
+      "text": "Início\nBrinquedos\nJogos e eletrônicos\n6 BRINQUEDOS\nAluguel de Jogos para Festa em Brasília\n\nJogos são perfeitos para festas com crianças maiores, adolescentes e adultos — e ocupam pouco espaço. Monte uma área de jogos completa com fliperama, air game",
+      "rect": {
+        "top": 115,
+        "height": 530.8125
+      },
+      "opacity": "1",
+      "images": []
+    },
+    {
+      "text": "Brinquedos Jogos e eletrônicos\nNOSTALGIA\nFliperama Multijogos\n\n2 mil jogos clássicos de Super Nintendo, Atari, PlayStation e Mega Drive.\n\nA partir de 6 anos\nAltura: 1,10 m\nVER DETALHES\nAdicionar\nFliperama Multijogos à lista\nAir Game (Air Hockey)\n\nA m",
+      "rect": {
+        "top": 159.8125,
+        "height": 1061.25
+      },
+      "opacity": "1",
+      "images": [
+        {
+          "src": "http://localhost:8080/site-assets/2487870ef86bd3e9.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/3bb66b68e1338933.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/fff4f8e2dfcec910.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/21e6744bc602665d.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/c837f196b64c73f8.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/9d99c3cc6d7e249e.webp",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "text": "Monte uma área de jogos que diverte todo mundo\nFesta teen: Fliperama + Air Game + Futmesa.\nFesta em salão de prédio: Sinuca Infantil + Totó + Air Game.\nEventos corporativos: Basquete + Futmesa + Fliperama, que animam também os adultos.\nCuidados com j",
+      "rect": {
+        "top": 160.0625,
+        "height": 555.515625
+      },
+      "opacity": "1",
+      "images": []
+    },
+    {
+      "text": "DEPOIMENTOS\nQuem alugou, aprovou!\n\nO carinho de quem já fez festa com a gente é o nosso maior orgulho.\n\nEmpresa com padrão de qualidade muito boa, atendimento perfeito, horário cumprido certinho. Eu conheço e recomendo.\nHS\nHerci da Silva\nCliente Tio ",
+      "rect": {
+        "top": 160.578125,
+        "height": 746.984375
+      },
+      "opacity": "1",
+      "images": []
+    },
+    {
+      "text": "TIRE SUAS DÚVIDAS\nPerguntas sobre jogos e eletrônicos\nOs jogos podem ficar ao ar livre?\nJogos são indicados para adultos?\n\nVer todas as perguntas frequentes ",
+      "rect": {
+        "top": 159.5625,
+        "height": 614.609375
+      },
+      "opacity": "1",
+      "images": []
+    },
+    {
+      "text": "Veja também\nAluguel de Brinquedos Infláveis\nAluguel de Brinquedos Aquáticos\nBrinquedos para bebês e crianças pequenas\nCombos para festa",
+      "rect": {
+        "top": 482.171875,
+        "height": 244.03125
+      },
+      "opacity": "1",
+      "images": []
+    },
+    {
+      "text": "Bora deixar a festa inesquecível?\n\nMonte sua lista de brinquedos e receba o orçamento pelo WhatsApp. Atendemos Brasília e todo o Entorno.\n\nPEDIR ORÇAMENTO\nWHATSAPP",
+      "rect": {
+        "top": 726.203125,
+        "height": 407.875
+      },
+      "opacity": "1",
+      "images": []
+    },
+    {
+      "text": "Desde 1998 levando diversão, segurança e alegria para festas infantis e eventos em Brasília e no Entorno.\n\nBRINQUEDOS\nInfláveis\nAquáticos\nJogos e eletrônicos\nPara crianças pequenas\nTodos os brinquedos\nCombos para festa\nTIO TITI\nSobre nós\nEmpresas, es",
+      "rect": {
+        "top": 1304.953125,
+        "height": 495.4375
+      },
+      "opacity": "1",
+      "images": [
+        {
+          "src": "http://localhost:8080/site-assets/7055a544d0bca36e.webp",
+          "loaded": true
+        }
+      ]
+    }
+  ],
+  "scrollBottom": {
+    "y": 3142,
+    "height": 4942,
+    "header": "site-header is-scrolled"
+  },
+  "accordion": true,
+  "addResult": "Adicionar\nFliperama Multijogos à lista",
+  "drawerAfterAdd": "MINHA LISTA\n0 BRINQUEDOS\nSua lista está vazia\nNavegue pelos brinquedos e clique em \"Adicionar à lista\" para montar seu orçamento.\nPEDIR ORÇAMENTO DESTA LISTA\nCONTINUAR ESCOLHENDO\n\nVocê informa data, horário e local na próxima etapa.",
+  "media": 0,
+  "errors": []
+}

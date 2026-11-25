@@ -1,0 +1,96 @@
+[
+  {
+    "route": "/",
+    "viewport": 1280,
+    "navigation": "passed",
+    "list": "passed",
+    "nextStep": "/orcamento",
+    "nextStepStatus": "missing imported page",
+    "combo": "passed",
+    "errors": []
+  },
+  {
+    "route": "/",
+    "viewport": 390,
+    "navigation": "passed",
+    "list": "passed",
+    "nextStep": "/orcamento",
+    "nextStepStatus": "missing imported page",
+    "combo": "passed",
+    "errors": []
+  },
+  {
+    "route": "/brinquedos-inflaveis",
+    "viewport": 1280,
+    "navigation": "passed",
+    "list": "passed",
+    "nextStep": "/orcamento",
+    "nextStepStatus": "missing imported page",
+    "errors": []
+  },
+  {
+    "route": "/brinquedos-inflaveis",
+    "viewport": 390,
+    "navigation": "passed",
+    "list": "passed",
+    "nextStep": "/orcamento",
+    "nextStepStatus": "missing imported page",
+    "errors": []
+  },
+  {
+    "route": "/brinquedos-aquaticos",
+    "viewport": 1280,
+    "navigation": "passed",
+    "list": "passed",
+    "nextStep": "/orcamento",
+    "nextStepStatus": "missing imported page",
+    "errors": []
+  },
+  {
+    "route": "/brinquedos-aquaticos",
+    "viewport": 390,
+    "navigation": "passed",
+    "list": "passed",
+    "nextStep": "/orcamento",
+    "nextStepStatus": "missing imported page",
+    "errors": []
+  },
+  {
+    "route": "/jogos-para-festa",
+    "viewport": 1280,
+    "navigation": "passed",
+    "list": "passed",
+    "nextStep": "/orcamento",
+    "nextStepStatus": "missing imported page",
+    "errors": []
+  },
+  {
+    "route": "/jogos-para-festa",
+    "viewport": 390,
+    "navigation": "passed",
+    "list": "passed",
+    "nextStep": "/orcamento",
+    "nextStepStatus": "missing imported page",
+    "errors": []
+  },
+  {
+    "route": "/brinquedos",
+    "viewport": 1280,
+    "navigation": "passed",
+    "list": "passed",
+    "nextStep": "/orcamento",
+    "nextStepStatus": "missing imported page",
+    "filter": "passed",
+    "errors": []
+  },
+  {
+    "route": "/brinquedos",
+    "viewport": 390,
+    "navigation": "passed",
+    "list": "passed",
+    "nextStep": "/orcamento",
+    "nextStepStatus": "missing imported page",
+    "filter": "passed",
+    "errors": []
+  }
+]

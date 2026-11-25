@@ -1,0 +1,243 @@
+{
+  "origin": "https://tiotiti.com.br",
+  "route": "/brinquedos-aquaticos",
+  "viewport": {
+    "width": 1280,
+    "height": 1800
+  },
+  "controls": [
+    {
+      "trigger": "dropdown",
+      "visible": true,
+      "text": "Infláveis\nTobogãs, tobopiscinas, futebol de sabão e circuitos para todas as idades.\nAquáticos\nToboágua, tobopiscina, futebol de sabão e espuma para refrescar a festa.\nJogos e eletrônicos\nFliperama, air game, totó, futmesa, sinuca e basquete para todas as idades.\nPara os pequenos (1 a 6 anos)\nCarrossel, piscina de bolinhas e tobogãs baixos para festas de 1 a 6 anos.\nVER TODOS OS 22 BRINQUEDOS",
+      "class": "dropdown",
+      "aria": null
+    },
+    {
+      "trigger": "drawer",
+      "visible": true,
+      "text": "MINHA LISTA\n0 BRINQUEDOS\nSua lista está vazia\nNavegue pelos brinquedos e clique em \"Adicionar à lista\" para montar seu orçamento.\nPEDIR ORÇAMENTO DESTA LISTA\nCONTINUAR ESCOLHENDO\n\nVocê informa data, horário e local na próxima etapa.",
+      "class": "drawer is-open",
+      "aria": "false"
+    },
+    {
+      "trigger": "populated-drawer",
+      "visible": true,
+      "text": "MINHA LISTA\n1 BRINQUEDO\nFutebol de Sabão 2 em 1\n1\nPEDIR ORÇAMENTO DESTA LISTA\nCONTINUAR ESCOLHENDO\n\nVocê informa data, horário e local na próxima etapa.",
+      "class": "drawer is-open",
+      "aria": "false"
+    }
+  ],
+  "title": "Aluguel de Brinquedos Aquáticos em Brasília | Tio Titi",
+  "buttons": [
+    {
+      "text": "Brinquedos ",
+      "aria": null,
+      "cls": "nav__link"
+    },
+    {
+      "text": " Minha lista de orçamento",
+      "aria": null,
+      "cls": "btn btn--blue"
+    },
+    {
+      "text": "Minha lista de orçamento0",
+      "aria": null,
+      "cls": "btn-lista"
+    },
+    {
+      "text": "",
+      "aria": "Abrir menu",
+      "cls": "menu-toggle"
+    },
+    {
+      "text": "Adicionar Futebol de Sabão 2 em 1 à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Golzinho de Sabão à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Toboágua à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Toboágua Médio à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Tobopiscina à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Tobopiscina Médio à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Vitória Régia e Tapete Aladdin à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Canhão de Espuma à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "",
+      "aria": "Fechar lista",
+      "cls": "icon-btn"
+    }
+  ],
+  "links": [
+    {
+      "text": "InfláveisTobogãs, tobopiscinas, futebol de sabão e circuitos para todas as idades.",
+      "href": "https://tiotiti.com.br/brinquedos-inflaveis/"
+    },
+    {
+      "text": "AquáticosToboágua, tobopiscina, futebol de sabão e espuma para refrescar a festa.",
+      "href": "https://tiotiti.com.br/brinquedos-aquaticos/"
+    },
+    {
+      "text": "Jogos e eletrônicosFliperama, air game, totó, futmesa, sinuca e basquete para todas as idades.",
+      "href": "https://tiotiti.com.br/jogos-para-festa/"
+    },
+    {
+      "text": "Para os pequenos (1 a 6 anos)Carrossel, piscina de bolinhas e tobogãs baixos para festas de 1 a 6 anos.",
+      "href": "https://tiotiti.com.br/brinquedos-para-criancas-pequenas/"
+    },
+    {
+      "text": "Ver todos os 22 brinquedos ",
+      "href": "https://tiotiti.com.br/brinquedos/"
+    }
+  ],
+  "sections": [
+    {
+      "text": "Início\nBrinquedos\nAquáticos\n8 BRINQUEDOS\nAluguel de Brinquedos Aquáticos em Brasília\n\nCom o clima quente e seco de Brasília, nada anima mais uma festa do que água! Nossos brinquedos aquáticos transformam o quintal ou a piscina num parque aquático par",
+      "rect": {
+        "top": 115,
+        "height": 530.8125
+      },
+      "opacity": "1",
+      "images": []
+    },
+    {
+      "text": "Brinquedos Aquáticos\nMAIS PEDIDO\nFutebol de Sabão 2 em 1\n\nCampo inflável 2 em 1: futebol e bolão gigante, com muita espuma e risada.\n\nAté 15 anos\nComprimento: 8 m\nVER DETALHES\nAdicionar\nFutebol de Sabão 2 em 1 à lista\nGolzinho de Sabão\n\nCampo infláve",
+      "rect": {
+        "top": 159.8125,
+        "height": 1122.34375
+      },
+      "opacity": "1",
+      "images": [
+        {
+          "src": "https://tiotiti.com.br/img/brinquedos/aluguel-de-futebol-de-sabao-em-brasilia-1-320.webp",
+          "loaded": true
+        },
+        {
+          "src": "https://tiotiti.com.br/img/brinquedos/aluguel-de-golzinho-de-sabao-em-brasilia-1-320.webp",
+          "loaded": true
+        },
+        {
+          "src": "https://tiotiti.com.br/img/brinquedos/aluguel-de-toboagua-em-brasilia-1-320.webp",
+          "loaded": true
+        },
+        {
+          "src": "https://tiotiti.com.br/img/brinquedos/aluguel-de-toboagua-medio-em-brasilia-1-320.webp",
+          "loaded": true
+        },
+        {
+          "src": "https://tiotiti.com.br/img/brinquedos/aluguel-de-tobopiscina-em-brasilia-1-320.webp",
+          "loaded": true
+        },
+        {
+          "src": "https://tiotiti.com.br/img/brinquedos/aluguel-de-tobopiscina-medio-em-brasilia-1-320.webp",
+          "loaded": true
+        },
+        {
+          "src": "https://tiotiti.com.br/img/brinquedos/aluguel-de-vitoria-regia-e-tapete-aladin-em-brasilia-1-320.webp",
+          "loaded": true
+        },
+        {
+          "src": "https://tiotiti.com.br/img/brinquedos/aluguel-de-canhao-de-espuma-em-brasilia-1-320.webp",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "text": "Tem piscina ou não tem?\nCom piscina: o Toboágua e o Toboágua Médio são montados na borda e as crianças caem direto na água. Os flutuadores Vitória Régia e Tapete Aladdin completam a diversão.\nSem piscina: a Tobopiscina e o Tobopiscina Médio já vêm co",
+      "rect": {
+        "top": 160.15625,
+        "height": 537.765625
+      },
+      "opacity": "1",
+      "images": []
+    },
+    {
+      "text": "DEPOIMENTOS\nQuem alugou, aprovou!\n\nO carinho de quem já fez festa com a gente é o nosso maior orgulho.\n\nÓtimo atendimento, o brinquedo que aluguei estava em perfeito estado, meu priminho amou e sem contar que o futebol de sabão fez a alegria dos adul",
+      "rect": {
+        "top": 159.921875,
+        "height": 772.578125
+      },
+      "opacity": "1",
+      "images": []
+    },
+    {
+      "text": "TIRE SUAS DÚVIDAS\nPerguntas sobre brinquedos aquáticos\nQual a melhor época para alugar brinquedos aquáticos em Brasília?\nPreciso ter piscina?\n\nVer todas as perguntas frequentes ",
+      "rect": {
+        "top": 160.5,
+        "height": 614.609375
+      },
+      "opacity": "1",
+      "images": []
+    },
+    {
+      "text": "Veja também\nAluguel de Brinquedos Infláveis\nAluguel de Jogos para Festa\nBrinquedos para bebês e crianças pequenas\nCombos para festa",
+      "rect": {
+        "top": 482.109375,
+        "height": 244.03125
+      },
+      "opacity": "1",
+      "images": []
+    },
+    {
+      "text": "Bora deixar a festa inesquecível?\n\nMonte sua lista de brinquedos e receba o orçamento pelo WhatsApp. Atendemos Brasília e todo o Entorno.\n\nPEDIR ORÇAMENTO\nWHATSAPP",
+      "rect": {
+        "top": 726.140625,
+        "height": 407.875
+      },
+      "opacity": "1",
+      "images": []
+    },
+    {
+      "text": "Desde 1998 levando diversão, segurança e alegria para festas infantis e eventos em Brasília e no Entorno.\n\nBRINQUEDOS\nInfláveis\nAquáticos\nJogos e eletrônicos\nPara crianças pequenas\nTodos os brinquedos\nCombos para festa\nTIO TITI\nSobre nós\nEmpresas, es",
+      "rect": {
+        "top": 1304.890625,
+        "height": 495.4375
+      },
+      "opacity": "1",
+      "images": [
+        {
+          "src": "https://tiotiti.com.br/img/logo-tio-titi-240.webp",
+          "loaded": true
+        }
+      ]
+    }
+  ],
+  "scrollBottom": {
+    "y": 3211,
+    "height": 5011,
+    "header": "site-header is-scrolled"
+  },
+  "accordion": true,
+  "addResult": "Na lista\nFutebol de Sabão 2 em 1 à lista",
+  "drawerAfterAdd": "MINHA LISTA\n1 BRINQUEDO\nFutebol de Sabão 2 em 1\n1\nPEDIR ORÇAMENTO DESTA LISTA\nCONTINUAR ESCOLHENDO\n\nVocê informa data, horário e local na próxima etapa.",
+  "media": 0,
+  "errors": []
+}
