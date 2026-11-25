@@ -414,14 +414,15 @@ function Index() {
 }
 
 function ImportedSectionListaDeBrinquedos() {
+  const [category, setCategory] = useState("todos");
   const { items, add, addCombo } = useContext(QuoteContext);
   return (
     <section className="section relative" style={{ paddingTop: "12px" }} aria-label="Lista de brinquedos">
       <div className="wrap">
-        <div className="flex flex-wrap gap-[10px] justify-center mb-[32px]" role="group" aria-label="Filtrar brinquedos"><button className={"\x66ilter items-center inline-flex gap-[7px] [box-shadow:4px_4px_0_var(--red)] [cursor:pointer] [font:500_.95rem_var(--font)] [font-weight:700]! [padding:10px_18px]"} type="button" aria-pressed="true"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-sparkles" } as any)} /></svg> Todos</button><button className={"\x66ilter items-center inline-flex gap-[7px] [box-shadow:var(--hard-sm)] [cursor:pointer] [font:500_.95rem_var(--font)] [font-weight:700]! [padding:10px_18px]"} type="button" aria-pressed="false"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-tent" } as any)} /></svg> Infláveis</button><button className={"\x66ilter items-center inline-flex gap-[7px] [box-shadow:var(--hard-sm)] [cursor:pointer] [font:500_.95rem_var(--font)] [font-weight:700]! [padding:10px_18px]"} type="button" aria-pressed="false"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-droplet" } as any)} /></svg> Aquáticos</button><button className={"\x66ilter items-center inline-flex gap-[7px] [box-shadow:var(--hard-sm)] [cursor:pointer] [font:500_.95rem_var(--font)] [font-weight:700]! [padding:10px_18px]"} type="button" aria-pressed="false"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-gamepad" } as any)} /></svg> Jogos</button><button className={"\x66ilter items-center inline-flex gap-[7px] [box-shadow:var(--hard-sm)] [cursor:pointer] [font:500_.95rem_var(--font)] [font-weight:700]! [padding:10px_18px]"} type="button" aria-pressed="false"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-smile" } as any)} /></svg> Pequenos</button><button className={"\x66ilter items-center inline-flex gap-[7px] [box-shadow:var(--hard-sm)] [cursor:pointer] [font:500_.95rem_var(--font)] [font-weight:700]! [padding:10px_18px]"} type="button" aria-pressed="false"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-sparkles" } as any)} /></svg> Parque</button></div>
-        <p className={"\x66ilter-count text-center [font-size:.9rem]"} aria-live="polite">22 brinquedos encontrados</p>
+        <div className="flex flex-wrap gap-[10px] justify-center mb-[32px]" role="group" aria-label="Filtrar brinquedos"><button className={"\x66ilter items-center inline-flex gap-[7px] [box-shadow:4px_4px_0_var(--red)] [cursor:pointer] [font:500_.95rem_var(--font)] [font-weight:700]! [padding:10px_18px]"} type="button" onClick={() => setCategory("todos")} aria-pressed={category === "todos"}><svg className="icon" aria-hidden="true"><use {...({ href: "#i-sparkles" } as any)} /></svg> Todos</button><button className={"\x66ilter items-center inline-flex gap-[7px] [box-shadow:var(--hard-sm)] [cursor:pointer] [font:500_.95rem_var(--font)] [font-weight:700]! [padding:10px_18px]"} type="button" onClick={() => setCategory("inflaveis")} aria-pressed={category === "inflaveis"}><svg className="icon" aria-hidden="true"><use {...({ href: "#i-tent" } as any)} /></svg> Infláveis</button><button className={"\x66ilter items-center inline-flex gap-[7px] [box-shadow:var(--hard-sm)] [cursor:pointer] [font:500_.95rem_var(--font)] [font-weight:700]! [padding:10px_18px]"} type="button" onClick={() => setCategory("aquaticos")} aria-pressed={category === "aquaticos"}><svg className="icon" aria-hidden="true"><use {...({ href: "#i-droplet" } as any)} /></svg> Aquáticos</button><button className={"\x66ilter items-center inline-flex gap-[7px] [box-shadow:var(--hard-sm)] [cursor:pointer] [font:500_.95rem_var(--font)] [font-weight:700]! [padding:10px_18px]"} type="button" onClick={() => setCategory("jogos")} aria-pressed={category === "jogos"}><svg className="icon" aria-hidden="true"><use {...({ href: "#i-gamepad" } as any)} /></svg> Jogos</button><button className={"\x66ilter items-center inline-flex gap-[7px] [box-shadow:var(--hard-sm)] [cursor:pointer] [font:500_.95rem_var(--font)] [font-weight:700]! [padding:10px_18px]"} type="button" onClick={() => setCategory("pequenos")} aria-pressed={category === "pequenos"}><svg className="icon" aria-hidden="true"><use {...({ href: "#i-smile" } as any)} /></svg> Pequenos</button><button className={"\x66ilter items-center inline-flex gap-[7px] [box-shadow:var(--hard-sm)] [cursor:pointer] [font:500_.95rem_var(--font)] [font-weight:700]! [padding:10px_18px]"} type="button" onClick={() => setCategory("parque")} aria-pressed={category === "parque"}><svg className="icon" aria-hidden="true"><use {...({ href: "#i-sparkles" } as any)} /></svg> Parque</button></div>
+        <p className={"\x66ilter-count text-center [font-size:.9rem]"} aria-live="polite">{["inflaveis aquaticos", "inflaveis aquaticos pequenos", "inflaveis pequenos", "inflaveis", "inflaveis pequenos", "inflaveis aquaticos", "inflaveis aquaticos", "inflaveis aquaticos", "inflaveis aquaticos pequenos", "aquaticos", "aquaticos", "inflaveis", "inflaveis parque", "parque", "pequenos", "pequenos parque", "jogos", "jogos", "jogos", "jogos", "jogos", "jogos"].filter(cats => category === "todos" || cats.split(" ").includes(category)).length} brinquedos encontrados</p>
         <div className="grid gap-[22px] grid-cols-[repeat(auto-fill,minmax(260px,1fr))]">
-          <article className="toy-card flex flex-col relative [overflow:hidden]">
+          <article className="toy-card flex flex-col relative [overflow:hidden]" data-cats="inflaveis aquaticos" hidden={category !== "todos" && !"inflaveis aquaticos".split(" ").includes(category)}>
             <a className="toy-card__media aspect-[4/3] block [overflow:hidden]" aria-hidden="true" href="/brinquedos/futebol-de-sabao" tabIndex={-1}>
               <img src="/site-assets/49d083b39898cf72.webp" srcSet="/site-assets/8d628c4190afeea4.webp 320w, /site-assets/49d083b39898cf72.webp 640w, /site-assets/ae8f26b6b6653dc6.webp 800w" sizes="(max-width: 600px) 86vw, (max-width: 1000px) 46vw, 300px" width="800" height="600" alt="Aluguel de Futebol de Sabão 2 em 1 para festas em Brasília – Tio Titi" loading="lazy" decoding="async" />
               <span className="toy-card__tag left-[12px] absolute uppercase top-[12px] [box-shadow:2px_2px_0_var(--ink)] [font-size:.74rem] [font-weight:700] [letter-spacing:.04em] [padding:5px_11px]">Mais pedido</span>
@@ -447,7 +448,7 @@ function ImportedSectionListaDeBrinquedos() {
               </div>
             </div>
           </article>
-          <article className="toy-card flex flex-col relative [overflow:hidden]">
+          <article className="toy-card flex flex-col relative [overflow:hidden]" data-cats="inflaveis aquaticos pequenos" hidden={category !== "todos" && !"inflaveis aquaticos pequenos".split(" ").includes(category)}>
             <a className="toy-card__media aspect-[4/3] block [overflow:hidden]" aria-hidden="true" href="/brinquedos/golzinho-de-sabao" tabIndex={-1}>
               <img src="/site-assets/c531d4dae650adec.webp" srcSet="/site-assets/56a497fec5d57ec9.webp 320w, /site-assets/c531d4dae650adec.webp 640w, /site-assets/0037dbca4ca5783d.webp 800w" sizes="(max-width: 600px) 86vw, (max-width: 1000px) 46vw, 300px" width="800" height="600" alt="Aluguel de Golzinho de Sabão para festas em Brasília – Tio Titi" loading="lazy" decoding="async" />
             </a>
@@ -472,7 +473,7 @@ function ImportedSectionListaDeBrinquedos() {
               </div>
             </div>
           </article>
-          <article className="toy-card flex flex-col relative [overflow:hidden]">
+          <article className="toy-card flex flex-col relative [overflow:hidden]" data-cats="inflaveis pequenos" hidden={category !== "todos" && !"inflaveis pequenos".split(" ").includes(category)}>
             <a className="toy-card__media aspect-[4/3] block [overflow:hidden]" aria-hidden="true" href="/brinquedos/toboga-tradicional" tabIndex={-1}>
               <img src="/site-assets/700502b308b72419.webp" srcSet="/site-assets/96d76b5231819ea2.webp 320w, /site-assets/700502b308b72419.webp 640w, /site-assets/fbe50f7dbfff4301.webp 800w" sizes="(max-width: 600px) 86vw, (max-width: 1000px) 46vw, 300px" width="800" height="600" alt="Aluguel de Tobogã Tradicional para festas em Brasília – Tio Titi" loading="lazy" decoding="async" />
             </a>
@@ -497,7 +498,7 @@ function ImportedSectionListaDeBrinquedos() {
               </div>
             </div>
           </article>
-          <article className="toy-card flex flex-col relative [overflow:hidden]">
+          <article className="toy-card flex flex-col relative [overflow:hidden]" data-cats="inflaveis" hidden={category !== "todos" && !"inflaveis".split(" ").includes(category)}>
             <a className="toy-card__media aspect-[4/3] block [overflow:hidden]" aria-hidden="true" href="/brinquedos/toboga-safari" tabIndex={-1}>
               <img src="/site-assets/370ce26428d9b79c.webp" srcSet="/site-assets/7baf92f9f0028c5a.webp 320w, /site-assets/370ce26428d9b79c.webp 640w, /site-assets/29c123db8132cd78.webp 800w, /site-assets/18ae42b7c0d5fbcf.webp 900w" sizes="(max-width: 600px) 86vw, (max-width: 1000px) 46vw, 300px" width="900" height="600" alt="Aluguel de Tobogã Safári 2 em 1 para festas em Brasília – Tio Titi" loading="lazy" decoding="async" />
               <span className="toy-card__tag left-[12px] absolute uppercase top-[12px] [box-shadow:2px_2px_0_var(--ink)] [font-size:.74rem] [font-weight:700] [letter-spacing:.04em] [padding:5px_11px]">Favorito</span>
@@ -523,7 +524,7 @@ function ImportedSectionListaDeBrinquedos() {
               </div>
             </div>
           </article>
-          <article className="toy-card flex flex-col relative [overflow:hidden]">
+          <article className="toy-card flex flex-col relative [overflow:hidden]" data-cats="inflaveis pequenos" hidden={category !== "todos" && !"inflaveis pequenos".split(" ").includes(category)}>
             <a className="toy-card__media aspect-[4/3] block [overflow:hidden]" aria-hidden="true" href="/brinquedos/toboga-3-em-1" tabIndex={-1}>
               <img src="/site-assets/bc7ab97962961bf4.webp" srcSet="/site-assets/3ae30e57b5d3c365.webp 320w, /site-assets/bc7ab97962961bf4.webp 640w, /site-assets/2e3410095f4089ee.webp 800w" sizes="(max-width: 600px) 86vw, (max-width: 1000px) 46vw, 300px" width="800" height="600" alt="Aluguel de Tobogã 3 em 1 para festas em Brasília – Tio Titi" loading="lazy" decoding="async" />
             </a>
@@ -548,7 +549,7 @@ function ImportedSectionListaDeBrinquedos() {
               </div>
             </div>
           </article>
-          <article className="toy-card flex flex-col relative [overflow:hidden]">
+          <article className="toy-card flex flex-col relative [overflow:hidden]" data-cats="inflaveis aquaticos" hidden={category !== "todos" && !"inflaveis aquaticos".split(" ").includes(category)}>
             <a className="toy-card__media aspect-[4/3] block [overflow:hidden]" aria-hidden="true" href="/brinquedos/toboagua" tabIndex={-1}>
               <img src="/site-assets/1c6debe2e1bbbb3e.webp" srcSet="/site-assets/1598656e479a082d.webp 320w, /site-assets/1c6debe2e1bbbb3e.webp 640w, /site-assets/4bc24432ce35b167.webp 800w, /site-assets/6dd3a74d910fc203.webp 1152w" sizes="(max-width: 600px) 86vw, (max-width: 1000px) 46vw, 300px" width="1152" height="648" alt="Aluguel de Toboágua para festas em Brasília – Tio Titi" loading="lazy" decoding="async" />
               <span className="toy-card__tag left-[12px] absolute uppercase top-[12px] [box-shadow:2px_2px_0_var(--ink)] [font-size:.74rem] [font-weight:700] [letter-spacing:.04em] [padding:5px_11px]">Verão</span>
@@ -574,7 +575,7 @@ function ImportedSectionListaDeBrinquedos() {
               </div>
             </div>
           </article>
-          <article className="toy-card flex flex-col relative [overflow:hidden]">
+          <article className="toy-card flex flex-col relative [overflow:hidden]" data-cats="inflaveis aquaticos" hidden={category !== "todos" && !"inflaveis aquaticos".split(" ").includes(category)}>
             <a className="toy-card__media aspect-[4/3] block [overflow:hidden]" aria-hidden="true" href="/brinquedos/toboagua-medio" tabIndex={-1}>
               <img src="/site-assets/3cf2952edda32e67.webp" srcSet="/site-assets/a4f89a39af0eb3fb.webp 320w, /site-assets/3cf2952edda32e67.webp 640w, /site-assets/f6f88a5ee88194f2.webp 800w" sizes="(max-width: 600px) 86vw, (max-width: 1000px) 46vw, 300px" width="800" height="600" alt="Aluguel de Toboágua Médio para festas em Brasília – Tio Titi" loading="lazy" decoding="async" />
             </a>
@@ -599,7 +600,7 @@ function ImportedSectionListaDeBrinquedos() {
               </div>
             </div>
           </article>
-          <article className="toy-card flex flex-col relative [overflow:hidden]">
+          <article className="toy-card flex flex-col relative [overflow:hidden]" data-cats="inflaveis aquaticos" hidden={category !== "todos" && !"inflaveis aquaticos".split(" ").includes(category)}>
             <a className="toy-card__media aspect-[4/3] block [overflow:hidden]" aria-hidden="true" href="/brinquedos/tobopiscina" tabIndex={-1}>
               <img src="/site-assets/5a9fa2fd948dea34.webp" srcSet="/site-assets/4d0db2c46fb2ed9c.webp 320w, /site-assets/5a9fa2fd948dea34.webp 640w, /site-assets/f479ce3f956afc22.webp 800w, /site-assets/92966f372fe035f7.webp 1067w" sizes="(max-width: 600px) 86vw, (max-width: 1000px) 46vw, 300px" width="1067" height="600" alt="Aluguel de Tobopiscina para festas em Brasília – Tio Titi" loading="lazy" decoding="async" />
               <span className="toy-card__tag left-[12px] absolute uppercase top-[12px] [box-shadow:2px_2px_0_var(--ink)] [font-size:.74rem] [font-weight:700] [letter-spacing:.04em] [padding:5px_11px]">Mais pedido</span>
@@ -625,7 +626,7 @@ function ImportedSectionListaDeBrinquedos() {
               </div>
             </div>
           </article>
-          <article className="toy-card flex flex-col relative [overflow:hidden]">
+          <article className="toy-card flex flex-col relative [overflow:hidden]" data-cats="inflaveis aquaticos pequenos" hidden={category !== "todos" && !"inflaveis aquaticos pequenos".split(" ").includes(category)}>
             <a className="toy-card__media aspect-[4/3] block [overflow:hidden]" aria-hidden="true" href="/brinquedos/tobopiscina-medio" tabIndex={-1}>
               <img src="/site-assets/4c3b6b1c1e39838a.webp" srcSet="/site-assets/9ba35b49d07191a1.webp 320w, /site-assets/4c3b6b1c1e39838a.webp 640w, /site-assets/a65942ec92680656.webp 800w" sizes="(max-width: 600px) 86vw, (max-width: 1000px) 46vw, 300px" width="800" height="600" alt="Aluguel de Tobopiscina Médio para festas em Brasília – Tio Titi" loading="lazy" decoding="async" />
             </a>
@@ -650,7 +651,7 @@ function ImportedSectionListaDeBrinquedos() {
               </div>
             </div>
           </article>
-          <article className="toy-card flex flex-col relative [overflow:hidden]">
+          <article className="toy-card flex flex-col relative [overflow:hidden]" data-cats="aquaticos" hidden={category !== "todos" && !"aquaticos".split(" ").includes(category)}>
             <a className="toy-card__media aspect-[4/3] block [overflow:hidden]" aria-hidden="true" href="/brinquedos/vitoria-regia-e-tapete-aladin" tabIndex={-1}>
               <img src="/site-assets/7d50baa837d9ebdf.webp" srcSet="/site-assets/d43c1cca4b6bdbf2.webp 320w, /site-assets/7d50baa837d9ebdf.webp 600w" sizes="(max-width: 600px) 86vw, (max-width: 1000px) 46vw, 300px" width="600" height="400" alt="Aluguel de Vitória Régia e Tapete Aladdin para festas em Brasília – Tio Titi" loading="lazy" decoding="async" />
               <span className="toy-card__tag left-[12px] absolute uppercase top-[12px] [box-shadow:2px_2px_0_var(--ink)] [font-size:.74rem] [font-weight:700] [letter-spacing:.04em] [padding:5px_11px]">Novidade</span>
@@ -676,7 +677,7 @@ function ImportedSectionListaDeBrinquedos() {
               </div>
             </div>
           </article>
-          <article className="toy-card flex flex-col relative [overflow:hidden]">
+          <article className="toy-card flex flex-col relative [overflow:hidden]" data-cats="aquaticos" hidden={category !== "todos" && !"aquaticos".split(" ").includes(category)}>
             <a className="toy-card__media aspect-[4/3] block [overflow:hidden]" aria-hidden="true" href="/brinquedos/canhao-de-espuma" tabIndex={-1}>
               <img src="/site-assets/95742622d0f0ea94.webp" srcSet="/site-assets/911a5f2d5295117a.webp 320w, /site-assets/95742622d0f0ea94.webp 640w, /site-assets/6859b1d7d1878b52.webp 800w" sizes="(max-width: 600px) 86vw, (max-width: 1000px) 46vw, 300px" width="800" height="600" alt="Aluguel de Canhão de Espuma para festas em Brasília – Tio Titi" loading="lazy" decoding="async" />
             </a>
@@ -701,7 +702,7 @@ function ImportedSectionListaDeBrinquedos() {
               </div>
             </div>
           </article>
-          <article className="toy-card flex flex-col relative [overflow:hidden]">
+          <article className="toy-card flex flex-col relative [overflow:hidden]" data-cats="inflaveis" hidden={category !== "todos" && !"inflaveis".split(" ").includes(category)}>
             <a className="toy-card__media aspect-[4/3] block [overflow:hidden]" aria-hidden="true" href="/brinquedos/corrida-de-obstaculos" tabIndex={-1}>
               <img src="/site-assets/bb3d3ee311fb6e14.webp" srcSet="/site-assets/ad7d95de35fb9930.webp 320w, /site-assets/bb3d3ee311fb6e14.webp 640w, /site-assets/ce32164daf3f118c.webp 800w" sizes="(max-width: 600px) 86vw, (max-width: 1000px) 46vw, 300px" width="800" height="600" alt="Aluguel de Corrida de Obstáculos para festas em Brasília – Tio Titi" loading="lazy" decoding="async" />
             </a>
@@ -726,7 +727,7 @@ function ImportedSectionListaDeBrinquedos() {
               </div>
             </div>
           </article>
-          <article className="toy-card flex flex-col relative [overflow:hidden]">
+          <article className="toy-card flex flex-col relative [overflow:hidden]" data-cats="inflaveis parque" hidden={category !== "todos" && !"inflaveis parque".split(" ").includes(category)}>
             <a className="toy-card__media aspect-[4/3] block [overflow:hidden]" aria-hidden="true" href="/brinquedos/torito" tabIndex={-1}>
               <img src="/site-assets/764368b970767f77.webp" srcSet="/site-assets/00a717f8fdbf7b1d.webp 320w, /site-assets/764368b970767f77.webp 640w, /site-assets/29f885d64b110c40.webp 800w, /site-assets/1611fb8339323e0d.webp 1200w" sizes="(max-width: 600px) 86vw, (max-width: 1000px) 46vw, 300px" width="1200" height="900" alt="Aluguel de Torito – Touro Mecânico Infantil para festas em Brasília – Tio Titi" loading="lazy" decoding="async" />
             </a>
@@ -751,7 +752,7 @@ function ImportedSectionListaDeBrinquedos() {
               </div>
             </div>
           </article>
-          <article className="toy-card flex flex-col relative [overflow:hidden]">
+          <article className="toy-card flex flex-col relative [overflow:hidden]" data-cats="parque" hidden={category !== "todos" && !"parque".split(" ").includes(category)}>
             <a className="toy-card__media aspect-[4/3] block [overflow:hidden]" aria-hidden="true" href="/brinquedos/cama-elastica" tabIndex={-1}>
               <img src="/site-assets/89b1a2b8d115187b.webp" srcSet="/site-assets/64576cc39ba8d9c0.webp 320w, /site-assets/89b1a2b8d115187b.webp 640w, /site-assets/b01deb15fac89e31.webp 800w, /site-assets/c523beebf5d23755.webp 900w" sizes="(max-width: 600px) 86vw, (max-width: 1000px) 46vw, 300px" width="900" height="600" alt="Aluguel de Cama Elástica (Pula-Pula) para festas em Brasília – Tio Titi" loading="lazy" decoding="async" />
               <span className="toy-card__tag left-[12px] absolute uppercase top-[12px] [box-shadow:2px_2px_0_var(--ink)] [font-size:.74rem] [font-weight:700] [letter-spacing:.04em] [padding:5px_11px]">Mais pedido</span>
@@ -777,7 +778,7 @@ function ImportedSectionListaDeBrinquedos() {
               </div>
             </div>
           </article>
-          <article className="toy-card flex flex-col relative [overflow:hidden]">
+          <article className="toy-card flex flex-col relative [overflow:hidden]" data-cats="pequenos" hidden={category !== "todos" && !"pequenos".split(" ").includes(category)}>
             <a className="toy-card__media aspect-[4/3] block [overflow:hidden]" aria-hidden="true" href="/brinquedos/piscina-de-bolinhas" tabIndex={-1}>
               <img src="/site-assets/97b170cdc0a28b87.webp" srcSet="/site-assets/00435f0f0f43d9c6.webp 320w, /site-assets/97b170cdc0a28b87.webp 640w, /site-assets/051168c6e6970058.webp 800w, /site-assets/3122615b5413c5f5.webp 1000w" sizes="(max-width: 600px) 86vw, (max-width: 1000px) 46vw, 300px" width="1000" height="750" alt="Aluguel de Piscina de Bolinhas Casinha Leão para festas em Brasília – Tio Titi" loading="lazy" decoding="async" />
             </a>
@@ -802,7 +803,7 @@ function ImportedSectionListaDeBrinquedos() {
               </div>
             </div>
           </article>
-          <article className="toy-card flex flex-col relative [overflow:hidden]">
+          <article className="toy-card flex flex-col relative [overflow:hidden]" data-cats="pequenos parque" hidden={category !== "todos" && !"pequenos parque".split(" ").includes(category)}>
             <a className="toy-card__media aspect-[4/3] block [overflow:hidden]" aria-hidden="true" href="/brinquedos/carrossel-fusquinha" tabIndex={-1}>
               <img src="/site-assets/64c257cab1023cbd.webp" srcSet="/site-assets/dae7b2fbfd051e24.webp 320w, /site-assets/64c257cab1023cbd.webp 640w, /site-assets/6f5af7b87bed75e4.webp 800w, /site-assets/fbb0f505849b61d8.webp 900w" sizes="(max-width: 600px) 86vw, (max-width: 1000px) 46vw, 300px" width="900" height="600" alt="Aluguel de Carrossel Fusquinha para festas em Brasília – Tio Titi" loading="lazy" decoding="async" />
             </a>
@@ -827,7 +828,7 @@ function ImportedSectionListaDeBrinquedos() {
               </div>
             </div>
           </article>
-          <article className="toy-card flex flex-col relative [overflow:hidden]">
+          <article className="toy-card flex flex-col relative [overflow:hidden]" data-cats="jogos" hidden={category !== "todos" && !"jogos".split(" ").includes(category)}>
             <a className="toy-card__media aspect-[4/3] block [overflow:hidden]" aria-hidden="true" href="/brinquedos/fliperama" tabIndex={-1}>
               <img src="/site-assets/992a41ccac2632f9.webp" srcSet="/site-assets/2487870ef86bd3e9.webp 320w, /site-assets/992a41ccac2632f9.webp 640w, /site-assets/eba0cc7af9ab39c7.webp 800w, /site-assets/489db23b0ea7e4c9.webp 1200w" sizes="(max-width: 600px) 86vw, (max-width: 1000px) 46vw, 300px" width="1200" height="798" alt="Aluguel de Fliperama Multijogos para festas em Brasília – Tio Titi" loading="lazy" decoding="async" />
               <span className="toy-card__tag left-[12px] absolute uppercase top-[12px] [box-shadow:2px_2px_0_var(--ink)] [font-size:.74rem] [font-weight:700] [letter-spacing:.04em] [padding:5px_11px]">Nostalgia</span>
@@ -853,7 +854,7 @@ function ImportedSectionListaDeBrinquedos() {
               </div>
             </div>
           </article>
-          <article className="toy-card flex flex-col relative [overflow:hidden]">
+          <article className="toy-card flex flex-col relative [overflow:hidden]" data-cats="jogos" hidden={category !== "todos" && !"jogos".split(" ").includes(category)}>
             <a className="toy-card__media aspect-[4/3] block [overflow:hidden]" aria-hidden="true" href="/brinquedos/air-game" tabIndex={-1}>
               <img src="/site-assets/2cd198bff8d52a28.webp" srcSet="/site-assets/3bb66b68e1338933.webp 320w, /site-assets/2cd198bff8d52a28.webp 640w, /site-assets/ccefd0f53c50248b.webp 800w, /site-assets/ce6b11ea377747ca.webp 1024w" sizes="(max-width: 600px) 86vw, (max-width: 1000px) 46vw, 300px" width="1024" height="680" alt="Aluguel de Air Game (Air Hockey) para festas em Brasília – Tio Titi" loading="lazy" decoding="async" />
             </a>
@@ -878,7 +879,7 @@ function ImportedSectionListaDeBrinquedos() {
               </div>
             </div>
           </article>
-          <article className="toy-card flex flex-col relative [overflow:hidden]">
+          <article className="toy-card flex flex-col relative [overflow:hidden]" data-cats="jogos" hidden={category !== "todos" && !"jogos".split(" ").includes(category)}>
             <a className="toy-card__media aspect-[4/3] block [overflow:hidden]" aria-hidden="true" href="/brinquedos/toto-pebolim" tabIndex={-1}>
               <img src="/site-assets/a2f5c0bdc9d1e8bb.webp" srcSet="/site-assets/fff4f8e2dfcec910.webp 320w, /site-assets/a2f5c0bdc9d1e8bb.webp 640w, /site-assets/8e2e4f46119b658d.webp 800w, /site-assets/8f1311e0f10449c7.webp 884w" sizes="(max-width: 600px) 86vw, (max-width: 1000px) 46vw, 300px" width="884" height="600" alt="Aluguel de Totó / Pebolim para festas em Brasília – Tio Titi" loading="lazy" decoding="async" />
             </a>
@@ -903,7 +904,7 @@ function ImportedSectionListaDeBrinquedos() {
               </div>
             </div>
           </article>
-          <article className="toy-card flex flex-col relative [overflow:hidden]">
+          <article className="toy-card flex flex-col relative [overflow:hidden]" data-cats="jogos" hidden={category !== "todos" && !"jogos".split(" ").includes(category)}>
             <a className="toy-card__media aspect-[4/3] block [overflow:hidden]" aria-hidden="true" href="/brinquedos/futmesa" tabIndex={-1}>
               <img src="/site-assets/be0104a8d8ad1498.webp" srcSet="/site-assets/21e6744bc602665d.webp 320w, /site-assets/be0104a8d8ad1498.webp 640w, /site-assets/43cb229dfc322806.webp 800w" sizes="(max-width: 600px) 86vw, (max-width: 1000px) 46vw, 300px" width="800" height="1067" alt="Aluguel de Futmesa para festas em Brasília – Tio Titi" loading="lazy" decoding="async" />
             </a>
@@ -928,7 +929,7 @@ function ImportedSectionListaDeBrinquedos() {
               </div>
             </div>
           </article>
-          <article className="toy-card flex flex-col relative [overflow:hidden]">
+          <article className="toy-card flex flex-col relative [overflow:hidden]" data-cats="jogos" hidden={category !== "todos" && !"jogos".split(" ").includes(category)}>
             <a className="toy-card__media aspect-[4/3] block [overflow:hidden]" aria-hidden="true" href="/brinquedos/basquete" tabIndex={-1}>
               <img src="/site-assets/0a2ea5c5e2fd992c.webp" srcSet="/site-assets/c837f196b64c73f8.webp 320w, /site-assets/0a2ea5c5e2fd992c.webp 640w, /site-assets/f00b756bba309e07.webp 800w, /site-assets/0d0bfada39544962.webp 1200w" sizes="(max-width: 600px) 86vw, (max-width: 1000px) 46vw, 300px" width="1200" height="1600" alt="Aluguel de Desafio do Basquete para festas em Brasília – Tio Titi" loading="lazy" decoding="async" />
             </a>
@@ -953,7 +954,7 @@ function ImportedSectionListaDeBrinquedos() {
               </div>
             </div>
           </article>
-          <article className="toy-card flex flex-col relative [overflow:hidden]">
+          <article className="toy-card flex flex-col relative [overflow:hidden]" data-cats="jogos" hidden={category !== "todos" && !"jogos".split(" ").includes(category)}>
             <a className="toy-card__media aspect-[4/3] block [overflow:hidden]" aria-hidden="true" href="/brinquedos/sinuca-infantil" tabIndex={-1}>
               <img src="/site-assets/e0a8adef44fc7572.webp" srcSet="/site-assets/9d99c3cc6d7e249e.webp 320w, /site-assets/e0a8adef44fc7572.webp 600w" sizes="(max-width: 600px) 86vw, (max-width: 1000px) 46vw, 300px" width="600" height="400" alt="Aluguel de Sinuca Infantil para festas em Brasília – Tio Titi" loading="lazy" decoding="async" />
               <span className="toy-card__tag left-[12px] absolute uppercase top-[12px] [box-shadow:2px_2px_0_var(--ink)] [font-size:.74rem] [font-weight:700] [letter-spacing:.04em] [padding:5px_11px]">Novidade</span>

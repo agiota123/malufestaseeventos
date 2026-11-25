@@ -1,0 +1,56 @@
+[
+  {
+    "route": "/",
+    "viewport": 1280,
+    "navigation": "passed",
+    "error": "Locator.click: Timeout 8000ms exceeded. Sandbox note: 8000ms was this sandbox's default timeout for Playwright actions and waits (page loads: 30000ms). A missing or misnamed element fails the same way; timeout=<ms> on one call and page.set_default_timeout(<ms>) both override the default.\nCall log:\n  - waiting for get_by_role(\"button\", name=\"Aumentar quantidade\")\n    - locator resolved to <button type=\"button\" aria-label=\"Aumentar quantidade\" data-tsd-source=\"/src/routes/index.tsx:398:15\">\u2026</butt"
+  },
+  {
+    "route": "/",
+    "viewport": 390,
+    "error": "Locator.click: Timeout 8000ms exceeded. Sandbox note: 8000ms was this sandbox's default timeout for Playwright actions and waits (page loads: 30000ms). A missing or misnamed element fails the same way; timeout=<ms> on one call and page.set_default_timeout(<ms>) both override the default.\nCall log:\n  - waiting for locator(\"button[aria-controls=\\\"dd-brinquedos\\\"]\")\n    - locator resolved to <button type=\"button\" class=\"nav__link\" aria-expanded=\"false\" aria-controls=\"dd-brinquedos\" data-tsd-source="
+  },
+  {
+    "route": "/brinquedos-inflaveis",
+    "viewport": 1280,
+    "navigation": "passed",
+    "error": "Locator.click: Timeout 8000ms exceeded. Sandbox note: 8000ms was this sandbox's default timeout for Playwright actions and waits (page loads: 30000ms). A missing or misnamed element fails the same way; timeout=<ms> on one call and page.set_default_timeout(<ms>) both override the default.\nCall log:\n  - waiting for get_by_role(\"button\", name=\"Aumentar quantidade\")\n    - locator resolved to <button type=\"button\" aria-label=\"Aumentar quantidade\" data-tsd-source=\"/src/routes/brinquedos-inflaveis.tsx:"
+  },
+  {
+    "route": "/brinquedos-inflaveis",
+    "viewport": 390,
+    "error": "Locator.click: Timeout 8000ms exceeded. Sandbox note: 8000ms was this sandbox's default timeout for Playwright actions and waits (page loads: 30000ms). A missing or misnamed element fails the same way; timeout=<ms> on one call and page.set_default_timeout(<ms>) both override the default.\nCall log:\n  - waiting for locator(\"button[aria-controls=\\\"dd-brinquedos\\\"]\")\n    - locator resolved to <button type=\"button\" class=\"nav__link\" aria-current=\"page\" aria-expanded=\"false\" aria-controls=\"dd-brinqued"
+  },
+  {
+    "route": "/brinquedos-aquaticos",
+    "viewport": 1280,
+    "navigation": "passed",
+    "error": "Locator.click: Timeout 8000ms exceeded. Sandbox note: 8000ms was this sandbox's default timeout for Playwright actions and waits (page loads: 30000ms). A missing or misnamed element fails the same way; timeout=<ms> on one call and page.set_default_timeout(<ms>) both override the default.\nCall log:\n  - waiting for get_by_role(\"button\", name=\"Aumentar quantidade\")\n    - locator resolved to <button type=\"button\" aria-label=\"Aumentar quantidade\" data-tsd-source=\"/src/routes/brinquedos-aquaticos.tsx:"
+  },
+  {
+    "route": "/brinquedos-aquaticos",
+    "viewport": 390,
+    "error": "Locator.click: Timeout 8000ms exceeded. Sandbox note: 8000ms was this sandbox's default timeout for Playwright actions and waits (page loads: 30000ms). A missing or misnamed element fails the same way; timeout=<ms> on one call and page.set_default_timeout(<ms>) both override the default.\nCall log:\n  - waiting for locator(\"button[aria-controls=\\\"dd-brinquedos\\\"]\")\n    - locator resolved to <button type=\"button\" class=\"nav__link\" aria-current=\"page\" aria-expanded=\"false\" aria-controls=\"dd-brinqued"
+  },
+  {
+    "route": "/jogos-para-festa",
+    "viewport": 1280,
+    "navigation": "passed",
+    "error": "Locator.click: Timeout 8000ms exceeded. Sandbox note: 8000ms was this sandbox's default timeout for Playwright actions and waits (page loads: 30000ms). A missing or misnamed element fails the same way; timeout=<ms> on one call and page.set_default_timeout(<ms>) both override the default.\nCall log:\n  - waiting for get_by_role(\"button\", name=\"Aumentar quantidade\")\n    - locator resolved to <button type=\"button\" aria-label=\"Aumentar quantidade\" data-tsd-source=\"/src/routes/jogos-para-festa.tsx:455:"
+  },
+  {
+    "route": "/jogos-para-festa",
+    "viewport": 390,
+    "error": "Locator.click: Timeout 8000ms exceeded. Sandbox note: 8000ms was this sandbox's default timeout for Playwright actions and waits (page loads: 30000ms). A missing or misnamed element fails the same way; timeout=<ms> on one call and page.set_default_timeout(<ms>) both override the default.\nCall log:\n  - waiting for locator(\"button[aria-controls=\\\"dd-brinquedos\\\"]\")\n    - locator resolved to <button type=\"button\" class=\"nav__link\" aria-current=\"page\" aria-expanded=\"false\" aria-controls=\"dd-brinqued"
+  },
+  {
+    "route": "/brinquedos",
+    "viewport": 1280,
+    "error": "Locator.wait_for: Timeout 8000ms exceeded. Sandbox note: 8000ms was this sandbox's default timeout for Playwright actions and waits (page loads: 30000ms). A missing or misnamed element fails the same way; timeout=<ms> on one call and page.set_default_timeout(<ms>) both override the default.\nCall log:\n  - waiting for locator(\"#dd-brinquedos:not([hidden])\") to be visible\n"
+  },
+  {
+    "route": "/brinquedos",
+    "viewport": 390,
+    "error": "Locator.wait_for: Timeout 8000ms exceeded. Sandbox note: 8000ms was this sandbox's default timeout for Playwright actions and waits (page loads: 30000ms). A missing or misnamed element fails the same way; timeout=<ms> on one call and page.set_default_timeout(<ms>) both override the default.\nCall log:\n  - waiting for locator(\"#nav.is-open\") to be visible\n"
+  }
+]
