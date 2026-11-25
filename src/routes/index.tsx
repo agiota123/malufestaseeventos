@@ -269,7 +269,7 @@ function Index() {
               <li>
                 <a className="nav__link" aria-current="page" href="/">Início</a>
               </li>
-              <li className="has-dropdown">
+              <li className={openMenu0 === "observed-0" ? "has-dropdown is-open" : "has-dropdown"}>
                 <button className="nav__link" aria-expanded={openMenu0 === "observed-0"} onClick={event => { event.preventDefault(); event.stopPropagation(); setOpenMenu0(open => open === "observed-0" ? null : "observed-0"); }} type="button" aria-controls="dd-brinquedos">Brinquedos <svg className="icon" aria-hidden="true"><use {...({ href: "#i-down" } as any)} /></svg></button>
                 <div className="dropdown" data-import-mobile-style={"0"} hidden={openMenu0 === "observed-0" ? undefined : (true)} ref={node => { menuRoot1.current = node; }} style={openMenu0 === "observed-0" ? { opacity: "1", transform: "translate(-50%)", visibility: "visible" } : ({ opacity: "1", transform: "translate(-50%)", visibility: "visible", display: "none" })} id="dd-brinquedos" data-site-import-observed-popup="" data-site-import-responsive="956">
                   <a className="c-red" href="/brinquedos-inflaveis">
