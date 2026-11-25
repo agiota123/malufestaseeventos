@@ -1,0 +1,10 @@
+
+.drawer-backdrop.is-open { visibility: visible; opacity: 1; }
+.badge-count[data-counted="true"] { transform: scale(1); }
+.add-mini.is-added { background: var(--green); color: var(--card); }
+.drawer__title small { font-weight: 400; color: var(--ink-3); }
+.drawer:not(.is-open) { visibility: hidden; }
+.drawer.is-open { visibility: visible; }
+.toy-card[hidden] { display: none; }
+@media(max-width:960px) { .nav { height: calc(100dvh - var(--header-h)); } }
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .marquee__track,.hx-sticker { animation:none; } }
