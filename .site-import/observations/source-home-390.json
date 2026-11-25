@@ -1,0 +1,372 @@
+{
+  "origin": "https://tiotiti.com.br",
+  "route": "/",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "controls": [
+    {
+      "trigger": "mobile",
+      "visible": true,
+      "text": "INÍCIO\nBRINQUEDOS\nCOMBOS\nEMPRESAS E ESCOLAS\nSOBRE\nCONTATO\nMINHA LISTA DE ORÇAMENTO\nFALAR NO WHATSAPP",
+      "class": "nav is-open",
+      "aria": null
+    },
+    {
+      "trigger": "dropdown",
+      "visible": true,
+      "text": "Infláveis\nTobogãs, tobopiscinas, futebol de sabão e circuitos para todas as idades.\nAquáticos\nToboágua, tobopiscina, futebol de sabão e espuma para refrescar a festa.\nJogos e eletrônicos\nFliperama, air game, totó, futmesa, sinuca e basquete para todas as idades.\nPara os pequenos (1 a 6 anos)\nCarrossel, piscina de bolinhas e tobogãs baixos para festas de 1 a 6 anos.\nVER TODOS OS 22 BRINQUEDOS",
+      "class": "dropdown",
+      "aria": null
+    },
+    {
+      "trigger": "drawer",
+      "visible": true,
+      "text": "MINHA LISTA\n0 BRINQUEDOS\nSua lista está vazia\nNavegue pelos brinquedos e clique em \"Adicionar à lista\" para montar seu orçamento.\nPEDIR ORÇAMENTO DESTA LISTA\nCONTINUAR ESCOLHENDO\n\nVocê informa data, horário e local na próxima etapa.",
+      "class": "drawer is-open",
+      "aria": "false"
+    },
+    {
+      "trigger": "populated-drawer",
+      "visible": true,
+      "text": "MINHA LISTA\n1 BRINQUEDO\nFutebol de Sabão 2 em 1\n1\nPEDIR ORÇAMENTO DESTA LISTA\nCONTINUAR ESCOLHENDO\n\nVocê informa data, horário e local na próxima etapa.",
+      "class": "drawer is-open",
+      "aria": "false"
+    }
+  ],
+  "title": "Aluguel de Brinquedos em Brasília DF | Tio Titi desde 1998",
+  "buttons": [
+    {
+      "text": "Brinquedos ",
+      "aria": null,
+      "cls": "nav__link"
+    },
+    {
+      "text": " Minha lista de orçamento",
+      "aria": null,
+      "cls": "btn btn--blue"
+    },
+    {
+      "text": "Minha lista de orçamento0",
+      "aria": null,
+      "cls": "btn-lista"
+    },
+    {
+      "text": "",
+      "aria": "Abrir menu",
+      "cls": "menu-toggle"
+    },
+    {
+      "text": "Adicionar Futebol de Sabão 2 em 1 à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Tobopiscina à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Cama Elástica (Pula-Pula) à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Tobogã Safári 2 em 1 à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Toboágua à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Fliperama Multijogos à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Carrossel Fusquinha à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Tobogã Tradicional à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": " Adicionar combo à lista",
+      "aria": null,
+      "cls": "btn btn--block"
+    },
+    {
+      "text": " Adicionar combo à lista",
+      "aria": null,
+      "cls": "btn btn--block"
+    },
+    {
+      "text": " Adicionar combo à lista",
+      "aria": null,
+      "cls": "btn btn--block"
+    },
+    {
+      "text": "",
+      "aria": "Fechar lista",
+      "cls": "icon-btn"
+    }
+  ],
+  "links": [
+    {
+      "text": "InfláveisTobogãs, tobopiscinas, futebol de sabão e circuitos para todas as idades.",
+      "href": "https://tiotiti.com.br/brinquedos-inflaveis/"
+    },
+    {
+      "text": "AquáticosToboágua, tobopiscina, futebol de sabão e espuma para refrescar a festa.",
+      "href": "https://tiotiti.com.br/brinquedos-aquaticos/"
+    },
+    {
+      "text": "Jogos e eletrônicosFliperama, air game, totó, futmesa, sinuca e basquete para todas as idades.",
+      "href": "https://tiotiti.com.br/jogos-para-festa/"
+    },
+    {
+      "text": "Para os pequenos (1 a 6 anos)Carrossel, piscina de bolinhas e tobogãs baixos para festas de 1 a 6 anos.",
+      "href": "https://tiotiti.com.br/brinquedos-para-criancas-pequenas/"
+    },
+    {
+      "text": "Ver todos os 22 brinquedos ",
+      "href": "https://tiotiti.com.br/brinquedos/"
+    }
+  ],
+  "sections": [
+    {
+      "text": "DESDE 1998 ALEGRANDO FESTAS NO DF\nAluguel de brinquedos para festas em Brasília\n\nTobogãs, infláveis, futebol de sabão, brinquedos aquáticos e jogos com monitor incluso, entrega, montagem e desmontagem. Monte sua lista e receba o orçamento no WhatsApp",
+      "rect": {
+        "top": 71,
+        "height": 1298.34375
+      },
+      "opacity": "1",
+      "images": [
+        {
+          "src": "https://tiotiti.com.br/img/sol-tio-titi.webp",
+          "loaded": false
+        },
+        {
+          "src": "https://tiotiti.com.br/img/brinquedos/aluguel-de-tobopiscina-em-brasilia-2-320.webp",
+          "loaded": true
+        },
+        {
+          "src": "https://tiotiti.com.br/img/brinquedos/aluguel-de-futebol-de-sabao-em-brasilia-3-320.webp",
+          "loaded": true
+        },
+        {
+          "src": "https://tiotiti.com.br/img/brinquedos/aluguel-de-carrossel-fusquinha-em-brasilia-2-320.webp",
+          "loaded": true
+        },
+        {
+          "src": "https://tiotiti.com.br/img/sol-tio-titi.webp",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "text": "OS QUERIDINHOS\nBrinquedos mais pedidos para festas no DF\n\nOs favoritos da criançada (e dos pais). Clique em Adicionar para montar sua lista de orçamento.\n\nMAIS PEDIDO\nFutebol de Sabão 2 em 1\n\nCampo inflável 2 em 1: futebol e bolão gigante, com muita ",
+      "rect": {
+        "top": 159.75,
+        "height": 4466.5
+      },
+      "opacity": "1",
+      "images": [
+        {
+          "src": "https://tiotiti.com.br/img/brinquedos/aluguel-de-futebol-de-sabao-em-brasilia-1-640.webp",
+          "loaded": true
+        },
+        {
+          "src": "https://tiotiti.com.br/img/brinquedos/aluguel-de-tobopiscina-em-brasilia-1-640.webp",
+          "loaded": true
+        },
+        {
+          "src": "https://tiotiti.com.br/img/brinquedos/aluguel-de-cama-elastica-em-brasilia-1-640.webp",
+          "loaded": true
+        },
+        {
+          "src": "https://tiotiti.com.br/img/brinquedos/aluguel-de-toboga-safari-em-brasilia-1-640.webp",
+          "loaded": true
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        }
+      ]
+    },
+    {
+      "text": "CATEGORIAS\nEncontre o brinquedo ideal para a sua festa\n\nDo primeiro aniversário à festa teen, temos opções para cada idade, espaço e estação do ano.\n\nBrinquedos infláveis\n\nTobogãs, tobopiscinas, futebol de sabão e circuitos para todas as idades.\n\n11 ",
+      "rect": {
+        "top": 160.25,
+        "height": 1864.78125
+      },
+      "opacity": "1",
+      "images": [
+        {
+          "src": "https://tiotiti.com.br/img/brinquedos/aluguel-de-toboga-safari-em-brasilia-1-640.webp",
+          "loaded": true
+        },
+        {
+          "src": "https://tiotiti.com.br/img/brinquedos/aluguel-de-tobopiscina-em-brasilia-2-640.webp",
+          "loaded": true
+        },
+        {
+          "src": "https://tiotiti.com.br/img/brinquedos/aluguel-de-fliperama-em-brasilia-1-640.webp",
+          "loaded": true
+        },
+        {
+          "src": "https://tiotiti.com.br/img/brinquedos/aluguel-de-carrossel-fusquinha-em-brasilia-2-640.webp",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "text": "ORÇAMENTO FÁCIL\nComo funciona o orçamento\n\nMonte a festa dos sonhos em 3 passos, sem cadastro e sem compromisso.\n\n1\nEscolha os brinquedos\n\nNavegue pelo catálogo e clique em “Adicionar à lista” nos brinquedos que você quer na festa.\n\n2\nInforme os dado",
+      "rect": {
+        "top": 160.03125,
+        "height": 1138
+      },
+      "opacity": "1",
+      "images": []
+    },
+    {
+      "text": "SOBRE A TIO TITI\nDiversão que voa alto, com segurança\n\nA Tio Titi atua no aluguel de brinquedos para festas em Brasília desde 1998. São mais de 28 anos criando sorrisos e momentos cheios de alegria em aniversários, escolas, condomínios e empresas.\n\nM",
+      "rect": {
+        "top": 160.03125,
+        "height": 1064.671875
+      },
+      "opacity": "1",
+      "images": [
+        {
+          "src": "https://tiotiti.com.br/img/brinquedos/aluguel-de-toboga-safari-em-brasilia-2-640.webp",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "text": "COMBOS\nNão sabe o que escolher? Comece por um combo\n\nSeleções prontas por idade e estilo de festa. Adicione com um clique e ajuste como quiser.\n\n1 A 5 ANOS\nFesta dos Pequenos\n\nBrinquedos baixos, coloridos e com movimentos suaves. Perfeito para o prim",
+      "rect": {
+        "top": 159.703125,
+        "height": 2145.453125
+      },
+      "opacity": "1",
+      "images": [
+        {
+          "src": "https://tiotiti.com.br/img/brinquedos/aluguel-de-carrossel-fusquinha-em-brasilia-1-320.webp",
+          "loaded": true
+        },
+        {
+          "src": "https://tiotiti.com.br/img/brinquedos/aluguel-de-piscina-de-bolinhas-em-brasilia-1-320.webp",
+          "loaded": true
+        },
+        {
+          "src": "https://tiotiti.com.br/img/brinquedos/aluguel-de-toboga-3-em-1-em-brasilia-1-320.webp",
+          "loaded": true
+        },
+        {
+          "src": "https://tiotiti.com.br/img/brinquedos/aluguel-de-toboga-tradicional-em-brasilia-1-320.webp",
+          "loaded": true
+        },
+        {
+          "src": "https://tiotiti.com.br/img/brinquedos/aluguel-de-cama-elastica-em-brasilia-1-320.webp",
+          "loaded": true
+        },
+        {
+          "src": "https://tiotiti.com.br/img/brinquedos/aluguel-de-corrida-de-obstaculos-em-brasilia-1-320.webp",
+          "loaded": true
+        },
+        {
+          "src": "https://tiotiti.com.br/img/brinquedos/aluguel-de-tobopiscina-em-brasilia-1-320.webp",
+          "loaded": true
+        },
+        {
+          "src": "https://tiotiti.com.br/img/brinquedos/aluguel-de-futebol-de-sabao-em-brasilia-1-320.webp",
+          "loaded": true
+        },
+        {
+          "src": "https://tiotiti.com.br/img/brinquedos/aluguel-de-canhao-de-espuma-em-brasilia-1-320.webp",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "text": "DEPOIMENTOS\nQuem alugou, aprovou!\n\nO carinho de quem já fez festa com a gente é o nosso maior orgulho.\n\nÓtimo atendimento, o brinquedo que aluguei estava em perfeito estado, meu priminho amou e sem contar que o futebol de sabão fez a alegria dos adul",
+      "rect": {
+        "top": 160.15625,
+        "height": 2035.0625
+      },
+      "opacity": "1",
+      "images": []
+    },
+    {
+      "text": "ONDE ATENDEMOS\nLevamos a festa até você, em todo o DF\n\nNossa base fica em Vicente Pires e atendemos Brasília, todas as regiões administrativas e cidades do Entorno.\n\nVicente Pires\nTaguatinga\nÁguas Claras\nGuará\nAsa Sul\nAsa Norte\nSudoeste\nLago Sul\nCeil",
+      "rect": {
+        "top": 160.21875,
+        "height": 979.484375
+      },
+      "opacity": "1",
+      "images": []
+    },
+    {
+      "text": "TIRE SUAS DÚVIDAS\nDúvidas frequentes\nComo funciona o orçamento pelo site?\nQuanto custa alugar um brinquedo?\nQuanto tempo dura a locação dos brinquedos?\nO monitor está incluído no valor?\nQuais regiões vocês atendem?\n\nVer todas as perguntas frequentes ",
+      "rect": {
+        "top": 159.703125,
+        "height": 760.90625
+      },
+      "opacity": "1",
+      "images": []
+    },
+    {
+      "text": "Bora deixar a festa inesquecível?\n\nMonte sua lista de brinquedos e receba o orçamento pelo WhatsApp. Atendemos Brasília e todo o Entorno.\n\nPEDIR ORÇAMENTO\nWHATSAPP",
+      "rect": {
+        "top": 160.609375,
+        "height": 500.96875
+      },
+      "opacity": "1",
+      "images": []
+    },
+    {
+      "text": "Desde 1998 levando diversão, segurança e alegria para festas infantis e eventos em Brasília e no Entorno.\n\nBRINQUEDOS\nInfláveis\nAquáticos\nJogos e eletrônicos\nPara crianças pequenas\nTodos os brinquedos\nCombos para festa\nTIO TITI\nSobre nós\nEmpresas, es",
+      "rect": {
+        "top": 159.984375,
+        "height": 1315.875
+      },
+      "opacity": "1",
+      "images": [
+        {
+          "src": "https://tiotiti.com.br/img/logo-tio-titi-240.webp",
+          "loaded": true
+        }
+      ]
+    }
+  ],
+  "scrollBottom": {
+    "y": 16972,
+    "height": 17816,
+    "header": "site-header is-scrolled"
+  },
+  "accordion": true,
+  "addResult": "Na lista\nFutebol de Sabão 2 em 1 à lista",
+  "drawerAfterAdd": "MINHA LISTA\n1 BRINQUEDO\nFutebol de Sabão 2 em 1\n1\nPEDIR ORÇAMENTO DESTA LISTA\nCONTINUAR ESCOLHENDO\n\nVocê informa data, horário e local na próxima etapa.",
+  "media": 0,
+  "errors": []
+}

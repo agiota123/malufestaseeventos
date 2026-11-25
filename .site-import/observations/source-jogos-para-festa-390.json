@@ -1,0 +1,232 @@
+{
+  "origin": "https://tiotiti.com.br",
+  "route": "/jogos-para-festa",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "controls": [
+    {
+      "trigger": "mobile",
+      "visible": true,
+      "text": "INÍCIO\nBRINQUEDOS\nCOMBOS\nEMPRESAS E ESCOLAS\nSOBRE\nCONTATO\nMINHA LISTA DE ORÇAMENTO\nFALAR NO WHATSAPP",
+      "class": "nav is-open",
+      "aria": null
+    },
+    {
+      "trigger": "dropdown",
+      "visible": true,
+      "text": "Infláveis\nTobogãs, tobopiscinas, futebol de sabão e circuitos para todas as idades.\nAquáticos\nToboágua, tobopiscina, futebol de sabão e espuma para refrescar a festa.\nJogos e eletrônicos\nFliperama, air game, totó, futmesa, sinuca e basquete para todas as idades.\nPara os pequenos (1 a 6 anos)\nCarrossel, piscina de bolinhas e tobogãs baixos para festas de 1 a 6 anos.\nVER TODOS OS 22 BRINQUEDOS",
+      "class": "dropdown",
+      "aria": null
+    },
+    {
+      "trigger": "drawer",
+      "visible": true,
+      "text": "MINHA LISTA\n0 BRINQUEDOS\nSua lista está vazia\nNavegue pelos brinquedos e clique em \"Adicionar à lista\" para montar seu orçamento.\nPEDIR ORÇAMENTO DESTA LISTA\nCONTINUAR ESCOLHENDO\n\nVocê informa data, horário e local na próxima etapa.",
+      "class": "drawer is-open",
+      "aria": "false"
+    },
+    {
+      "trigger": "populated-drawer",
+      "visible": true,
+      "text": "MINHA LISTA\n1 BRINQUEDO\nFliperama Multijogos\n1\nPEDIR ORÇAMENTO DESTA LISTA\nCONTINUAR ESCOLHENDO\n\nVocê informa data, horário e local na próxima etapa.",
+      "class": "drawer is-open",
+      "aria": "false"
+    }
+  ],
+  "title": "Aluguel de Jogos para Festa em Brasília | Fliperama e mais",
+  "buttons": [
+    {
+      "text": "Brinquedos ",
+      "aria": null,
+      "cls": "nav__link"
+    },
+    {
+      "text": " Minha lista de orçamento",
+      "aria": null,
+      "cls": "btn btn--blue"
+    },
+    {
+      "text": "Minha lista de orçamento0",
+      "aria": null,
+      "cls": "btn-lista"
+    },
+    {
+      "text": "",
+      "aria": "Abrir menu",
+      "cls": "menu-toggle"
+    },
+    {
+      "text": "Adicionar Fliperama Multijogos à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Air Game (Air Hockey) à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Totó / Pebolim à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Futmesa à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Desafio do Basquete à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Sinuca Infantil à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "",
+      "aria": "Fechar lista",
+      "cls": "icon-btn"
+    }
+  ],
+  "links": [
+    {
+      "text": "InfláveisTobogãs, tobopiscinas, futebol de sabão e circuitos para todas as idades.",
+      "href": "https://tiotiti.com.br/brinquedos-inflaveis/"
+    },
+    {
+      "text": "AquáticosToboágua, tobopiscina, futebol de sabão e espuma para refrescar a festa.",
+      "href": "https://tiotiti.com.br/brinquedos-aquaticos/"
+    },
+    {
+      "text": "Jogos e eletrônicosFliperama, air game, totó, futmesa, sinuca e basquete para todas as idades.",
+      "href": "https://tiotiti.com.br/jogos-para-festa/"
+    },
+    {
+      "text": "Para os pequenos (1 a 6 anos)Carrossel, piscina de bolinhas e tobogãs baixos para festas de 1 a 6 anos.",
+      "href": "https://tiotiti.com.br/brinquedos-para-criancas-pequenas/"
+    },
+    {
+      "text": "Ver todos os 22 brinquedos ",
+      "href": "https://tiotiti.com.br/brinquedos/"
+    }
+  ],
+  "sections": [
+    {
+      "text": "Início\nBrinquedos\nJogos e eletrônicos\n6 BRINQUEDOS\nAluguel de Jogos para Festa em Brasília\n\nJogos são perfeitos para festas com crianças maiores, adolescentes e adultos — e ocupam pouco espaço. Monte uma área de jogos completa com fliperama, air game",
+      "rect": {
+        "top": 71,
+        "height": 564.03125
+      },
+      "opacity": "1",
+      "images": []
+    },
+    {
+      "text": "Brinquedos Jogos e eletrônicos\nNOSTALGIA\nFliperama Multijogos\n\n2 mil jogos clássicos de Super Nintendo, Atari, PlayStation e Mega Drive.\n\nA partir de 6 anos\nAltura: 1,10 m\nVER DETALHES\nAdicionar\nFliperama Multijogos à lista\nAir Game (Air Hockey)\n\nA m",
+      "rect": {
+        "top": 160.03125,
+        "height": 3139.90625
+      },
+      "opacity": "1",
+      "images": [
+        {
+          "src": "https://tiotiti.com.br/img/brinquedos/aluguel-de-fliperama-em-brasilia-1-640.webp",
+          "loaded": true
+        },
+        {
+          "src": "https://tiotiti.com.br/img/brinquedos/aluguel-de-air-game-em-brasilia-1-640.webp",
+          "loaded": true
+        },
+        {
+          "src": "https://tiotiti.com.br/img/brinquedos/aluguel-de-toto-pebolim-em-brasilia-1-640.webp",
+          "loaded": true
+        },
+        {
+          "src": "https://tiotiti.com.br/img/brinquedos/aluguel-de-futmesa-em-brasilia-1-640.webp",
+          "loaded": true
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        }
+      ]
+    },
+    {
+      "text": "Monte uma área de jogos que diverte todo mundo\nFesta teen: Fliperama + Air Game + Futmesa.\nFesta em salão de prédio: Sinuca Infantil + Totó + Air Game.\nEventos corporativos: Basquete + Futmesa + Fliperama, que animam também os adultos.\nCuidados com j",
+      "rect": {
+        "top": 159.9375,
+        "height": 628.25
+      },
+      "opacity": "1",
+      "images": []
+    },
+    {
+      "text": "DEPOIMENTOS\nQuem alugou, aprovou!\n\nO carinho de quem já fez festa com a gente é o nosso maior orgulho.\n\nEmpresa com padrão de qualidade muito boa, atendimento perfeito, horário cumprido certinho. Eu conheço e recomendo.\nHS\nHerci da Silva\nCliente Tio ",
+      "rect": {
+        "top": 160.1875,
+        "height": 1191.453125
+      },
+      "opacity": "1",
+      "images": []
+    },
+    {
+      "text": "TIRE SUAS DÚVIDAS\nPerguntas sobre jogos e eletrônicos\nOs jogos podem ficar ao ar livre?\nJogos são indicados para adultos?\n\nVer todas as perguntas frequentes ",
+      "rect": {
+        "top": 159.640625,
+        "height": 517.390625
+      },
+      "opacity": "1",
+      "images": []
+    },
+    {
+      "text": "Veja também\nAluguel de Brinquedos Infláveis\nAluguel de Brinquedos Aquáticos\nBrinquedos para bebês e crianças pequenas\nCombos para festa",
+      "rect": {
+        "top": 160.03125,
+        "height": 394.46875
+      },
+      "opacity": "1",
+      "images": []
+    },
+    {
+      "text": "Bora deixar a festa inesquecível?\n\nMonte sua lista de brinquedos e receba o orçamento pelo WhatsApp. Atendemos Brasília e todo o Entorno.\n\nPEDIR ORÇAMENTO\nWHATSAPP",
+      "rect": {
+        "top": 160.5,
+        "height": 500.96875
+      },
+      "opacity": "1",
+      "images": []
+    },
+    {
+      "text": "Desde 1998 levando diversão, segurança e alegria para festas infantis e eventos em Brasília e no Entorno.\n\nBRINQUEDOS\nInfláveis\nAquáticos\nJogos e eletrônicos\nPara crianças pequenas\nTodos os brinquedos\nCombos para festa\nTIO TITI\nSobre nós\nEmpresas, es",
+      "rect": {
+        "top": 159.875,
+        "height": 1315.875
+      },
+      "opacity": "1",
+      "images": [
+        {
+          "src": "https://tiotiti.com.br/img/logo-tio-titi-240.webp",
+          "loaded": true
+        }
+      ]
+    }
+  ],
+  "scrollBottom": {
+    "y": 7602,
+    "height": 8446,
+    "header": "site-header is-scrolled"
+  },
+  "accordion": true,
+  "addResult": "Na lista\nFliperama Multijogos à lista",
+  "drawerAfterAdd": "MINHA LISTA\n1 BRINQUEDO\nFliperama Multijogos\n1\nPEDIR ORÇAMENTO DESTA LISTA\nCONTINUAR ESCOLHENDO\n\nVocê informa data, horário e local na próxima etapa.",
+  "media": 0,
+  "errors": []
+}

@@ -1,0 +1,406 @@
+{
+  "origin": "http://localhost:8080",
+  "route": "/brinquedos",
+  "viewport": {
+    "width": 1280,
+    "height": 1800
+  },
+  "controls": [
+    {
+      "trigger": "dropdown",
+      "visible": true,
+      "text": "Infláveis\nTobogãs, tobopiscinas, futebol de sabão e circuitos para todas as idades.\nAquáticos\nToboágua, tobopiscina, futebol de sabão e espuma para refrescar a festa.\nJogos e eletrônicos\nFliperama, air game, totó, futmesa, sinuca e basquete para todas as idades.\nPara os pequenos (1 a 6 anos)\nCarrossel, piscina de bolinhas e tobogãs baixos para festas de 1 a 6 anos.\nVER TODOS OS 22 BRINQUEDOS",
+      "class": "dropdown",
+      "aria": null
+    },
+    {
+      "trigger": "drawer",
+      "visible": true,
+      "text": "MINHA LISTA\n0 BRINQUEDOS\nSua lista está vazia\nNavegue pelos brinquedos e clique em \"Adicionar à lista\" para montar seu orçamento.\nPEDIR ORÇAMENTO DESTA LISTA\nCONTINUAR ESCOLHENDO\n\nVocê informa data, horário e local na próxima etapa.",
+      "class": "drawer flex-col fixed w-[min(420px,100%)] [bottom:0] [box-shadow:var(--shadow-lg)] [right:0] [top:0] [z-index:81]",
+      "aria": "true"
+    },
+    {
+      "trigger": "populated-drawer",
+      "visible": true,
+      "text": "MINHA LISTA\n0 BRINQUEDOS\nSua lista está vazia\nNavegue pelos brinquedos e clique em \"Adicionar à lista\" para montar seu orçamento.\nPEDIR ORÇAMENTO DESTA LISTA\nCONTINUAR ESCOLHENDO\n\nVocê informa data, horário e local na próxima etapa.",
+      "class": "drawer flex-col fixed w-[min(420px,100%)] [bottom:0] [box-shadow:var(--shadow-lg)] [right:0] [top:0] [z-index:81]",
+      "aria": "true"
+    }
+  ],
+  "title": "Brinquedos para Alugar: Catálogo Completo | Tio Titi",
+  "buttons": [
+    {
+      "text": "Brinquedos ",
+      "aria": null,
+      "cls": "nav__link"
+    },
+    {
+      "text": " Minha lista de orçamento",
+      "aria": null,
+      "cls": "btn btn--blue"
+    },
+    {
+      "text": "Minha lista de orçamento0",
+      "aria": null,
+      "cls": "btn-lista"
+    },
+    {
+      "text": "",
+      "aria": "Abrir menu",
+      "cls": "menu-toggle"
+    },
+    {
+      "text": " Todos",
+      "aria": null,
+      "cls": "filter items-center inline-flex gap-[7px] [box-shadow:4px_4px_0_var(--red)] [cursor:pointer] [font:500_.95rem_var(--font)] [font-weight:700]! [padding:10px_18px]"
+    },
+    {
+      "text": " Infláveis",
+      "aria": null,
+      "cls": "filter items-center inline-flex gap-[7px] [box-shadow:var(--hard-sm)] [cursor:pointer] [font:500_.95rem_var(--font)] [font-weight:700]! [padding:10px_18px]"
+    },
+    {
+      "text": " Aquáticos",
+      "aria": null,
+      "cls": "filter items-center inline-flex gap-[7px] [box-shadow:var(--hard-sm)] [cursor:pointer] [font:500_.95rem_var(--font)] [font-weight:700]! [padding:10px_18px]"
+    },
+    {
+      "text": " Jogos",
+      "aria": null,
+      "cls": "filter items-center inline-flex gap-[7px] [box-shadow:var(--hard-sm)] [cursor:pointer] [font:500_.95rem_var(--font)] [font-weight:700]! [padding:10px_18px]"
+    },
+    {
+      "text": " Pequenos",
+      "aria": null,
+      "cls": "filter items-center inline-flex gap-[7px] [box-shadow:var(--hard-sm)] [cursor:pointer] [font:500_.95rem_var(--font)] [font-weight:700]! [padding:10px_18px]"
+    },
+    {
+      "text": " Parque",
+      "aria": null,
+      "cls": "filter items-center inline-flex gap-[7px] [box-shadow:var(--hard-sm)] [cursor:pointer] [font:500_.95rem_var(--font)] [font-weight:700]! [padding:10px_18px]"
+    },
+    {
+      "text": "Adicionar Futebol de Sabão 2 em 1 à lista",
+      "aria": null,
+      "cls": "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"
+    },
+    {
+      "text": "Adicionar Golzinho de Sabão à lista",
+      "aria": null,
+      "cls": "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"
+    },
+    {
+      "text": "Adicionar Tobogã Tradicional à lista",
+      "aria": null,
+      "cls": "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"
+    },
+    {
+      "text": "Adicionar Tobogã Safári 2 em 1 à lista",
+      "aria": null,
+      "cls": "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"
+    },
+    {
+      "text": "Adicionar Tobogã 3 em 1 à lista",
+      "aria": null,
+      "cls": "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"
+    },
+    {
+      "text": "Adicionar Toboágua à lista",
+      "aria": null,
+      "cls": "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"
+    },
+    {
+      "text": "Adicionar Toboágua Médio à lista",
+      "aria": null,
+      "cls": "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"
+    },
+    {
+      "text": "Adicionar Tobopiscina à lista",
+      "aria": null,
+      "cls": "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"
+    },
+    {
+      "text": "Adicionar Tobopiscina Médio à lista",
+      "aria": null,
+      "cls": "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"
+    },
+    {
+      "text": "Adicionar Vitória Régia e Tapete Aladdin à lista",
+      "aria": null,
+      "cls": "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"
+    },
+    {
+      "text": "Adicionar Canhão de Espuma à lista",
+      "aria": null,
+      "cls": "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"
+    },
+    {
+      "text": "Adicionar Corrida de Obstáculos à lista",
+      "aria": null,
+      "cls": "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"
+    },
+    {
+      "text": "Adicionar Torito – Touro Mecânico Infantil à lista",
+      "aria": null,
+      "cls": "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"
+    },
+    {
+      "text": "Adicionar Cama Elástica (Pula-Pula) à lista",
+      "aria": null,
+      "cls": "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"
+    },
+    {
+      "text": "Adicionar Piscina de Bolinhas Casinha Leão à lista",
+      "aria": null,
+      "cls": "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"
+    },
+    {
+      "text": "Adicionar Carrossel Fusquinha à lista",
+      "aria": null,
+      "cls": "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"
+    },
+    {
+      "text": "Adicionar Fliperama Multijogos à lista",
+      "aria": null,
+      "cls": "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"
+    },
+    {
+      "text": "Adicionar Air Game (Air Hockey) à lista",
+      "aria": null,
+      "cls": "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"
+    },
+    {
+      "text": "Adicionar Totó / Pebolim à lista",
+      "aria": null,
+      "cls": "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"
+    },
+    {
+      "text": "Adicionar Futmesa à lista",
+      "aria": null,
+      "cls": "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"
+    },
+    {
+      "text": "Adicionar Desafio do Basquete à lista",
+      "aria": null,
+      "cls": "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"
+    },
+    {
+      "text": "Adicionar Sinuca Infantil à lista",
+      "aria": null,
+      "cls": "add-mini items-center inline-flex flex-none gap-[6px] h-[38px] relative [cursor:pointer] [font:600_.84rem_var(--font)] [font-size:.84rem]! [font-weight:800]! [padding:0_12px] [z-index:2]"
+    },
+    {
+      "text": "",
+      "aria": "Fechar lista",
+      "cls": "icon-btn grid h-[34px] place-items-center w-[34px] [cursor:pointer]"
+    }
+  ],
+  "links": [
+    {
+      "text": "InfláveisTobogãs, tobopiscinas, futebol de sabão e circuitos para todas as idades.",
+      "href": "http://localhost:8080/brinquedos-inflaveis"
+    },
+    {
+      "text": "AquáticosToboágua, tobopiscina, futebol de sabão e espuma para refrescar a festa.",
+      "href": "http://localhost:8080/brinquedos-aquaticos"
+    },
+    {
+      "text": "Jogos e eletrônicosFliperama, air game, totó, futmesa, sinuca e basquete para todas as idades.",
+      "href": "http://localhost:8080/jogos-para-festa"
+    },
+    {
+      "text": "Para os pequenos (1 a 6 anos)Carrossel, piscina de bolinhas e tobogãs baixos para festas de 1 a 6 anos.",
+      "href": "http://localhost:8080/brinquedos-para-criancas-pequenas"
+    },
+    {
+      "text": "Ver todos os 22 brinquedos ",
+      "href": "http://localhost:8080/brinquedos#"
+    }
+  ],
+  "sections": [
+    {
+      "text": "Início\nBrinquedos\n22 OPÇÕES PARA A SUA FESTA\nCatálogo de brinquedos para alugar\n\nEscolha por categoria, adicione os favoritos à sua lista e receba o orçamento pelo WhatsApp. Todos com entrega, montagem e desmontagem em Brasília e no Entorno.",
+      "rect": {
+        "top": 115,
+        "height": 464.640625
+      },
+      "opacity": "1",
+      "images": []
+    },
+    {
+      "text": "Todos\nInfláveis\nAquáticos\nJogos\nPequenos\nParque\n\n22 brinquedos encontrados\n\nMAIS PEDIDO\nFutebol de Sabão 2 em 1\n\nCampo inflável 2 em 1: futebol e bolão gigante, com muita espuma e risada.\n\nAté 15 anos\nComprimento: 8 m\nVER DETALHES\nAdicionar\nFutebol d",
+      "rect": {
+        "top": 159.640625,
+        "height": 3202.859375
+      },
+      "opacity": "1",
+      "images": [
+        {
+          "src": "http://localhost:8080/site-assets/8d628c4190afeea4.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/56a497fec5d57ec9.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/96d76b5231819ea2.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/7baf92f9f0028c5a.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/3ae30e57b5d3c365.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/1598656e479a082d.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/a4f89a39af0eb3fb.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/4d0db2c46fb2ed9c.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/9ba35b49d07191a1.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/d43c1cca4b6bdbf2.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/911a5f2d5295117a.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/ad7d95de35fb9930.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/00a717f8fdbf7b1d.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/64576cc39ba8d9c0.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/00435f0f0f43d9c6.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/dae7b2fbfd051e24.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/2487870ef86bd3e9.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/3bb66b68e1338933.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/fff4f8e2dfcec910.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/21e6744bc602665d.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/c837f196b64c73f8.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/9d99c3cc6d7e249e.webp",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "text": "Explore por categoria\n\nDicas, medidas e sugestões para escolher o brinquedo certo para cada festa.\n\nBrinquedos infláveis\n\nTobogãs, tobopiscinas, futebol de sabão e circuitos para todas as idades.\n\n11 OPÇÕES\nBrinquedos aquáticos\n\nToboágua, tobopiscina",
+      "rect": {
+        "top": 160.5,
+        "height": 780.734375
+      },
+      "opacity": "1",
+      "images": [
+        {
+          "src": "http://localhost:8080/site-assets/7baf92f9f0028c5a.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/478696cc864515ed.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/2487870ef86bd3e9.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://localhost:8080/site-assets/bc0394c6a221ed55.webp",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "text": "ORÇAMENTO FÁCIL\nComo funciona o orçamento\n\nMonte a festa dos sonhos em 3 passos, sem cadastro e sem compromisso.\n\n1\nEscolha os brinquedos\n\nNavegue pelo catálogo e clique em “Adicionar à lista” nos brinquedos que você quer na festa.\n\n2\nInforme os dado",
+      "rect": {
+        "top": 160.234375,
+        "height": 746.21875
+      },
+      "opacity": "1",
+      "images": []
+    },
+    {
+      "text": "DEPOIMENTOS\nQuem alugou, aprovou!\n\nO carinho de quem já fez festa com a gente é o nosso maior orgulho.\n\nOs brinquedos são ótimos, muitas opções, sem falar na pontualidade e organização.\nTM\nTiciana Andrade Macedo\nCliente Tio Titi\nNossa, adoro o Tio Ti",
+      "rect": {
+        "top": 159.453125,
+        "height": 746.984375
+      },
+      "opacity": "1",
+      "images": []
+    },
+    {
+      "text": "Escolheu? Agora é só pedir o orçamento\n\nAbra sua lista, informe data, horário e local da festa e envie pelo WhatsApp. Respondemos rapidinho!\n\nPEDIR ORÇAMENTO\nWHATSAPP",
+      "rect": {
+        "top": 670.4375,
+        "height": 463.359375
+      },
+      "opacity": "1",
+      "images": []
+    },
+    {
+      "text": "Desde 1998 levando diversão, segurança e alegria para festas infantis e eventos em Brasília e no Entorno.\n\nBRINQUEDOS\nInfláveis\nAquáticos\nJogos e eletrônicos\nPara crianças pequenas\nTodos os brinquedos\nCombos para festa\nTIO TITI\nSobre nós\nEmpresas, es",
+      "rect": {
+        "top": 1304.671875,
+        "height": 495.4375
+      },
+      "opacity": "1",
+      "images": [
+        {
+          "src": "http://localhost:8080/site-assets/7055a544d0bca36e.webp",
+          "loaded": true
+        }
+      ]
+    }
+  ],
+  "scrollBottom": {
+    "y": 5386,
+    "height": 7186,
+    "header": "site-header is-scrolled"
+  },
+  "addResult": "Adicionar\nFutebol de Sabão 2 em 1 à lista",
+  "drawerAfterAdd": "MINHA LISTA\n0 BRINQUEDOS\nSua lista está vazia\nNavegue pelos brinquedos e clique em \"Adicionar à lista\" para montar seu orçamento.\nPEDIR ORÇAMENTO DESTA LISTA\nCONTINUAR ESCOLHENDO\n\nVocê informa data, horário e local na próxima etapa.",
+  "media": 0,
+  "errors": []
+}

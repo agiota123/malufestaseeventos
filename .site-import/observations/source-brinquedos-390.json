@@ -1,0 +1,413 @@
+{
+  "origin": "https://tiotiti.com.br",
+  "route": "/brinquedos",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "controls": [
+    {
+      "trigger": "mobile",
+      "visible": true,
+      "text": "INÍCIO\nBRINQUEDOS\nCOMBOS\nEMPRESAS E ESCOLAS\nSOBRE\nCONTATO\nMINHA LISTA DE ORÇAMENTO\nFALAR NO WHATSAPP",
+      "class": "nav is-open",
+      "aria": null
+    },
+    {
+      "trigger": "dropdown",
+      "visible": true,
+      "text": "Infláveis\nTobogãs, tobopiscinas, futebol de sabão e circuitos para todas as idades.\nAquáticos\nToboágua, tobopiscina, futebol de sabão e espuma para refrescar a festa.\nJogos e eletrônicos\nFliperama, air game, totó, futmesa, sinuca e basquete para todas as idades.\nPara os pequenos (1 a 6 anos)\nCarrossel, piscina de bolinhas e tobogãs baixos para festas de 1 a 6 anos.\nVER TODOS OS 22 BRINQUEDOS",
+      "class": "dropdown",
+      "aria": null
+    },
+    {
+      "trigger": "drawer",
+      "visible": true,
+      "text": "MINHA LISTA\n0 BRINQUEDOS\nSua lista está vazia\nNavegue pelos brinquedos e clique em \"Adicionar à lista\" para montar seu orçamento.\nPEDIR ORÇAMENTO DESTA LISTA\nCONTINUAR ESCOLHENDO\n\nVocê informa data, horário e local na próxima etapa.",
+      "class": "drawer is-open",
+      "aria": "false"
+    },
+    {
+      "trigger": "populated-drawer",
+      "visible": true,
+      "text": "MINHA LISTA\n1 BRINQUEDO\nFutebol de Sabão 2 em 1\n1\nPEDIR ORÇAMENTO DESTA LISTA\nCONTINUAR ESCOLHENDO\n\nVocê informa data, horário e local na próxima etapa.",
+      "class": "drawer is-open",
+      "aria": "false"
+    }
+  ],
+  "title": "Brinquedos para Alugar: Catálogo Completo | Tio Titi",
+  "buttons": [
+    {
+      "text": "Brinquedos ",
+      "aria": null,
+      "cls": "nav__link"
+    },
+    {
+      "text": " Minha lista de orçamento",
+      "aria": null,
+      "cls": "btn btn--blue"
+    },
+    {
+      "text": "Minha lista de orçamento0",
+      "aria": null,
+      "cls": "btn-lista"
+    },
+    {
+      "text": "",
+      "aria": "Abrir menu",
+      "cls": "menu-toggle"
+    },
+    {
+      "text": " Todos",
+      "aria": null,
+      "cls": "filter"
+    },
+    {
+      "text": " Infláveis",
+      "aria": null,
+      "cls": "filter"
+    },
+    {
+      "text": " Aquáticos",
+      "aria": null,
+      "cls": "filter"
+    },
+    {
+      "text": " Jogos",
+      "aria": null,
+      "cls": "filter"
+    },
+    {
+      "text": " Pequenos",
+      "aria": null,
+      "cls": "filter"
+    },
+    {
+      "text": " Parque",
+      "aria": null,
+      "cls": "filter"
+    },
+    {
+      "text": "Adicionar Futebol de Sabão 2 em 1 à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Golzinho de Sabão à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Tobogã Tradicional à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Tobogã Safári 2 em 1 à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Tobogã 3 em 1 à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Toboágua à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Toboágua Médio à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Tobopiscina à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Tobopiscina Médio à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Vitória Régia e Tapete Aladdin à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Canhão de Espuma à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Corrida de Obstáculos à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Torito – Touro Mecânico Infantil à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Cama Elástica (Pula-Pula) à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Piscina de Bolinhas Casinha Leão à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Carrossel Fusquinha à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Fliperama Multijogos à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Air Game (Air Hockey) à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Totó / Pebolim à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Futmesa à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Desafio do Basquete à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "Adicionar Sinuca Infantil à lista",
+      "aria": null,
+      "cls": "add-mini"
+    },
+    {
+      "text": "",
+      "aria": "Fechar lista",
+      "cls": "icon-btn"
+    }
+  ],
+  "links": [
+    {
+      "text": "InfláveisTobogãs, tobopiscinas, futebol de sabão e circuitos para todas as idades.",
+      "href": "https://tiotiti.com.br/brinquedos-inflaveis/"
+    },
+    {
+      "text": "AquáticosToboágua, tobopiscina, futebol de sabão e espuma para refrescar a festa.",
+      "href": "https://tiotiti.com.br/brinquedos-aquaticos/"
+    },
+    {
+      "text": "Jogos e eletrônicosFliperama, air game, totó, futmesa, sinuca e basquete para todas as idades.",
+      "href": "https://tiotiti.com.br/jogos-para-festa/"
+    },
+    {
+      "text": "Para os pequenos (1 a 6 anos)Carrossel, piscina de bolinhas e tobogãs baixos para festas de 1 a 6 anos.",
+      "href": "https://tiotiti.com.br/brinquedos-para-criancas-pequenas/"
+    },
+    {
+      "text": "Ver todos os 22 brinquedos ",
+      "href": "https://tiotiti.com.br/brinquedos/"
+    }
+  ],
+  "sections": [
+    {
+      "text": "Início\nBrinquedos\n22 OPÇÕES PARA A SUA FESTA\nCatálogo de brinquedos para alugar\n\nEscolha por categoria, adicione os favoritos à sua lista e receba o orçamento pelo WhatsApp. Todos com entrega, montagem e desmontagem em Brasília e no Entorno.",
+      "rect": {
+        "top": 71,
+        "height": 403.796875
+      },
+      "opacity": "1",
+      "images": []
+    },
+    {
+      "text": "Todos\nInfláveis\nAquáticos\nJogos\nPequenos\nParque\n\n22 brinquedos encontrados\n\nMAIS PEDIDO\nFutebol de Sabão 2 em 1\n\nCampo inflável 2 em 1: futebol e bolão gigante, com muita espuma e risada.\n\nAté 15 anos\nComprimento: 8 m\nVER DETALHES\nAdicionar\nFutebol d",
+      "rect": {
+        "top": 159.796875,
+        "height": 11466.203125
+      },
+      "opacity": "1",
+      "images": [
+        {
+          "src": "https://tiotiti.com.br/img/brinquedos/aluguel-de-futebol-de-sabao-em-brasilia-1-640.webp",
+          "loaded": true
+        },
+        {
+          "src": "https://tiotiti.com.br/img/brinquedos/aluguel-de-golzinho-de-sabao-em-brasilia-1-640.webp",
+          "loaded": true
+        },
+        {
+          "src": "https://tiotiti.com.br/img/brinquedos/aluguel-de-toboga-tradicional-em-brasilia-1-640.webp",
+          "loaded": true
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        }
+      ]
+    },
+    {
+      "text": "Explore por categoria\n\nDicas, medidas e sugestões para escolher o brinquedo certo para cada festa.\n\nBrinquedos infláveis\n\nTobogãs, tobopiscinas, futebol de sabão e circuitos para todas as idades.\n\n11 OPÇÕES\nBrinquedos aquáticos\n\nToboágua, tobopiscina",
+      "rect": {
+        "top": 160,
+        "height": 1754.03125
+      },
+      "opacity": "1",
+      "images": [
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        }
+      ]
+    },
+    {
+      "text": "ORÇAMENTO FÁCIL\nComo funciona o orçamento\n\nMonte a festa dos sonhos em 3 passos, sem cadastro e sem compromisso.\n\n1\nEscolha os brinquedos\n\nNavegue pelo catálogo e clique em “Adicionar à lista” nos brinquedos que você quer na festa.\n\n2\nInforme os dado",
+      "rect": {
+        "top": 160.03125,
+        "height": 1138
+      },
+      "opacity": "1",
+      "images": []
+    },
+    {
+      "text": "DEPOIMENTOS\nQuem alugou, aprovou!\n\nO carinho de quem já fez festa com a gente é o nosso maior orgulho.\n\nOs brinquedos são ótimos, muitas opções, sem falar na pontualidade e organização.\nTM\nTiciana Andrade Macedo\nCliente Tio Titi\nNossa, adoro o Tio Ti",
+      "rect": {
+        "top": 160.03125,
+        "height": 1191.453125
+      },
+      "opacity": "1",
+      "images": []
+    },
+    {
+      "text": "Escolheu? Agora é só pedir o orçamento\n\nAbra sua lista, informe data, horário e local da festa e envie pelo WhatsApp. Respondemos rapidinho!\n\nPEDIR ORÇAMENTO\nWHATSAPP",
+      "rect": {
+        "top": 160.484375,
+        "height": 500.96875
+      },
+      "opacity": "1",
+      "images": []
+    },
+    {
+      "text": "Desde 1998 levando diversão, segurança e alegria para festas infantis e eventos em Brasília e no Entorno.\n\nBRINQUEDOS\nInfláveis\nAquáticos\nJogos e eletrônicos\nPara crianças pequenas\nTodos os brinquedos\nCombos para festa\nTIO TITI\nSobre nós\nEmpresas, es",
+      "rect": {
+        "top": 159.859375,
+        "height": 1315.875
+      },
+      "opacity": "1",
+      "images": [
+        {
+          "src": "https://tiotiti.com.br/img/logo-tio-titi-240.webp",
+          "loaded": true
+        }
+      ]
+    }
+  ],
+  "scrollBottom": {
+    "y": 17120,
+    "height": 17964,
+    "header": "site-header is-scrolled"
+  },
+  "addResult": "Na lista\nFutebol de Sabão 2 em 1 à lista",
+  "drawerAfterAdd": "MINHA LISTA\n1 BRINQUEDO\nFutebol de Sabão 2 em 1\n1\nPEDIR ORÇAMENTO DESTA LISTA\nCONTINUAR ESCOLHENDO\n\nVocê informa data, horário e local na próxima etapa.",
+  "media": 0,
+  "errors": []
+}
