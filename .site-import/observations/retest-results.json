@@ -6,12 +6,18 @@
     "list": "passed",
     "nextStep": "/orcamento",
     "nextStepStatus": "missing imported page",
-    "error": "Locator.wait_for: Timeout 8000ms exceeded. Sandbox note: 8000ms was this sandbox's default timeout for Playwright actions and waits (page loads: 30000ms). A missing or misnamed element fails the same way; timeout=<ms> on one call and page.set_default_timeout(<ms>) both override the default.\nCall log:\n  - waiting for locator(\"#drawer:not(.is-open)\") to be visible\n    21 \u00d7 locator resolved to hidden <aside inert=\"\" id=\"drawer\" aria-hidden=\"true\" aria-label=\"Minha lista de or\u00e7amento\" data-tsd-sourc"
+    "combo": "passed",
+    "errors": []
   },
   {
     "route": "/",
     "viewport": 390,
-    "error": "Locator.wait_for: Timeout 8000ms exceeded. Sandbox note: 8000ms was this sandbox's default timeout for Playwright actions and waits (page loads: 30000ms). A missing or misnamed element fails the same way; timeout=<ms> on one call and page.set_default_timeout(<ms>) both override the default.\nCall log:\n  - waiting for locator(\"#dd-brinquedos:not([hidden])\") to be visible\n    21 \u00d7 locator resolved to hidden <div class=\"dropdown\" id=\"dd-brinquedos\" data-import-mobile-style=\"0\" data-site-import-respo"
+    "navigation": "passed",
+    "list": "passed",
+    "nextStep": "/orcamento",
+    "nextStepStatus": "missing imported page",
+    "combo": "passed",
+    "errors": []
   },
   {
     "route": "/brinquedos-inflaveis",
@@ -20,12 +26,16 @@
     "list": "passed",
     "nextStep": "/orcamento",
     "nextStepStatus": "missing imported page",
-    "error": "Locator.wait_for: Timeout 8000ms exceeded. Sandbox note: 8000ms was this sandbox's default timeout for Playwright actions and waits (page loads: 30000ms). A missing or misnamed element fails the same way; timeout=<ms> on one call and page.set_default_timeout(<ms>) both override the default.\nCall log:\n  - waiting for locator(\"#drawer:not(.is-open)\") to be visible\n    21 \u00d7 locator resolved to hidden <aside inert=\"\" id=\"drawer\" aria-hidden=\"true\" aria-label=\"Minha lista de or\u00e7amento\" data-tsd-sourc"
+    "errors": []
   },
   {
     "route": "/brinquedos-inflaveis",
     "viewport": 390,
-    "error": "Locator.wait_for: Timeout 8000ms exceeded. Sandbox note: 8000ms was this sandbox's default timeout for Playwright actions and waits (page loads: 30000ms). A missing or misnamed element fails the same way; timeout=<ms> on one call and page.set_default_timeout(<ms>) both override the default.\nCall log:\n  - waiting for locator(\"#dd-brinquedos:not([hidden])\") to be visible\n    21 \u00d7 locator resolved to hidden <div class=\"dropdown\" id=\"dd-brinquedos\" data-import-mobile-style=\"0\" data-site-import-respo"
+    "navigation": "passed",
+    "list": "passed",
+    "nextStep": "/orcamento",
+    "nextStepStatus": "missing imported page",
+    "errors": []
   },
   {
     "route": "/brinquedos-aquaticos",
@@ -34,12 +44,16 @@
     "list": "passed",
     "nextStep": "/orcamento",
     "nextStepStatus": "missing imported page",
-    "error": "Locator.wait_for: Timeout 8000ms exceeded. Sandbox note: 8000ms was this sandbox's default timeout for Playwright actions and waits (page loads: 30000ms). A missing or misnamed element fails the same way; timeout=<ms> on one call and page.set_default_timeout(<ms>) both override the default.\nCall log:\n  - waiting for locator(\"#drawer:not(.is-open)\") to be visible\n    21 \u00d7 locator resolved to hidden <aside inert=\"\" id=\"drawer\" aria-hidden=\"true\" aria-label=\"Minha lista de or\u00e7amento\" data-tsd-sourc"
+    "errors": []
   },
   {
     "route": "/brinquedos-aquaticos",
     "viewport": 390,
-    "error": "Locator.wait_for: Timeout 8000ms exceeded. Sandbox note: 8000ms was this sandbox's default timeout for Playwright actions and waits (page loads: 30000ms). A missing or misnamed element fails the same way; timeout=<ms> on one call and page.set_default_timeout(<ms>) both override the default.\nCall log:\n  - waiting for locator(\"#dd-brinquedos:not([hidden])\") to be visible\n    21 \u00d7 locator resolved to hidden <div class=\"dropdown\" id=\"dd-brinquedos\" data-import-mobile-style=\"0\" data-site-import-respo"
+    "navigation": "passed",
+    "list": "passed",
+    "nextStep": "/orcamento",
+    "nextStepStatus": "missing imported page",
+    "errors": []
   },
   {
     "route": "/jogos-para-festa",
@@ -48,12 +62,16 @@
     "list": "passed",
     "nextStep": "/orcamento",
     "nextStepStatus": "missing imported page",
-    "error": "Locator.wait_for: Timeout 8000ms exceeded. Sandbox note: 8000ms was this sandbox's default timeout for Playwright actions and waits (page loads: 30000ms). A missing or misnamed element fails the same way; timeout=<ms> on one call and page.set_default_timeout(<ms>) both override the default.\nCall log:\n  - waiting for locator(\"#drawer:not(.is-open)\") to be visible\n    21 \u00d7 locator resolved to hidden <aside inert=\"\" id=\"drawer\" aria-hidden=\"true\" aria-label=\"Minha lista de or\u00e7amento\" data-tsd-sourc"
+    "errors": []
   },
   {
     "route": "/jogos-para-festa",
     "viewport": 390,
-    "error": "Locator.wait_for: Timeout 8000ms exceeded. Sandbox note: 8000ms was this sandbox's default timeout for Playwright actions and waits (page loads: 30000ms). A missing or misnamed element fails the same way; timeout=<ms> on one call and page.set_default_timeout(<ms>) both override the default.\nCall log:\n  - waiting for locator(\"#dd-brinquedos:not([hidden])\") to be visible\n    21 \u00d7 locator resolved to hidden <div class=\"dropdown\" id=\"dd-brinquedos\" data-import-mobile-style=\"0\" data-site-import-respo"
+    "navigation": "passed",
+    "list": "passed",
+    "nextStep": "/orcamento",
+    "nextStepStatus": "missing imported page",
+    "errors": []
   },
   {
     "route": "/brinquedos",
@@ -62,11 +80,17 @@
     "list": "passed",
     "nextStep": "/orcamento",
     "nextStepStatus": "missing imported page",
-    "error": "Locator.wait_for: Timeout 8000ms exceeded. Sandbox note: 8000ms was this sandbox's default timeout for Playwright actions and waits (page loads: 30000ms). A missing or misnamed element fails the same way; timeout=<ms> on one call and page.set_default_timeout(<ms>) both override the default.\nCall log:\n  - waiting for locator(\"#drawer:not(.is-open)\") to be visible\n    21 \u00d7 locator resolved to hidden <aside inert=\"\" id=\"drawer\" aria-hidden=\"true\" aria-label=\"Minha lista de or\u00e7amento\" data-tsd-sourc"
+    "filter": "passed",
+    "errors": []
   },
   {
     "route": "/brinquedos",
     "viewport": 390,
-    "error": "Locator.wait_for: Timeout 8000ms exceeded. Sandbox note: 8000ms was this sandbox's default timeout for Playwright actions and waits (page loads: 30000ms). A missing or misnamed element fails the same way; timeout=<ms> on one call and page.set_default_timeout(<ms>) both override the default.\nCall log:\n  - waiting for locator(\"#dd-brinquedos:not([hidden])\") to be visible\n    21 \u00d7 locator resolved to hidden <div class=\"dropdown\" id=\"dd-brinquedos\" data-import-mobile-style=\"0\" data-site-import-respo"
+    "navigation": "passed",
+    "list": "passed",
+    "nextStep": "/orcamento",
+    "nextStepStatus": "missing imported page",
+    "filter": "passed",
+    "errors": []
   }
 ]
