@@ -383,22 +383,8 @@ function Index() {
             type="button"
             onClick={event => { event.preventDefault(); event.stopPropagation(); setIntroVisible(false); }}
             aria-label="Pular animação de entrada"
-            style={{
-              position: "absolute",
-              top: "14px",
-              right: "14px",
-              zIndex: 5,
-              padding: "6px 10px",
-              border: "1px solid rgba(255,255,255,.38)",
-              borderRadius: "999px",
-              background: "rgba(20,24,61,.24)",
-              color: "#fff",
-              fontSize: "11px",
-              fontWeight: 600,
-              letterSpacing: ".02em",
-              cursor: "pointer",
-              opacity: .78,
-            }}
+            className="btn btn--yellow btn--sm malu-intro__skip"
+            style={{ position: "absolute", top: "14px", right: "14px", zIndex: 5 }}
           >
             Pular
           </button>
