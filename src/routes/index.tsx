@@ -238,7 +238,7 @@ function Index() {
   const [ready, setReady] = useState(false);
   const [introVisible, setIntroVisible] = useState(true);
   useEffect(() => {
-    const timer = window.setTimeout(() => setIntroVisible(false), 1400);
+    const timer = window.setTimeout(() => setIntroVisible(false), 2500);
     return () => window.clearTimeout(timer);
   }, []);
   const returnFocus = useRef<HTMLElement | null>(null);
@@ -324,8 +324,16 @@ function Index() {
       <style>{capturedCSS + repairCSS}</style>
       {introVisible && (
         <div className="malu-intro" role="status" aria-label="MALU Festas e Eventos">
-          <img className="malu-intro__logo" src={logo.url} alt="MALU Festas e Eventos" />
-          <span className="malu-intro__line" aria-hidden="true" />
+          <div className="malu-intro__burst" aria-hidden="true" />
+          <div className="malu-intro__confetti" aria-hidden="true">
+            {Array.from({ length: 14 }, (_, i) => <i key={i} />)}
+          </div>
+          <div className="malu-intro__content">
+            <span className="malu-intro__eyebrow">A SUA FESTA COMEÇA AQUI</span>
+            <img className="malu-intro__logo" src={logo.url} alt="MALU Festas e Eventos" />
+            <span className="malu-intro__line" aria-hidden="true" />
+            <span className="malu-intro__tagline">FESTAS <b>•</b> EVENTOS <b>•</b> DIVULGAÇÕES</span>
+          </div>
         </div>
       )}
     <style>{"@layer imported-inline{@media(max-width:960px){[data-import-mobile-style=\"0\"]{transform:none!important;}}}"}</style>
