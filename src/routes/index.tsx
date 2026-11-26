@@ -236,6 +236,11 @@ function Index() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [items, setItems] = useState<QuoteItem[]>([]);
   const [ready, setReady] = useState(false);
+  const [introVisible, setIntroVisible] = useState(true);
+  useEffect(() => {
+    const timer = window.setTimeout(() => setIntroVisible(false), 1400);
+    return () => window.clearTimeout(timer);
+  }, []);
   const returnFocus = useRef<HTMLElement | null>(null);
   const total = items.reduce((sum, item) => sum + item.quantity, 0);
   useEffect(() => {
@@ -317,6 +322,12 @@ function Index() {
   return (
     <QuoteContext.Provider value={{ items, add, addCombo }}>
       <style>{capturedCSS + repairCSS}</style>
+      {introVisible && (
+        <div className="malu-intro" role="status" aria-label="MALU Festas e Eventos">
+          <img className="malu-intro__logo" src={logo.url} alt="MALU Festas e Eventos" />
+          <span className="malu-intro__line" aria-hidden="true" />
+        </div>
+      )}
     <style>{"@layer imported-inline{@media(max-width:960px){[data-import-mobile-style=\"0\"]{transform:none!important;}}}"}</style>
       <a className="skip-link [padding:10px_16px]" href="#conteudo">Pular para o conteúdo</a>
       <svg style={{ position: "absolute" }} width="0" height="0" aria-hidden="true">
