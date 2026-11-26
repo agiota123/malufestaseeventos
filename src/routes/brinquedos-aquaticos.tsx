@@ -6,7 +6,7 @@ import repairCSS from "../styles/import-repairs.css?raw";
 import capturedCSS from "../styles/pages/brinquedos-aquaticos.css?raw";
 
 export const Route = createFileRoute("/brinquedos-aquaticos")({
-  head: () => ({ meta: [{"title": "Aluguel de Brinquedos Aquáticos em Brasília | Tio Titi"}, {"name": "description", "content": "Aluguel de Brinquedos Aquáticos em Brasília | Tio Titi para festas no DF e Entorno, com entrega, montagem e monitor incluso."}, {"property": "og:title", "content": "Aluguel de Brinquedos Aquáticos em Brasília | Tio Titi"}, {"property": "og:description", "content": "Aluguel de Brinquedos Aquáticos em Brasília | Tio Titi para festas no DF e Entorno, com entrega, montagem e monitor incluso."}, {"property": "og:type", "content": "website"}, {"name": "twitter:card", "content": "summary_large_image"}] }),
+  head: () => ({ meta: [{ name: "robots", content: "noindex,follow" },{"title": "Aluguel de Brinquedos Aquáticos em Brasília | Tio Titi"}, {"name": "description", "content": "Aluguel de Brinquedos Aquáticos em Brasília | Tio Titi para festas no DF e Entorno, com entrega, montagem e monitor incluso."}, {"property": "og:title", "content": "Aluguel de Brinquedos Aquáticos em Brasília | Tio Titi"}, {"property": "og:description", "content": "Aluguel de Brinquedos Aquáticos em Brasília | Tio Titi para festas no DF e Entorno, com entrega, montagem e monitor incluso."}, {"property": "og:type", "content": "website"}, {"name": "twitter:card", "content": "summary_large_image"}] }),
   staticData: { importedDocument: { html: { "className": "js", "lang": "pt-BR" }, body: {  } } },
   component: Index,
 });
