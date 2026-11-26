@@ -1092,3 +1092,9 @@ a.tag:hover{filter:brightness(.97);color:var(--c-d)}.qs .dd-ico{width:38px;heigh
 .hero--impacto h1,.hero--impacto .hero__trust{color:var(--ink)}
 .hero--impacto .lead{color:var(--ink-2)}
 .hero--impacto .lead strong{color:var(--ink)}
+
+/* MA.lu header: bigger logo, WhatsApp number in site font */
+.site-header .logo img{height:84px;width:auto;max-height:none}
+.header-wa,.header-wa__num{font-family:var(--font);letter-spacing:.01em}
+@media (max-width:860px){.site-header .logo img{height:64px}.header-wa{font-size:.82rem;padding-inline:12px}}
+@media (max-width:400px){.site-header .logo img{height:54px}}
