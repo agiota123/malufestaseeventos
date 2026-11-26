@@ -324,3 +324,92 @@ button img:hover {
     transition-duration: .01ms !important;
   }
 }
+
+
+/* MALU — animações perceptíveis */
+@keyframes malu-section-enter {
+  0% { opacity: 0; transform: translateY(28px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes malu-hero-enter {
+  0% { opacity: 0; transform: translateY(20px) scale(.985); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes malu-soft-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+/* Animação de entrada mais perceptível ao carregar a página */
+main > section,
+main > div > section {
+  animation: malu-section-enter .85s cubic-bezier(.2,.75,.25,1) both !important;
+}
+main > section:nth-of-type(2) { animation-delay: .08s !important; }
+main > section:nth-of-type(3) { animation-delay: .16s !important; }
+main > section:nth-of-type(4) { animation-delay: .24s !important; }
+main > section:nth-of-type(5) { animation-delay: .32s !important; }
+
+/* Microinterações nos elementos que aparecem como cartões no site */
+.toy-card,
+.combo,
+.panel,
+.highlight,
+.stat,
+.contact-card,
+.faq details,
+.cta-band,
+.hero__badge {
+  transition: transform .28s cubic-bezier(.2,.75,.25,1), box-shadow .28s ease, filter .28s ease !important;
+}
+.toy-card:hover,
+.combo:hover,
+.panel:hover,
+.highlight:hover,
+.stat:hover,
+.contact-card:hover,
+.faq details:hover {
+  transform: translateY(-6px) !important;
+  filter: saturate(1.04);
+}
+.toy-card img,
+.combo img,
+.hero img {
+  transition: transform .55s cubic-bezier(.2,.75,.25,1), filter .35s ease !important;
+}
+.toy-card:hover img,
+.combo:hover img {
+  transform: scale(1.045);
+}
+.btn,
+button,
+a.btn {
+  transition: transform .22s ease, box-shadow .22s ease, filter .22s ease !important;
+}
+.btn:hover,
+a.btn:hover,
+button:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.06);
+}
+.btn:active,
+a.btn:active,
+button:active {
+  transform: translateY(0) scale(.97);
+}
+.hero__badge {
+  animation: malu-soft-float 4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main > section,
+  main > div > section,
+  .hero__badge {
+    animation: none !important;
+  }
+  .toy-card, .combo, .panel, .highlight, .stat, .contact-card,
+  .faq details, .cta-band, .hero__badge, .btn, button, a.btn,
+  .toy-card img, .combo img, .hero img {
+    transition: none !important;
+  }
+}
