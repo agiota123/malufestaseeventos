@@ -198,7 +198,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     links: [
       { rel: "canonical", href: `${SITE_URL}/` },
-      { rel: "preload", href: "/assets/malu-playground-hd.webp", as: "image", fetchPriority: "high" },
+      { rel: "preload", href: brandLogo.url, as: "image", fetchPriority: "high" },
     ],
     meta: [
       { title: HOME_TITLE },
@@ -398,7 +398,7 @@ function Index() {
           </div>
           <div className="malu-intro__content">
             <span className="malu-intro__eyebrow">A SUA FESTA COMEÇA AQUI</span>
-            <img className="malu-intro__logo" src={brandLogo.url} alt="MALU Festas e Eventos" />
+            <img className="malu-intro__logo" src={brandLogo.url} width="400" height="254" alt="MALU Festas e Eventos" loading="eager" fetchPriority="high" decoding="async" />
             <span className="malu-intro__line" aria-hidden="true" />
             <span className="malu-intro__tagline">FESTAS <b>•</b> EVENTOS <b>•</b> DIVULGAÇÕES</span>
           </div>
@@ -560,7 +560,7 @@ function Index() {
       <header className="site-header" ref={node => { menuRoot0.current = node; }} data-site-import-scroll-header={"{\"desktop\":{\"added\":[\"is-scrolled\"],\"removed\":[],\"threshold\":648},\"mobile\":{\"added\":[\"is-scrolled\"],\"removed\":[],\"threshold\":645}}"}>
         <div className="wrap">
           <a className="logo" aria-label="MALU – página inicial" href="/">
-            <img src={brandLogo.url} width="400" height="254" alt="MALU Festas, Eventos e Divulgações" />
+            <img src={brandLogo.url} width="400" height="254" alt="MALU Festas, Eventos e Divulgações" loading="eager" fetchPriority="high" decoding="async" />
           </a>
           <nav className={mobileOpen ? "nav is-open" : "nav"} id="nav" aria-label="Menu principal">
             <ul className="nav__list"><li><a className="nav__link" href="#inicio" onClick={() => setMobileOpen(false)}>Início</a></li><li><a className="nav__link" href="#salao" onClick={() => setMobileOpen(false)}>Salão</a></li><li><a className="nav__link" href="#brinquedos" onClick={() => setMobileOpen(false)}>Brinquedos</a></li><li><a className="nav__link" href="#aluguel-brinquedos" onClick={() => setMobileOpen(false)}>Aluguel</a></li><li><a className="nav__link" href="#buffet" onClick={() => setMobileOpen(false)}>Buffet</a></li><li><a className="nav__link" href="#localizacao" onClick={() => setMobileOpen(false)}>Localização</a></li><li><a className="nav__link" href="#contato" onClick={() => setMobileOpen(false)}>Contato</a></li></ul>
@@ -582,8 +582,8 @@ function Index() {
           <div className="hero__trust flex flex-wrap mt-[28px] [font-size:.92rem] [font-weight:500] [gap:10px_18px]"><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-shield" } as any)} /></svg> Wi-Fi grátis</span><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-sparkles" } as any)} /></svg> Som de qualidade</span><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-pin" } as any)} /></svg> Jardim das Oliveiras</span></div>
         </div>
         <div className="hero__art aspect-[1/.92] relative [@media(max-width:860px)]:max-w-[480px] [@media(max-width:860px)]:[margin:0_auto] [@media(max-width:860px)]:[width:100%]">
-          <div className="hero__img hero__img--1 absolute [box-shadow:14px_14px_0_var(--red)] [inset:6%_3%_24%_6%] [overflow:hidden]"><img src={playground.url} width="1254" height="1254" alt="Área de brinquedos do salão MALU com gramado" fetchPriority="high" /></div>
-          <div className="hero__img hero__img--2 aspect-[1] absolute w-[38%] [bottom:0] [box-shadow:10px_10px_0_var(--yellow)] [overflow:hidden] [right:0]"><img src={cama.url} width="1254" height="1254" alt="Cama elástica colorida" loading="lazy" /></div>
+          <div className="hero__img hero__img--1 absolute [box-shadow:14px_14px_0_var(--red)] [inset:6%_3%_24%_6%] [overflow:hidden]"><img src={playground.url} width="1254" height="1254" alt="Área de brinquedos do salão MALU com gramado" fetchPriority="high" decoding="async" /></div>
+          <div className="hero__img hero__img--2 aspect-[1] absolute w-[38%] [bottom:0] [box-shadow:10px_10px_0_var(--yellow)] [overflow:hidden] [right:0]"><img src={cama.url} width="1254" height="1254" alt="Cama elástica colorida" loading="lazy" decoding="async" /></div>
           <div className="hero__img hero__img--3 aspect-[1] bottom-[6%] absolute w-[33%] [box-shadow:10px_10px_0_var(--blue)] [left:0] [overflow:hidden]"><img src={sinuca.url} width="1254" height="1254" alt="Mesa de sinuca" loading="lazy" /></div>
           <div className="hero__badge hero__badge--b items-center bottom-[2%] flex gap-[10px] left-[34%] absolute [box-shadow:5px_5px_0_var(--green)] [font-size:.85rem] [line-height:1.25] [padding:10px_14px] [z-index:3]"><span className="dd-ico c-green"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-star" } as any)} /></svg></span><span><strong>Nota 4.9</strong>no Google</span></div>
         </div>
