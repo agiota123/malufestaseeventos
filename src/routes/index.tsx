@@ -203,7 +203,10 @@ const HOME_STRUCTURED_DATA = {
 // GEO: inserir código de verificação do Google Search Console em google-site-verification quando fornecido.
 export const Route = createFileRoute("/")({
   head: () => ({
-    links: [{ rel: "canonical", href: `${SITE_URL}/` }],
+    links: [
+      { rel: "canonical", href: `${SITE_URL}/` },
+      { rel: "preload", href: "/assets/malu-playground-hd.webp", as: "image", fetchPriority: "high" },
+    ],
     meta: [
       { title: HOME_TITLE },
       { name: "description", content: HOME_META_DESCRIPTION },
