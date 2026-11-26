@@ -621,3 +621,12 @@ button:active {
 @keyframes malu-balloon-float { 0%,100%{translate:0 0} 50%{translate:0 -9px} }
 @keyframes malu-blower-pop { 0%{opacity:0;scale:.2} 65%{opacity:1;scale:1.12} 100%{opacity:1;scale:1} }
 @media (prefers-reduced-motion:reduce) { .malu-intro__balloon,.malu-intro__blower { animation:none!important;opacity:1; } }
+
+
+/* Hero: tipografia cartoonesca da identidade MALU */
+.hero__text h1 {
+  font-family: "Baloo 2", var(--font), system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: -.035em;
+  line-height: 1.12;
+}
