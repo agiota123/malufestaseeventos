@@ -212,7 +212,7 @@ export const Route = createFileRoute("/")({
 });
 
 
-type QuoteItem = { name: string; href: string; image: string; quantity: number };
+type QuoteItem = { name: string; href: string; image: string; quantity: number; price?: number | null };
 const QuoteContext = createContext<{
   items: QuoteItem[];
   add: (event: MouseEvent<HTMLButtonElement>) => void;
@@ -268,13 +268,29 @@ function Index() {
   }, [introVisible, mobileOpen, drawerOpen]);
   const returnFocus = useRef<HTMLElement | null>(null);
   const total = items.reduce((sum, item) => sum + item.quantity, 0);
+  const subtotal = items.reduce((sum, item) => sum + (typeof item.price === "number" ? item.price * item.quantity : 0), 0);
+  const pendingPriceItems = items.filter(item => typeof item.price !== "number").length;
+  const formatCurrency = (value: number) => value.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
   useEffect(() => {
     try {
       const saved: unknown = JSON.parse(sessionStorage.getItem("tio-titi-quote") || "[]");
-      if (Array.isArray(saved)) setItems(saved.filter((item): item is QuoteItem =>
-        typeof item?.name === "string" && typeof item?.href === "string" &&
-        (item.href.startsWith("/brinquedos/") || item.href.startsWith("#aluguel-brinquedos")) && typeof item?.image === "string" &&
-        item.image.length > 0 && Number.isInteger(item.quantity) && item.quantity > 0));
+      if (Array.isArray(saved)) {
+        const pricesByName = new Map(Array.from(document.querySelectorAll<HTMLElement>("#aluguel-brinquedos article")).map(card => {
+          const name = card.querySelector<HTMLElement>("h3")?.textContent?.trim() || "";
+          const text = card.querySelector("strong")?.textContent || "";
+          const match = text.match(/R\\$\\s*([\\d.]+,\\d{2})/);
+          const price = match ? Number(match[1].replace(/\\./g, "").replace(",", ".")) : null;
+          return [name, price] as const;
+        }));
+        setItems(saved.filter((item): item is QuoteItem =>
+          typeof item?.name === "string" && typeof item?.href === "string" &&
+          (item.href.startsWith("/brinquedos/") || item.href.startsWith("#aluguel-brinquedos")) && typeof item?.image === "string" &&
+          item.image.length > 0 && Number.isInteger(item.quantity) && item.quantity > 0
+        ).map(item => ({
+          ...item,
+          price: typeof item.price === "number" ? item.price : pricesByName.get(item.name) ?? null,
+        })));
+      }
     } catch { /* A new list is usable even when browser storage is unavailable. */ }
     setReady(true);
   }, []);
@@ -317,8 +333,11 @@ function Index() {
     const name = link?.textContent?.trim() || heading?.textContent?.trim() || "";
     const href = link?.getAttribute("href") || "#aluguel-brinquedos";
     const imageSrc = image?.getAttribute("src") || "";
+    const priceText = card?.querySelector("strong")?.textContent || "";
+    const priceMatch = priceText.match(/R\\$\\s*([\\d.]+,\\d{2})/);
+    const price = priceMatch ? Number(priceMatch[1].replace(/\\./g, "").replace(",", ".")) : null;
     if (!name || !imageSrc) return;
-    addItems([{ name, href, image: imageSrc, quantity: 1 }]);
+    addItems([{ name, href, image: imageSrc, quantity: 1, price }]);
     returnFocus.current = event.currentTarget;
     setMobileOpen(false);
     setOpenMenu0(null);
@@ -623,7 +642,7 @@ function Index() {
         <div className="flex-1 [overflow-y:auto] [padding:18px_20px]" id="drawer-list">
           {items.length ? <ul className="cart-list">{items.map(item => <li className="cart-item" key={item.name}>
             <img src={item.image} alt="" width="64" height="64" />
-            <div><span className="cart-item__name">{item.name}</span></div>
+            <div><span className="cart-item__name">{item.name}</span><span className="cart-item__price">{typeof item.price === "number" ? `${formatCurrency(item.price)} / unidade` : "Preço sob consulta"}</span><strong className="cart-item__subtotal">{typeof item.price === "number" ? formatCurrency(item.price * item.quantity) : "A combinar"}</strong></div>
             <div className="cart-item__ctrl"><span className="qty">
               <button type="button" onClick={() => changeQuantity(item.name, -1)} aria-label="Diminuir quantidade"><svg className="icon" aria-hidden="true"><use href="#i-minus" /></svg></button>
               <output aria-live="polite">{item.quantity}</output>
@@ -631,7 +650,7 @@ function Index() {
             </span><button type="button" className="icon-btn" onClick={() => setItems(current => current.filter(existing => existing.name !== item.name))} aria-label={`Remover ${item.name}`}><svg className="icon" aria-hidden="true"><use href="#i-trash" /></svg></button></div>
           </li>)}</ul> : <div className="cart-empty text-center [padding:24px_12px]"><div className="dd-ico c-yellow [margin:0_auto_12px]"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-list" } as any)} /></svg></div><b>Sua lista está vazia</b>Navegue pelo catálogo e clique em "Adicionar ao carrinho" para montar seu orçamento.</div>}
         </div>
-        <div className="drawer__foot grid gap-[10px] [padding:16px_20px_calc(16px_+_env(safe-area-inset-bottom))]"><a className="btn btn--block [width:100%]" href={`https://wa.me/5511947216605?text=${encodeURIComponent("Olá, MALU! Gostaria de um orçamento para os itens abaixo:\\n" + items.map(item => item.name + " — quantidade: " + item.quantity).join("\\n"))}`} target="_blank" rel="noopener"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-send" } as any)} /></svg> Pedir orçamento pelo WhatsApp</a><a className="btn btn--ghost btn--block [width:100%]" href="#aluguel-brinquedos" onClick={closeDrawer}>Continuar escolhendo</a><p>Informe a data, o horário e o local do evento pelo WhatsApp.</p></div>
+        <div className="drawer__foot grid gap-[10px] [padding:16px_20px_calc(16px_+_env(safe-area-inset-bottom))]">{items.length > 0 && <div className="cart-total"><span>Subtotal dos itens com preço</span><strong>{formatCurrency(subtotal)}</strong>{pendingPriceItems > 0 && <small>{pendingPriceItems} {pendingPriceItems === 1 ? "item com preço" : "itens com preço"} sob consulta não incluído(s) na soma.</small>}</div>}<a className="btn btn--block [width:100%]" href={`https://wa.me/5511947216605?text=${encodeURIComponent("Olá, MALU! Gostaria de um orçamento para os itens abaixo:\\n" + items.map(item => item.name + " — quantidade: " + item.quantity + (typeof item.price === "number" ? " — unitário: " + formatCurrency(item.price) + " — subtotal: " + formatCurrency(item.price * item.quantity) : " — preço sob consulta")).join("\\n") + (items.length ? "\\n\\nSubtotal dos itens com preço: " + formatCurrency(subtotal) : ""))}`} target="_blank" rel="noopener"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-send" } as any)} /></svg> Pedir orçamento pelo WhatsApp</a><a className="btn btn--ghost btn--block [width:100%]" href="#aluguel-brinquedos" onClick={closeDrawer}>Continuar escolhendo</a><p>Informe a data, o horário e o local do evento pelo WhatsApp.</p></div>
       </aside>
       <div className={drawerOpen ? "drawer-backdrop is-open fixed [inset:0] [z-index:80]" : "drawer-backdrop fixed invisible [inset:0] [z-index:80]"} onClick={closeDrawer} aria-hidden="true" />
       <a className="wa-float h-[60px] place-items-center w-[60px] [box-shadow:4px_4px_0_var(--ink)]" aria-label="Conversar com a MALU no WhatsApp" href="https://wa.me/5511947216605?text=Ol%C3%A1%2C%20MALU!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20a%20minha%20festa.%20%F0%9F%8E%88" rel="noopener" target="_blank">
