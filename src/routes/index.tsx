@@ -11,7 +11,7 @@ const sinuca = { url: "/assets/malu-sinuca-hd.webp" };
 const som = { url: "/assets/malu-som-hd.webp" };
 const banheiro = { url: "/assets/malu-banheiro-hd.webp" };
 const cama = { url: "/assets/malu-cama-elastica-hd.webp" };
-const playground = { url: "/assets/malu-playground-hd.webp" };
+const playground = { url: "/assets/IMG-20261126-WA0034.jpg" };
 
 
 const HOME_STRUCTURED_DATA = {
@@ -582,7 +582,7 @@ function Index() {
           <div className="hero__trust flex flex-wrap mt-[28px] [font-size:.92rem] [font-weight:500] [gap:10px_18px]"><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-shield" } as any)} /></svg> Wi-Fi grátis</span><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-sparkles" } as any)} /></svg> Som de qualidade</span><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-pin" } as any)} /></svg> Jardim das Oliveiras</span></div>
         </div>
         <div className="hero__art aspect-[1/.92] relative [@media(max-width:860px)]:max-w-[480px] [@media(max-width:860px)]:[margin:0_auto] [@media(max-width:860px)]:[width:100%]">
-          <div className="hero__img hero__img--1 absolute [box-shadow:14px_14px_0_var(--red)] [inset:6%_3%_24%_6%] [overflow:hidden]"><img src={playground.url} width="1254" height="1254" alt="Área de brinquedos do salão MALU com gramado" fetchPriority="high" decoding="async" /></div>
+          <div className="hero__img hero__img--1 absolute [box-shadow:14px_14px_0_var(--red)] [inset:6%_3%_24%_6%] [overflow:hidden]"><img src={playground.url} width="1254" height="1254" alt="Dono da MALU Festas e Eventos ao lado dos brinquedos infláveis" fetchPriority="high" decoding="async" /></div>
           <div className="hero__img hero__img--2 aspect-[1] absolute w-[38%] [bottom:0] [box-shadow:10px_10px_0_var(--yellow)] [overflow:hidden] [right:0]"><img src={cama.url} width="1254" height="1254" alt="Cama elástica colorida" loading="lazy" decoding="async" /></div>
           <div className="hero__img hero__img--3 aspect-[1] bottom-[6%] absolute w-[33%] [box-shadow:10px_10px_0_var(--blue)] [left:0] [overflow:hidden]"><img src={sinuca.url} width="1254" height="1254" alt="Mesa de sinuca" loading="lazy" /></div>
           <div className="hero__badge hero__badge--b items-center bottom-[2%] flex gap-[10px] left-[34%] absolute [box-shadow:5px_5px_0_var(--green)] [font-size:.85rem] [line-height:1.25] [padding:10px_14px] [z-index:3]"><span className="dd-ico c-green"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-star" } as any)} /></svg></span><span><strong>Nota 4.9</strong>no Google</span></div>
