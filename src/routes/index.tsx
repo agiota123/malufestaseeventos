@@ -6,6 +6,7 @@ import repairCSS from "../styles/import-repairs.css?raw";
 import { SITE_URL, BRAND_NAME, HOME_TITLE, HOME_META_DESCRIPTION, OG_IMAGE_URL } from "../lib/site";
 import capturedCSS from "../styles/pages/index.css?raw";
 const logo = { url: "/assets/malu-logo.webp" };
+const brandLogo = { url: "/assets/file_00000000e9ac820e91c8c324bf226277.png" };
 const sinuca = { url: "/assets/malu-sinuca-hd.webp" };
 const som = { url: "/assets/malu-som-hd.webp" };
 const banheiro = { url: "/assets/malu-banheiro-hd.webp" };
@@ -22,8 +23,8 @@ const HOME_STRUCTURED_DATA = {
       "name": "MALU Festas e Eventos",
       "alternateName": "MALU",
       "url": `${SITE_URL}/`,
-      "logo": `${SITE_URL}/assets/malu-logo.webp`,
-      "image": `${SITE_URL}/assets/malu-logo.webp`,
+      "logo": `${SITE_URL}${brandLogo.url}`,
+      "image": `${SITE_URL}${brandLogo.url}`,
       "description": "MALU Festas e Eventos é um salão de festas com buffet, brinquedos e estrutura para eventos familiares no Jardim das Oliveiras, em Itapecerica da Serra (SP). O espaço reúne piscina, churrasqueira, Wi-Fi, som e opções de cardápio para celebrações no local.",
       "telephone": "+55-11-94721-6605",
       "address": {
@@ -387,7 +388,7 @@ function Index() {
           </div>
           <div className="malu-intro__content">
             <span className="malu-intro__eyebrow">A SUA FESTA COMEÇA AQUI</span>
-            <img className="malu-intro__logo" src={logo.url} alt="MALU Festas e Eventos" />
+            <img className="malu-intro__logo" src={brandLogo.url} alt="MALU Festas e Eventos" />
             <span className="malu-intro__line" aria-hidden="true" />
             <span className="malu-intro__tagline">FESTAS <b>•</b> EVENTOS <b>•</b> DIVULGAÇÕES</span>
           </div>
@@ -549,7 +550,7 @@ function Index() {
       <header className="site-header" ref={node => { menuRoot0.current = node; }} data-site-import-scroll-header={"{\"desktop\":{\"added\":[\"is-scrolled\"],\"removed\":[],\"threshold\":648},\"mobile\":{\"added\":[\"is-scrolled\"],\"removed\":[],\"threshold\":645}}"}>
         <div className="wrap">
           <a className="logo" aria-label="MALU – página inicial" href="/">
-            <img src={logo.url} width="400" height="254" alt="MALU Festas, Eventos e Divulgações" />
+            <img src={brandLogo.url} width="400" height="254" alt="MALU Festas, Eventos e Divulgações" />
           </a>
           <nav className={mobileOpen ? "nav is-open" : "nav"} id="nav" aria-label="Menu principal">
             <ul className="nav__list"><li><a className="nav__link" href="#inicio" onClick={() => setMobileOpen(false)}>Início</a></li><li><a className="nav__link" href="#salao" onClick={() => setMobileOpen(false)}>Salão</a></li><li><a className="nav__link" href="#brinquedos" onClick={() => setMobileOpen(false)}>Brinquedos</a></li><li><a className="nav__link" href="#buffet" onClick={() => setMobileOpen(false)}>Buffet</a></li><li><a className="nav__link" href="#localizacao" onClick={() => setMobileOpen(false)}>Localização</a></li><li><a className="nav__link" href="#contato" onClick={() => setMobileOpen(false)}>Contato</a></li></ul>
