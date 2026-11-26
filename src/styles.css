@@ -440,3 +440,56 @@ button:active {
     will-change: auto;
   }
 }
+
+
+/* MALU — abertura rápida com a identidade da marca */
+.malu-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 46%, oklch(1 0 0 / .82), transparent 34%),
+    var(--site-import-background, #fff7f4);
+  animation: malu-intro-exit 1.4s cubic-bezier(.7, 0, .2, 1) forwards;
+  pointer-events: none;
+}
+.malu-intro__logo {
+  display: block;
+  width: min( min(64vw, 280px), 280px);
+  max-height: 30vh;
+  object-fit: contain;
+  opacity: 0;
+  filter: drop-shadow(0 12px 22px oklch(0.35 0.08 300 / .14));
+  animation: malu-intro-logo 850ms cubic-bezier(.18, .82, .25, 1) 100ms forwards;
+}
+.malu-intro__line {
+  position: absolute;
+  left: 50%;
+  top: calc(50% + 86px);
+  width: 0;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--malu-pink);
+  transform: translateX(-50%);
+  animation: malu-intro-line 650ms ease-out 300ms forwards;
+}
+@keyframes malu-intro-logo {
+  0% { opacity: 0; transform: translateY(16px) scale(.72) rotate(-5deg); }
+  65% { opacity: 1; transform: translateY(-3px) scale(1.045) rotate(1deg); }
+  100% { opacity: 1; transform: translateY(0) scale(1) rotate(0); }
+}
+@keyframes malu-intro-line {
+  to { width: min(34vw, 116px); }
+}
+@keyframes malu-intro-exit {
+  0%, 72% { opacity: 1; visibility: visible; }
+  100% { opacity: 0; visibility: hidden; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .malu-intro { animation-duration: 1ms; }
+  .malu-intro__logo { opacity: 1; animation: none; }
+  .malu-intro__line { animation: none; width: 72px; }
+}
