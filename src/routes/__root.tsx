@@ -82,10 +82,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "MA.lu Festas e Eventos" },
+      { title: "MALU Festas e Eventos" },
       { name: "description", content: "Salão de festas com buffet e brinquedos." },
-      { name: "author", content: "MA.lu" },
-      { property: "og:title", content: "MA.lu Festas e Eventos" },
+      { name: "author", content: "MALU" },
+      { property: "og:title", content: "MALU Festas e Eventos" },
       { property: "og:description", content: "Salão de festas com buffet e brinquedos." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
