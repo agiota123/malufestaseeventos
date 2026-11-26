@@ -442,7 +442,7 @@ button:active {
 }
 
 
-/* MALU — abertura rápida com a identidade da marca */
+/* MALU — abertura comemorativa */
 .malu-intro {
   position: fixed;
   inset: 0;
@@ -450,45 +450,129 @@ button:active {
   display: grid;
   place-items: center;
   overflow: hidden;
+  isolation: isolate;
   background: #fffaf3;
-  animation: malu-intro-exit 1.4s cubic-bezier(.7, 0, .2, 1) forwards;
+  animation: malu-intro-exit 2.5s cubic-bezier(.72, 0, .24, 1) forwards;
   pointer-events: none;
+}
+.malu-intro__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(90vw, 440px);
+  animation: malu-content-arrive 900ms cubic-bezier(.16, 1, .3, 1) 180ms both;
+}
+.malu-intro__eyebrow {
+  margin-bottom: 18px;
+  color: var(--malu-purple);
+  font: 800 10px/1.2 Lexend, system-ui, sans-serif;
+  letter-spacing: .24em;
+  opacity: 0;
+  animation: malu-eyebrow-in 550ms ease-out 500ms forwards;
 }
 .malu-intro__logo {
   display: block;
-  mix-blend-mode: multiply;
-  width: min( min(64vw, 280px), 280px);
-  max-height: 30vh;
+  width: min( min(72vw, 320px), 320px);
+  max-height: 32vh;
   object-fit: contain;
-  opacity: 0;
-  filter: drop-shadow(0 12px 22px oklch(0.35 0.08 300 / .14));
-  animation: malu-intro-logo 850ms cubic-bezier(.18, .82, .25, 1) 100ms forwards;
+  mix-blend-mode: multiply;
+  filter: drop-shadow(0 12px 22px oklch(0.35 0.08 300 / .12));
+  animation: malu-logo-pop 950ms cubic-bezier(.16, 1, .3, 1) 280ms both;
 }
 .malu-intro__line {
+  display: block;
+  width: 0;
+  height: 4px;
+  margin-top: 19px;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--malu-cyan), var(--malu-pink), var(--malu-yellow), var(--malu-purple));
+  animation: malu-line-grow 700ms cubic-bezier(.16, 1, .3, 1) 850ms forwards;
+}
+.malu-intro__tagline {
+  margin-top: 13px;
+  color: var(--malu-ink);
+  font: 800 9px/1.4 Lexend, system-ui, sans-serif;
+  letter-spacing: .12em;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: malu-tagline-in 550ms ease-out 1050ms forwards;
+}
+.malu-intro__tagline b { color: var(--malu-pink); padding: 0 3px; }
+.malu-intro__burst {
+  position: absolute;
+  z-index: 0;
+  width: min(82vw, 520px);
+  aspect-ratio: 1;
+  border: 1px solid oklch(0.7 0.12 350 / .18);
+  border-radius: 50%;
+  box-shadow: 0 0 0 22px oklch(0.7 0.12 350 / .045), 0 0 0 52px oklch(0.7 0.12 350 / .035);
+  animation: malu-burst 1.8s cubic-bezier(.16, 1, .3, 1) 150ms both;
+}
+.malu-intro__confetti { position: absolute; inset: 0; overflow: hidden; z-index: 1; }
+.malu-intro__confetti i {
   position: absolute;
   left: 50%;
-  top: calc(50% + 86px);
-  width: 0;
-  height: 3px;
-  border-radius: 999px;
+  top: 50%;
+  width: 9px;
+  height: 15px;
+  border-radius: 3px;
+  opacity: 0;
   background: var(--malu-pink);
-  transform: translateX(-50%);
-  animation: malu-intro-line 650ms ease-out 300ms forwards;
+  animation: malu-confetti 1.5s cubic-bezier(.12, .7, .25, 1) both;
 }
-@keyframes malu-intro-logo {
-  0% { opacity: 0; transform: translateY(16px) scale(.72) rotate(-5deg); }
-  65% { opacity: 1; transform: translateY(-3px) scale(1.045) rotate(1deg); }
-  100% { opacity: 1; transform: translateY(0) scale(1) rotate(0); }
+.malu-intro__confetti i:nth-child(1) { --x: -38vw; --y: -24vh; --r: 35deg; background: var(--malu-cyan); animation-delay: .15s; }
+.malu-intro__confetti i:nth-child(2) { --x: 34vw; --y: -29vh; --r: 80deg; background: var(--malu-yellow); animation-delay: .22s; }
+.malu-intro__confetti i:nth-child(3) { --x: -42vw; --y: 18vh; --r: 120deg; background: var(--malu-purple); animation-delay: .28s; }
+.malu-intro__confetti i:nth-child(4) { --x: 40vw; --y: 20vh; --r: -40deg; background: var(--malu-pink); animation-delay: .18s; }
+.malu-intro__confetti i:nth-child(5) { --x: -22vw; --y: -38vh; --r: 70deg; background: var(--malu-yellow); animation-delay: .32s; }
+.malu-intro__confetti i:nth-child(6) { --x: 24vw; --y: 37vh; --r: 145deg; background: var(--malu-cyan); animation-delay: .25s; }
+.malu-intro__confetti i:nth-child(7) { --x: -8vw; --y: 42vh; --r: 25deg; background: var(--malu-purple); animation-delay: .3s; }
+.malu-intro__confetti i:nth-child(8) { --x: 9vw; --y: -42vh; --r: -65deg; background: var(--malu-pink); animation-delay: .2s; }
+.malu-intro__confetti i:nth-child(9) { --x: -46vw; --y: -4vh; --r: 90deg; background: var(--malu-yellow); animation-delay: .36s; }
+.malu-intro__confetti i:nth-child(10) { --x: 46vw; --y: -6vh; --r: 20deg; background: var(--malu-cyan); animation-delay: .26s; }
+.malu-intro__confetti i:nth-child(11) { --x: -28vw; --y: 33vh; --r: 115deg; background: var(--malu-pink); animation-delay: .34s; }
+.malu-intro__confetti i:nth-child(12) { --x: 30vw; --y: -37vh; --r: -20deg; background: var(--malu-purple); animation-delay: .3s; }
+.malu-intro__confetti i:nth-child(13) { --x: 17vw; --y: 43vh; --r: 60deg; background: var(--malu-yellow); animation-delay: .38s; }
+.malu-intro__confetti i:nth-child(14) { --x: -16vw; --y: -43vh; --r: 140deg; background: var(--malu-cyan); animation-delay: .24s; }
+@keyframes malu-content-arrive {
+  from { opacity: 0; transform: translateY(24px) scale(.94); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
-@keyframes malu-intro-line {
-  to { width: min(34vw, 116px); }
+@keyframes malu-eyebrow-in { to { opacity: 1; } }
+@keyframes malu-logo-pop {
+  0% { opacity: 0; transform: scale(.58) rotate(-7deg); }
+  65% { opacity: 1; transform: scale(1.06) rotate(2deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0); }
+}
+@keyframes malu-line-grow { to { width: min(42vw, 170px); } }
+@keyframes malu-tagline-in { to { opacity: 1; transform: translateY(0); } }
+@keyframes malu-burst {
+  0% { opacity: 0; transform: scale(.55); }
+  55% { opacity: 1; transform: scale(1.04); }
+  100% { opacity: .8; transform: scale(1); }
+}
+@keyframes malu-confetti {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(.2) rotate(0); }
+  18% { opacity: 1; }
+  100% { opacity: .75; transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y))) scale(1) rotate(var(--r)); }
 }
 @keyframes malu-intro-exit {
-  0%, 72% { opacity: 1; visibility: visible; }
+  0%, 82% { opacity: 1; visibility: visible; }
   100% { opacity: 0; visibility: hidden; }
 }
+@media (max-width: 480px) {
+  .malu-intro__eyebrow { font-size: 9px; }
+  .malu-intro__tagline { font-size: 8px; }
+}
 @media (prefers-reduced-motion: reduce) {
-  .malu-intro { animation-duration: 1ms; }
-  .malu-intro__logo { opacity: 1; animation: none; }
-  .malu-intro__line { animation: none; width: 72px; }
+  .malu-intro, .malu-intro__content, .malu-intro__eyebrow,
+  .malu-intro__logo, .malu-intro__line, .malu-intro__tagline,
+  .malu-intro__burst, .malu-intro__confetti i {
+    animation-duration: 1ms !important;
+    animation-delay: 0ms !important;
+  }
+  .malu-intro__eyebrow, .malu-intro__tagline { opacity: 1; }
+  .malu-intro__line { width: 120px; }
 }
