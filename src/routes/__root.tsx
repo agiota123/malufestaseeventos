@@ -90,7 +90,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "MALU Festas e Eventos" },
       { name: "description", content: "Salão de festas com buffet, brinquedos e estrutura para eventos familiares em Itapecerica da Serra, SP." },
       { name: "author", content: "MALU Festas e Eventos" },
-      { name: "robots", content: "index,follow" },
       { name: "theme-color", content: "#fff8e8" },
     ],
     links: [
