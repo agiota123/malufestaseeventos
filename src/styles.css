@@ -244,3 +244,83 @@
   --color-malu-wa: var(--malu-wa);
   --font-display: "Baloo 2", system-ui, sans-serif;
 }
+
+
+/* MALU — microinterações e movimento suave em todo o site */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+@keyframes malu-fade-up {
+  from { opacity: 0; transform: translate3d(0, 16px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@keyframes malu-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Entrada discreta das áreas principais */
+main > section,
+main > div > section,
+main section[id] {
+  animation: malu-fade-up 650ms cubic-bezier(.2,.7,.2,1) both;
+}
+
+/* Respostas visuais consistentes ao interagir */
+a,
+button,
+[role="button"],
+input,
+select,
+textarea {
+  transition:
+    color 220ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    opacity 220ms ease,
+    transform 220ms cubic-bezier(.2,.7,.2,1);
+}
+
+a:active,
+button:active,
+[role="button"]:active {
+  transform: translateY(1px) scale(.985);
+}
+
+button:hover,
+[role="button"]:hover {
+  filter: brightness(1.035);
+}
+
+/* Imagens e cartões ganham resposta sutil sem alterar o layout */
+img {
+  transition: transform 420ms cubic-bezier(.2,.7,.2,1), filter 300ms ease;
+}
+
+a img:hover,
+button img:hover {
+  transform: scale(1.025);
+}
+
+:focus-visible {
+  outline: 3px solid var(--malu-cyan);
+  outline-offset: 3px;
+}
+
+/* Respeita quem prefere menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
