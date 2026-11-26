@@ -6,7 +6,7 @@ import repairCSS from "../styles/import-repairs.css?raw";
 import capturedCSS from "../styles/pages/jogos-para-festa.css?raw";
 
 export const Route = createFileRoute("/jogos-para-festa")({
-  head: () => ({ meta: [{"title": "Aluguel de Jogos para Festa em Brasília | Fliperama e mais"}, {"name": "description", "content": "Aluguel de Jogos para Festa em Brasília | Fliperama e mais para festas no DF e Entorno, com entrega, montagem e monitor incluso."}, {"property": "og:title", "content": "Aluguel de Jogos para Festa em Brasília | Fliperama e mais"}, {"property": "og:description", "content": "Aluguel de Jogos para Festa em Brasília | Fliperama e mais para festas no DF e Entorno, com entrega, montagem e monitor incluso."}, {"property": "og:type", "content": "website"}, {"name": "twitter:card", "content": "summary_large_image"}] }),
+  head: () => ({ meta: [{ name: "robots", content: "noindex,follow" },{"title": "Aluguel de Jogos para Festa em Brasília | Fliperama e mais"}, {"name": "description", "content": "Aluguel de Jogos para Festa em Brasília | Fliperama e mais para festas no DF e Entorno, com entrega, montagem e monitor incluso."}, {"property": "og:title", "content": "Aluguel de Jogos para Festa em Brasília | Fliperama e mais"}, {"property": "og:description", "content": "Aluguel de Jogos para Festa em Brasília | Fliperama e mais para festas no DF e Entorno, com entrega, montagem e monitor incluso."}, {"property": "og:type", "content": "website"}, {"name": "twitter:card", "content": "summary_large_image"}] }),
   staticData: { importedDocument: { html: { "className": "js", "lang": "pt-BR" }, body: {  } } },
   component: Index,
 });
