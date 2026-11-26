@@ -238,7 +238,7 @@ function Index() {
   const [ready, setReady] = useState(false);
   const [introVisible, setIntroVisible] = useState(true);
   useEffect(() => {
-    const timer = window.setTimeout(() => setIntroVisible(false), 2500);
+    const timer = window.setTimeout(() => setIntroVisible(false), 2200);
     return () => window.clearTimeout(timer);
   }, []);
   const returnFocus = useRef<HTMLElement | null>(null);
