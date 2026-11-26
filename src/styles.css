@@ -452,7 +452,7 @@ button:active {
   overflow: hidden;
   isolation: isolate;
   background: #fffaf3;
-  animation: malu-intro-exit 2s cubic-bezier(.72, 0, .24, 1) forwards;
+  animation: malu-intro-exit 3s cubic-bezier(.72, 0, .24, 1) forwards;
   pointer-events: auto;
 }
 .malu-intro__welcome {
@@ -464,7 +464,7 @@ button:active {
   margin: 0;
   color: var(--malu-purple);
   text-align: center;
-  font: 900 clamp(17px, 2.8vw, 25px)/1.3 Lexend, system-ui, sans-serif;
+  font: 900 clamp(17px, 2.8vw, 25px)/1.3 var(--font), Lexend, system-ui, sans-serif;
   letter-spacing: -.035em;
   text-wrap: balance;
   text-shadow: 0 2px 0 rgba(255,255,255,.85);
