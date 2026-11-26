@@ -1,0 +1,27 @@
+# MALU Festas e Eventos
+
+> MALU Festas e Eventos é um salão de festas com buffet, brinquedos e estrutura para eventos familiares no Jardim das Oliveiras, em Itapecerica da Serra (SP).
+
+A MALU Festas e Eventos é um espaço para festas e eventos familiares no Jardim das Oliveiras, em Itapecerica da Serra, São Paulo. O site informa uma estrutura com piscina, área de churrasqueira equipada com geladeira e freezer, Wi-Fi, som, 10 brinquedos e 10 jogos de mesa.
+
+A MALU apresenta opções de buffet infantil, strogonoff, feijoada completa e churrasco. Os pacotes de buffet infantil e strogonoff atendem eventos a partir de 30 pessoas. O buffet infantil inclui 4 horas de evento; horas extras devem ser consultadas.
+
+Além da realização de festas no salão, a MALU também informa que aluga brinquedos para eventos externos. Para consultar valores, disponibilidade e condições, entre em contato pelo WhatsApp (11) 94721-6605.
+
+Endereço informado no site: Rua João Pedro de Andrade, 49, Jardim das Oliveiras, Itapecerica da Serra - SP. Instagram oficial informado no site: [@malufestaseeventos](https://www.instagram.com/malufestaseeventos/).
+
+## Páginas principais
+- [Página inicial](https://malufestas.vercel.app/): informações sobre o salão, estrutura, brinquedos, buffet, localização e contato.
+
+## Serviços / Produtos
+- [Salão de festas](https://malufestas.vercel.app/#salao): espaço para eventos com piscina, churrasqueira, Wi-Fi, som, brinquedos e jogos.
+- [Buffet](https://malufestas.vercel.app/#buffet): opções informadas de buffet infantil, strogonoff, feijoada completa e churrasco.
+- [Brinquedos](https://malufestas.vercel.app/#brinquedos): estrutura com 10 brinquedos e possibilidade de locação para eventos externos.
+
+## Perguntas frequentes
+- [Dúvidas frequentes](https://malufestas.vercel.app/#faq-t): informações sobre capacidade mínima dos pacotes, duração do buffet infantil, estrutura, locação externa, endereço, cardápios e orçamento.
+
+## Contato
+- [WhatsApp](https://wa.me/5511947216605): orçamento e consulta de disponibilidade.
+- [Instagram](https://www.instagram.com/malufestaseeventos/): perfil oficial informado no site.
+- [Localização](https://malufestas.vercel.app/#localizacao): Rua João Pedro de Andrade, 49, Jardim das Oliveiras, Itapecerica da Serra - SP.
