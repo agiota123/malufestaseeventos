@@ -536,7 +536,7 @@ function Index() {
 }
 
 
-{/* <!-- GEO: inserir dado real aqui --> */} {/* história, ano de fundação, responsáveis pela empresa e dados completos do Perfil da Empresa no Google */}
+/* <!-- GEO: inserir dado real aqui --> história, ano de fundação, responsáveis pela empresa e dados completos do Perfil da Empresa no Google. */
 function ImportedFooter() {
   return (
     <footer className="site-footer pt-[20px] relative [font-size:.94rem] [margin-top:0]"><div className="wrap footer-grid grid">
