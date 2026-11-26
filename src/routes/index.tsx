@@ -591,7 +591,6 @@ function useImportedLayout() {
       revealItems.forEach((item) => item.classList.add("is-in"));
     }
     const scrollingAreas = Array.from(document.querySelectorAll<HTMLElement>("[data-site-import-scroll-root]"));
-    const scrollingAreas = Array.from(document.querySelectorAll<HTMLElement>("[data-site-import-scroll-root]"));
     const scrollTop = () =>
       scrollingAreas.find(
         (node) =>
