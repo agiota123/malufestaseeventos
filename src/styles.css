@@ -456,6 +456,7 @@ button:active {
 }
 .malu-intro__logo {
   display: block;
+  mix-blend-mode: multiply;
   width: min( min(64vw, 280px), 280px);
   max-height: 30vh;
   object-fit: contain;
