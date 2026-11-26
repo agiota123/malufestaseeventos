@@ -413,3 +413,24 @@ button:active {
     transition: none !important;
   }
 }
+
+
+/* Scroll reveal — conteúdo aparece conforme entra na tela */
+.js .reveal {
+  opacity: 0;
+  transform: translate3d(0, 34px, 0) scale(.985);
+  transition: opacity .75s cubic-bezier(.2,.7,.2,1), transform .75s cubic-bezier(.2,.7,.2,1);
+  will-change: opacity, transform;
+}
+.js .reveal.is-in {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal, .js .reveal.is-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    will-change: auto;
+  }
+}
