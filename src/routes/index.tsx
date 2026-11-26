@@ -363,6 +363,13 @@ function Index() {
   const menuRoot0 = useRef<Element | null>(null);
   const menuRoot1 = useRef<Element | null>(null);
   useEffect(() => {
+    const header = menuRoot0.current;
+    if (!header) return;
+    if (mobileOpen) header.setAttribute("data-import-menu-open", "true");
+    else header.removeAttribute("data-import-menu-open");
+    return () => header.removeAttribute("data-import-menu-open");
+  }, [mobileOpen]);
+  useEffect(() => {
     if (!openMenu0) return;
     const closeOutside = (event: globalThis.MouseEvent) => {
       if (event.target instanceof Node && ![menuRoot0.current, menuRoot1.current].some(root => root?.contains(event.target as Node))) setOpenMenu0(null);
