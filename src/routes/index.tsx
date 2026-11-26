@@ -238,9 +238,26 @@ function Index() {
   const [ready, setReady] = useState(false);
   const [introVisible, setIntroVisible] = useState(true);
   useEffect(() => {
+    if (!introVisible) return;
+    const root = document.documentElement;
+    const body = document.body;
+    const previousRootOverflow = root.style.overflow;
+    const previousBodyOverflow = body.style.overflow;
+    const previousRootOverscroll = root.style.overscrollBehavior;
+    const previousBodyOverscroll = body.style.overscrollBehavior;
+    root.style.overflow = "hidden";
+    body.style.overflow = "hidden";
+    root.style.overscrollBehavior = "none";
+    body.style.overscrollBehavior = "none";
     const timer = window.setTimeout(() => setIntroVisible(false), 2000);
-    return () => window.clearTimeout(timer);
-  }, []);
+    return () => {
+      window.clearTimeout(timer);
+      root.style.overflow = previousRootOverflow;
+      body.style.overflow = previousBodyOverflow;
+      root.style.overscrollBehavior = previousRootOverscroll;
+      body.style.overscrollBehavior = previousBodyOverscroll;
+    };
+  }, [introVisible]);
   const returnFocus = useRef<HTMLElement | null>(null);
   const total = items.reduce((sum, item) => sum + item.quantity, 0);
   useEffect(() => {
@@ -324,6 +341,29 @@ function Index() {
       <style>{capturedCSS + repairCSS}</style>
       {introVisible && (
         <div className="malu-intro" role="status" aria-label="MALU Festas e Eventos">
+          <button
+            type="button"
+            onClick={() => setIntroVisible(false)}
+            aria-label="Pular animação de entrada"
+            style={{
+              position: "absolute",
+              top: "14px",
+              right: "14px",
+              zIndex: 5,
+              padding: "6px 10px",
+              border: "1px solid rgba(255,255,255,.38)",
+              borderRadius: "999px",
+              background: "rgba(20,24,61,.24)",
+              color: "#fff",
+              fontSize: "11px",
+              fontWeight: 600,
+              letterSpacing: ".02em",
+              cursor: "pointer",
+              opacity: .78,
+            }}
+          >
+            Pular
+          </button>
           <div className="malu-intro__burst" aria-hidden="true" />
           <div className="malu-intro__confetti" aria-hidden="true">
             {Array.from({ length: 14 }, (_, i) => <i key={i} />)}
