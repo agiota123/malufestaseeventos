@@ -6,7 +6,7 @@ import repairCSS from "../styles/import-repairs.css?raw";
 import capturedCSS from "../styles/pages/brinquedos.css?raw";
 
 export const Route = createFileRoute("/brinquedos")({
-  head: () => ({ meta: [{"title": "Brinquedos para Alugar: Catálogo Completo | Tio Titi"}, {"name": "description", "content": "Explore o catálogo completo de brinquedos da Tio Titi para festas em Brasília: infláveis, aquáticos, jogos e opções para os pequenos."}, {"property": "og:title", "content": "Brinquedos para Alugar: Catálogo Completo | Tio Titi"}, {"property": "og:description", "content": "Explore o catálogo completo de brinquedos da Tio Titi para festas em Brasília: infláveis, aquáticos, jogos e opções para os pequenos."}, {"property": "og:type", "content": "website"}, {"name": "twitter:card", "content": "summary_large_image"}] }),
+  head: () => ({ meta: [{ name: "robots", content: "noindex,follow" },{"title": "Brinquedos para Alugar: Catálogo Completo | Tio Titi"}, {"name": "description", "content": "Explore o catálogo completo de brinquedos da Tio Titi para festas em Brasília: infláveis, aquáticos, jogos e opções para os pequenos."}, {"property": "og:title", "content": "Brinquedos para Alugar: Catálogo Completo | Tio Titi"}, {"property": "og:description", "content": "Explore o catálogo completo de brinquedos da Tio Titi para festas em Brasília: infláveis, aquáticos, jogos e opções para os pequenos."}, {"property": "og:type", "content": "website"}, {"name": "twitter:card", "content": "summary_large_image"}] }),
   staticData: { importedDocument: { html: { "className": "js", "lang": "pt-BR" }, body: {  } } },
   component: Index,
 });
