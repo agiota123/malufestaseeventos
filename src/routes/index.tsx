@@ -322,7 +322,11 @@ function Index() {
   }, [drawerOpen, mobileOpen]);
   const addItems = (incoming: QuoteItem[]) => setItems(current => {
     const next = [...current];
-    for (const item of incoming) if (!next.some(existing => existing.name === item.name)) next.push(item);
+    for (const item of incoming) {
+      const existingIndex = next.findIndex(existing => existing.name === item.name);
+      if (existingIndex >= 0) next[existingIndex] = { ...next[existingIndex], quantity: next[existingIndex].quantity + item.quantity };
+      else next.push(item);
+    }
     return next;
   });
   const add = (event: MouseEvent<HTMLButtonElement>) => {
