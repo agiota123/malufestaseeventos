@@ -415,20 +415,26 @@ button:active {
 }
 
 
-/* Scroll reveal — conteúdo aparece conforme entra na tela */
+/* Scroll reveal — entrada progressiva dos elementos ao chegar na viewport */
 .js .reveal {
   opacity: 0;
-  transform: translate3d(0, 34px, 0) scale(.985);
-  transition: opacity .75s cubic-bezier(.2,.7,.2,1), transform .75s cubic-bezier(.2,.7,.2,1);
-  will-change: opacity, transform;
+  filter: blur(7px);
+  transform: translate3d(0, 48px, 0) scale(.975);
+  transition:
+    opacity 850ms cubic-bezier(.2,.75,.25,1),
+    transform 850ms cubic-bezier(.2,.75,.25,1),
+    filter 850ms cubic-bezier(.2,.75,.25,1);
+  will-change: opacity, transform, filter;
 }
 .js .reveal.is-in {
   opacity: 1;
+  filter: blur(0);
   transform: translate3d(0, 0, 0) scale(1);
 }
 @media (prefers-reduced-motion: reduce) {
   .js .reveal, .js .reveal.is-in {
     opacity: 1;
+    filter: none;
     transform: none;
     transition: none;
     will-change: auto;
