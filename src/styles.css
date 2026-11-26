@@ -450,9 +450,7 @@ button:active {
   display: grid;
   place-items: center;
   overflow: hidden;
-  background:
-    radial-gradient(circle at 50% 46%, oklch(1 0 0 / .82), transparent 34%),
-    var(--site-import-background, #fff7f4);
+  background: oklch(1 0 0);
   animation: malu-intro-exit 1.4s cubic-bezier(.7, 0, .2, 1) forwards;
   pointer-events: none;
 }
