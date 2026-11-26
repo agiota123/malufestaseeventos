@@ -4,12 +4,12 @@ import { useRef } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import repairCSS from "../styles/import-repairs.css?raw";
 import capturedCSS from "../styles/pages/index.css?raw";
-import logo from "@/assets/malu-logo.webp.asset.json";
-import sinuca from "@/assets/malu-sinuca-hd.webp.asset.json";
-import som from "@/assets/malu-som-hd.webp.asset.json";
-import banheiro from "@/assets/malu-banheiro-hd.webp.asset.json";
-import cama from "@/assets/malu-cama-elastica-hd.webp.asset.json";
-import playground from "@/assets/malu-playground-hd.webp.asset.json";
+const logo = { url: "/assets/malu-logo.webp" };
+const sinuca = { url: "/assets/malu-sinuca-hd.webp" };
+const som = { url: "/assets/malu-som-hd.webp" };
+const banheiro = { url: "/assets/malu-banheiro-hd.webp" };
+const cama = { url: "/assets/malu-cama-elastica-hd.webp" };
+const playground = { url: "/assets/malu-playground-hd.webp" };
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [{"title": "MA.lu Festas e Eventos | Salão de festas com buffet e brinquedos"}, {"name": "description", "content": "Salão completo com 10 brinquedos, piscina, buffet, som, Wi-Fi e churrasqueira no Jardim das Oliveiras. Peça seu orçamento pelo WhatsApp."}, {"property": "og:title", "content": "MA.lu Festas e Eventos"}, {"property": "og:description", "content": "Salão de festas com buffet, piscina e 10 brinquedos. Reserve sua data pelo WhatsApp."}, {"property": "og:type", "content": "website"}, {"name": "twitter:card", "content": "summary_large_image"}] }),
