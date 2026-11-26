@@ -239,25 +239,44 @@ function Index() {
   const [introVisible, setIntroVisible] = useState(true);
   useEffect(() => {
     if (!introVisible) return;
+    const timer = window.setTimeout(() => setIntroVisible(false), 2000);
+    return () => window.clearTimeout(timer);
+  }, [introVisible]);
+
+  // Trava a página durante a abertura, o menu mobile e o painel de orçamento.
+  useEffect(() => {
+    if (!introVisible && !mobileOpen && !drawerOpen) return;
     const root = document.documentElement;
     const body = document.body;
-    const previousRootOverflow = root.style.overflow;
-    const previousBodyOverflow = body.style.overflow;
-    const previousRootOverscroll = root.style.overscrollBehavior;
-    const previousBodyOverscroll = body.style.overscrollBehavior;
-    root.style.overflow = "hidden";
-    body.style.overflow = "hidden";
-    root.style.overscrollBehavior = "none";
-    body.style.overscrollBehavior = "none";
-    const timer = window.setTimeout(() => setIntroVisible(false), 2000);
-    return () => {
-      window.clearTimeout(timer);
-      root.style.overflow = previousRootOverflow;
-      body.style.overflow = previousBodyOverflow;
-      root.style.overscrollBehavior = previousRootOverscroll;
-      body.style.overscrollBehavior = previousBodyOverscroll;
+    const scrollY = window.scrollY;
+    const previous = {
+      rootOverflow: root.style.overflow, rootOverscroll: root.style.overscrollBehavior,
+      bodyOverflow: body.style.overflow, bodyOverscroll: body.style.overscrollBehavior,
+      bodyPosition: body.style.position, bodyTop: body.style.top,
+      bodyLeft: body.style.left, bodyRight: body.style.right, bodyWidth: body.style.width,
     };
-  }, [introVisible]);
+    root.style.overflow = "hidden";
+    root.style.overscrollBehavior = "none";
+    body.style.overflow = "hidden";
+    body.style.overscrollBehavior = "none";
+    body.style.position = "fixed";
+    body.style.top = `-${scrollY}px`;
+    body.style.left = "0";
+    body.style.right = "0";
+    body.style.width = "100%";
+    return () => {
+      root.style.overflow = previous.rootOverflow;
+      root.style.overscrollBehavior = previous.rootOverscroll;
+      body.style.overflow = previous.bodyOverflow;
+      body.style.overscrollBehavior = previous.bodyOverscroll;
+      body.style.position = previous.bodyPosition;
+      body.style.top = previous.bodyTop;
+      body.style.left = previous.bodyLeft;
+      body.style.right = previous.bodyRight;
+      body.style.width = previous.bodyWidth;
+      window.scrollTo(0, scrollY);
+    };
+  }, [introVisible, mobileOpen, drawerOpen]);
   const returnFocus = useRef<HTMLElement | null>(null);
   const total = items.reduce((sum, item) => sum + item.quantity, 0);
   useEffect(() => {
@@ -280,8 +299,6 @@ function Index() {
   };
   useEffect(() => {
     if (!drawerOpen && !mobileOpen) return;
-    const original = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
     if (drawerOpen) document.querySelector<HTMLButtonElement>('[aria-label="Fechar lista"]')?.focus();
     const onKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -296,7 +313,7 @@ function Index() {
       }
     };
     document.addEventListener("keydown", onKey);
-    return () => { document.body.style.overflow = original; document.removeEventListener("keydown", onKey); };
+    return () => { document.removeEventListener("keydown", onKey); };
   }, [drawerOpen, mobileOpen]);
   const addItems = (incoming: QuoteItem[]) => setItems(current => {
     const next = [...current];
@@ -343,7 +360,7 @@ function Index() {
         <div className="malu-intro" role="status" aria-label="MALU Festas e Eventos">
           <button
             type="button"
-            onClick={() => setIntroVisible(false)}
+            onClick={event => { event.preventDefault(); event.stopPropagation(); setIntroVisible(false); }}
             aria-label="Pular animação de entrada"
             style={{
               position: "absolute",
