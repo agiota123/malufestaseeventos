@@ -565,6 +565,32 @@ function ImportedFooter() {
 
 function useImportedLayout() {
   useEffect(() => {
+    const revealTargets = new Set<HTMLElement>(
+      document.querySelectorAll<HTMLElement>(
+        "main section .section-head, main section .toy-card, main section .step, main section .combo, main section .faq details, main section .stat, main section .highlight, main section .cta-band, main section .split > div, main section > .wrap > div"
+      )
+    );
+    const revealItems = Array.from(revealTargets);
+    if ("IntersectionObserver" in window) {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-in");
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -45px 0px" });
+      revealItems.forEach((item, index) => {
+        item.classList.add("reveal");
+        item.classList.remove("is-in");
+        item.style.transitionDelay = `${(index % 4) * 85}ms`;
+        revealObserver.observe(item);
+      });
+      // Reveal everything if the page is opened in an environment without a working observer.
+      window.setTimeout(() => revealItems.forEach((item) => item.classList.add("is-in")), 3500);
+    } else {
+      revealItems.forEach((item) => item.classList.add("is-in"));
+    }
+    const scrollingAreas = Array.from(document.querySelectorAll<HTMLElement>("[data-site-import-scroll-root]"));
     const scrollingAreas = Array.from(document.querySelectorAll<HTMLElement>("[data-site-import-scroll-root]"));
     const scrollTop = () =>
       scrollingAreas.find(
