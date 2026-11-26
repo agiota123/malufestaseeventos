@@ -278,8 +278,8 @@ function Index() {
         const pricesByName = new Map(Array.from(document.querySelectorAll<HTMLElement>("#aluguel-brinquedos article")).map(card => {
           const name = card.querySelector<HTMLElement>("h3")?.textContent?.trim() || "";
           const text = card.querySelector("strong")?.textContent || "";
-          const match = text.match(/R\\$\\s*([\\d.]+,\\d{2})/);
-          const price = match ? Number(match[1].replace(/\\./g, "").replace(",", ".")) : null;
+          const match = text.match(/R\$\s*([\d.]+,\d{2})/);
+          const price = match ? Number(match[1].replace(/\./g, "").replace(",", ".")) : null;
           return [name, price] as const;
         }));
         setItems(saved.filter((item): item is QuoteItem =>
@@ -334,8 +334,8 @@ function Index() {
     const href = link?.getAttribute("href") || "#aluguel-brinquedos";
     const imageSrc = image?.getAttribute("src") || "";
     const priceText = card?.querySelector("strong")?.textContent || "";
-    const priceMatch = priceText.match(/R\\$\\s*([\\d.]+,\\d{2})/);
-    const price = priceMatch ? Number(priceMatch[1].replace(/\\./g, "").replace(",", ".")) : null;
+    const priceMatch = priceText.match(/R\$\s*([\d.]+,\d{2})/);
+    const price = priceMatch ? Number(priceMatch[1].replace(/\./g, "").replace(",", ".")) : null;
     if (!name || !imageSrc) return;
     addItems([{ name, href, image: imageSrc, quantity: 1, price }]);
     returnFocus.current = event.currentTarget;
