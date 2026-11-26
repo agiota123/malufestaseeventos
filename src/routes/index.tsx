@@ -574,7 +574,7 @@ function Index() {
           </div>
         </div>
       </div>
-      <header className="site-header" ref={node => { menuRoot0.current = node; }} data-site-import-scroll-header={"{\"desktop\":{\"added\":[\"is-scrolled\"],\"removed\":[],\"threshold\":648},\"mobile\":{\"added\":[\"is-scrolled\"],\"removed\":[],\"threshold\":645}}"}>
+      <header className={mobileOpen ? "site-header mobile-menu-open" : "site-header"} ref={node => { menuRoot0.current = node; }} data-site-import-scroll-header={"{\"desktop\":{\"added\":[\"is-scrolled\"],\"removed\":[],\"threshold\":648},\"mobile\":{\"added\":[\"is-scrolled\"],\"removed\":[],\"threshold\":645}}"}>
         <div className="wrap">
           <a className="logo" aria-label="MALU – página inicial" href="/">
             <img src={brandLogo.url} width="400" height="254" alt="MALU Festas, Eventos e Divulgações" loading="eager" fetchPriority="high" decoding="async" />
