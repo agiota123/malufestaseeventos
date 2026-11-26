@@ -450,7 +450,7 @@ button:active {
   display: grid;
   place-items: center;
   overflow: hidden;
-  background: oklch(1 0 0);
+  background: #fffaf3;
   animation: malu-intro-exit 1.4s cubic-bezier(.7, 0, .2, 1) forwards;
   pointer-events: none;
 }
