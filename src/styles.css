@@ -576,3 +576,29 @@ button:active {
   .malu-intro__eyebrow, .malu-intro__tagline { opacity: 1; }
   .malu-intro__line { width: 120px; }
 }
+
+
+/* Enfeites da abertura: balões e línguas de sogra */
+.malu-intro__party { position:absolute; inset:0; z-index:1; pointer-events:none; overflow:hidden; }
+.malu-intro__balloon {
+  position:absolute; width:clamp(34px,5vw,58px); height:clamp(44px,6.5vw,72px);
+  border-radius:52% 48% 48% 52% / 58% 58% 42% 42%;
+  opacity:0; transform-origin:50% 100%;
+  box-shadow:inset -9px -7px 0 rgba(0,0,0,.09),inset 8px 7px 0 rgba(255,255,255,.3),0 9px 18px rgba(40,30,70,.1);
+  animation:malu-balloon-in 1.45s cubic-bezier(.2,.8,.2,1) both,malu-balloon-float 2.4s ease-in-out 1.45s infinite;
+}
+.malu-intro__balloon::before { content:"";position:absolute;left:50%;bottom:-6px;transform:translateX(-50%);border-left:5px solid transparent;border-right:5px solid transparent;border-top:8px solid currentColor;filter:brightness(.85); }
+.malu-intro__balloon::after { content:"";position:absolute;left:50%;top:100%;height:clamp(42px,8vh,78px);border-left:1px solid rgba(80,70,90,.32);transform:rotate(3deg); }
+.malu-intro__balloon--one { left:9%;top:19%;color:#ed579c;background:linear-gradient(125deg,#ffb2d4,#ed579c);--tilt:-9deg;animation-delay:.08s,1.53s; }
+.malu-intro__balloon--two { right:10%;top:15%;color:#37b9d2;background:linear-gradient(125deg,#b5f4f3,#37b9d2);--tilt:8deg;animation-delay:.22s,1.67s; }
+.malu-intro__balloon--three { left:15%;bottom:15%;color:#9b68d8;background:linear-gradient(125deg,#d9b8ff,#9b68d8);--tilt:7deg;animation-delay:.34s,1.79s; }
+.malu-intro__balloon--four { right:14%;bottom:13%;color:#e9b72f;background:linear-gradient(125deg,#fff0a0,#e9b72f);--tilt:-8deg;animation-delay:.16s,1.61s; }
+.malu-intro__blower { position:absolute;width:clamp(54px,8vw,86px);height:12px;border-radius:99px;background:repeating-linear-gradient(90deg,#fff 0 9px,#f05a9d 9px 18px);box-shadow:0 3px 7px rgba(30,20,50,.12);opacity:0;transform-origin:left center; }
+.malu-intro__blower::before { content:"";position:absolute;right:-8px;top:1px;width:15px;height:10px;border:2px solid #e94f98;border-left:0;border-radius:0 100% 100% 0;transform:rotate(-8deg); }
+.malu-intro__blower--one { left:5%;top:48%;transform:rotate(-25deg);animation:malu-blower-pop .75s ease-out .25s both; }
+.malu-intro__blower--two { right:5%;top:54%;transform:rotate(205deg);animation:malu-blower-pop .75s ease-out .4s both; }
+.malu-intro__blower--three { right:23%;bottom:7%;transform:rotate(195deg) scale(.8);animation:malu-blower-pop .75s ease-out .55s both; }
+@keyframes malu-balloon-in { 0%{opacity:0;transform:translateY(55px) scale(.45) rotate(var(--tilt))} 70%{opacity:1;transform:translateY(-7px) scale(1.06) rotate(var(--tilt))} 100%{opacity:1;transform:translateY(0) scale(1) rotate(var(--tilt))} }
+@keyframes malu-balloon-float { 0%,100%{translate:0 0} 50%{translate:0 -9px} }
+@keyframes malu-blower-pop { 0%{opacity:0;scale:.2} 65%{opacity:1;scale:1.12} 100%{opacity:1;scale:1} }
+@media (prefers-reduced-motion:reduce) { .malu-intro__balloon,.malu-intro__blower { animation:none!important;opacity:1; } }
