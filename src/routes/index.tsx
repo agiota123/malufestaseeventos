@@ -240,7 +240,7 @@ function Index() {
   const [introVisible, setIntroVisible] = useState(true);
   useEffect(() => {
     if (!introVisible) return;
-    const timer = window.setTimeout(() => setIntroVisible(false), 2000);
+    const timer = window.setTimeout(() => setIntroVisible(false), 3000);
     return () => window.clearTimeout(timer);
   }, [introVisible]);
 
