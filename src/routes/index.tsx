@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useRef } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import repairCSS from "../styles/import-repairs.css?raw";
+import { SITE_URL, BRAND_DESCRIPTION } from "../lib/site";
 import capturedCSS from "../styles/pages/index.css?raw";
 const logo = { url: "/assets/malu-logo.webp" };
 const sinuca = { url: "/assets/malu-sinuca-hd.webp" };
@@ -11,8 +12,197 @@ const banheiro = { url: "/assets/malu-banheiro-hd.webp" };
 const cama = { url: "/assets/malu-cama-elastica-hd.webp" };
 const playground = { url: "/assets/malu-playground-hd.webp" };
 
+
+const HOME_STRUCTURED_DATA = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://malufestas.vercel.app/#business",
+      "name": "MALU Festas e Eventos",
+      "alternateName": "MALU",
+      "url": "https://malufestas.vercel.app/",
+      "logo": "https://malufestas.vercel.app/assets/malu-logo.webp",
+      "image": "https://malufestas.vercel.app/assets/malu-logo.webp",
+      "description": "MALU Festas e Eventos é um salão de festas com buffet, brinquedos e estrutura para eventos familiares no Jardim das Oliveiras, em Itapecerica da Serra (SP).",
+      "telephone": "+55-11-94721-6605",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua João Pedro de Andrade, 49",
+        "addressLocality": "Itapecerica da Serra",
+        "addressRegion": "SP",
+        "addressCountry": "BR"
+      },
+      "areaServed": [
+        {
+          "@type": "Place",
+          "name": "Jardim das Oliveiras, Itapecerica da Serra, SP"
+        },
+        {
+          "@type": "City",
+          "name": "Itapecerica da Serra"
+        }
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+55-11-94721-6605",
+        "contactType": "reservas e orçamentos",
+        "availableLanguage": "Portuguese"
+      },
+      "sameAs": [
+        "https://www.instagram.com/malufestaseventos/",
+        "https://www.google.com/maps/search/?api=1&query=Rua%20Jo%C3%A3o%20Pedro%20de%20Andrade%2C%2049%20-%20Jardim%20das%20Oliveiras%2C%20Itapecerica%20da%20Serra%20-%20SP"
+      ],
+      "knowsAbout": [
+        "salão de festas",
+        "buffet infantil",
+        "buffet de strogonoff",
+        "feijoada",
+        "churrasco",
+        "locação de brinquedos para eventos",
+        "festas familiares",
+        "estrutura para eventos"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://malufestas.vercel.app/#website",
+      "url": "https://malufestas.vercel.app/",
+      "name": "MALU Festas e Eventos",
+      "inLanguage": "pt-BR",
+      "publisher": {
+        "@id": "https://malufestas.vercel.app/#business"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://malufestas.vercel.app/#webpage",
+      "url": "https://malufestas.vercel.app/",
+      "name": "MALU Festas e Eventos | Salão de festas com buffet e brinquedos",
+      "description": "MALU Festas e Eventos é um salão de festas com buffet, brinquedos e estrutura para eventos familiares no Jardim das Oliveiras, em Itapecerica da Serra (SP).",
+      "inLanguage": "pt-BR",
+      "isPartOf": {
+        "@id": "https://malufestas.vercel.app/#website"
+      },
+      "about": {
+        "@id": "https://malufestas.vercel.app/#business"
+      },
+      "dateModified": "2026-11-25",
+      "breadcrumb": {
+        "@id": "https://malufestas.vercel.app/#breadcrumb"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://malufestas.vercel.app/#service-salao",
+      "name": "Locação de salão de festas com buffet e brinquedos",
+      "serviceType": "Locação de salão de festas com estrutura para eventos",
+      "provider": {
+        "@id": "https://malufestas.vercel.app/#business"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Itapecerica da Serra"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://malufestas.vercel.app/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://malufestas.vercel.app/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://malufestas.vercel.app/#faq",
+      "url": "https://malufestas.vercel.app/#faq-t",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quantas pessoas o buffet atende?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Os pacotes de buffet infantil e strogonoff atendem eventos a partir de 30 pessoas. Para outros tamanhos, consulte a MALU pelo WhatsApp."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quanto tempo dura a festa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O buffet infantil inclui 4 horas de evento. A possibilidade de horas extras deve ser consultada diretamente com a MALU."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O que tem no salão?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O salão oferece Wi-Fi, 10 brinquedos, 10 jogos de mesa, som, piscina, banheiros masculino e feminino e área de churrasqueira com geladeira e freezer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Vocês alugam brinquedos para fora?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. Além das festas realizadas no salão, a MALU também aluga brinquedos para eventos externos. O orçamento é solicitado pelo WhatsApp."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quais opções de buffet estão disponíveis?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O site apresenta buffet infantil, buffet de strogonoff, feijoada completa e churrasco MALU. Consulte a equipe para confirmar detalhes e disponibilidade de cada opção."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Onde fica a MALU Festas e Eventos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A MALU fica na Rua João Pedro de Andrade, 49, no Jardim das Oliveiras, em Itapecerica da Serra, São Paulo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O salão tem piscina e churrasqueira?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. O espaço conta com piscina e área de churrasqueira equipada com geladeira e freezer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como pedir um orçamento ou consultar uma data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Entre em contato pelo WhatsApp (11) 94721-6605 e informe os detalhes da festa para solicitar um orçamento e consultar a disponibilidade."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quais são os principais itens incluídos na estrutura?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O site informa 10 brinquedos, 10 jogos de mesa, piscina, som, Wi-Fi e banheiros masculino e feminino, além da área de churrasqueira."
+          }
+        }
+      ]
+    }
+  ]
+} as const;
+
+// GEO: inserir código de verificação do Bing Webmaster Tools em msvalidate.01 quando fornecido.
+// GEO: inserir código de verificação do Google Search Console em google-site-verification quando fornecido.
 export const Route = createFileRoute("/")({
-  head: () => ({ meta: [{"title": "MALU Festas e Eventos | Salão de festas com buffet e brinquedos"}, {"name": "description", "content": "Salão completo com 10 brinquedos, piscina, buffet, som, Wi-Fi e churrasqueira no Jardim das Oliveiras. Peça seu orçamento pelo WhatsApp."}, {"property": "og:title", "content": "MALU Festas e Eventos"}, {"property": "og:description", "content": "Salão de festas com buffet, piscina e 10 brinquedos. Reserve sua data pelo WhatsApp."}, {"property": "og:type", "content": "website"}, {"name": "twitter:card", "content": "summary_large_image"}] }),
+  head: () => ({ links: [{ rel: "canonical", href: SITE_URL + "/" }], meta: [{"title": "MALU Festas e Eventos | Salão de festas com buffet e brinquedos"}, {"name": "description", "content": BRAND_DESCRIPTION}, {"property": "og:title", "content": "MALU Festas e Eventos"}, {"property": "og:description", "content": BRAND_DESCRIPTION}, {"property": "og:type", "content": "website"}, {"name": "twitter:card", "content": "summary_large_image"}] }),
   staticData: { importedDocument: { html: { "className": "js", "lang": "pt-BR" }, body: {  } } },
   component: Index,
 });
@@ -278,12 +468,13 @@ function Index() {
         </div>
       </header>
       <main id="conteudo">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(HOME_STRUCTURED_DATA) }} />
 <section id="inicio" className="hero hero--impacto [overflow:hidden] [padding:clamp(28px,4vw,56px)_0_0] [padding-top:clamp(36px,5vw,72px)]!">
       <div className="wrap hero__grid items-center grid gap-[clamp(24px,4vw,56px)] relative [z-index:2]">
         <div className="hero__text">
           <span className="eyebrow items-center inline-flex gap-[8px] mb-[14px] uppercase [box-shadow:3px_3px_0_var(--red)] [font-size:.8rem] [font-weight:800] [letter-spacing:.08em] [padding:7px_14px]"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-sparkles" } as any)} /></svg> Festas • Eventos • Divulgações</span>
           <h1>Salão de festas com buffet e <span className="hl whitespace-normal [box-shadow:4px_4px_0_var(--ink)] [line-height:1] [margin:.06em_0] [padding:.04em_.2em_.08em]">diversão</span></h1>
-          <p className="lead max-w-[560px] [font-size:clamp(1.05rem,.5vw_+_.95rem,1.22rem)]">Salão completo com <strong>10 brinquedos, piscina, buffet</strong>, som de qualidade, Wi-Fi grátis e área de churrasqueira. Tudo para a sua festa em um só lugar.</p>
+          <p className="lead max-w-[560px] [font-size:clamp(1.05rem,.5vw_+_.95rem,1.22rem)]">MALU Festas e Eventos é um salão de festas com buffet, brinquedos e estrutura para eventos familiares no Jardim das Oliveiras, em Itapecerica da Serra (SP). O espaço reúne piscina, churrasqueira, Wi-Fi, som e opções de cardápio para celebrações no local.</p>
           <div className="btn-row items-center flex flex-wrap gap-[14px]"><a className="btn btn--wa btn--lg" href="https://wa.me/5511947216605?text=Ol%C3%A1%2C%20MALU!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20a%20minha%20festa.%20%F0%9F%8E%88" rel="noopener" target="_blank"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-whatsapp" } as any)} /></svg> Falar no WhatsApp</a><a className="btn btn--purple btn--lg" href="https://www.instagram.com/malufestaseventos/" rel="noopener" target="_blank"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-instagram" } as any)} /></svg> Instagram</a></div>
           <div className="hero__trust flex flex-wrap mt-[28px] [font-size:.92rem] [font-weight:500] [gap:10px_18px]"><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-shield" } as any)} /></svg> Wi-Fi grátis</span><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-sparkles" } as any)} /></svg> Som de qualidade</span><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-pin" } as any)} /></svg> Jardim das Oliveiras</span></div>
         </div>
@@ -305,7 +496,7 @@ function Index() {
 <section id="buffet" className="section section--lilac relative" aria-labelledby="buffet-t"><div className="wrap"><div className="section-head max-w-[760px] text-center [margin:0_auto_clamp(32px,4vw,52px)]"><span className="eyebrow items-center inline-flex gap-[8px] mb-[14px] uppercase [box-shadow:3px_3px_0_var(--red)] [font-size:.8rem] [font-weight:800] [letter-spacing:.08em] [padding:7px_14px]"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-gift" } as any)} /></svg> Buffet</span><h2 id="buffet-t">Cardápios para <span className="hl whitespace-normal [box-shadow:4px_4px_0_var(--ink)] [line-height:1] [margin:.06em_0] [padding:.04em_.2em_.08em]">todos os gostos</span></h2><p>Escolha o cardápio ideal. Algodão doce de cortesia!</p></div><div className="grid gap-[24px] grid-cols-[repeat(auto-fill,minmax(300px,1fr))]"><article className="combo c-red reveal is-in flex flex-col [box-shadow:var(--hard)] [overflow:hidden]"><div className="combo__body flex flex-1 flex-col gap-[12px] [padding:22px_24px_26px]"><span className="tag items-center self-start inline-flex gap-[6px] no-underline uppercase [box-shadow:2px_2px_0_var(--ink)] [font-size:.78rem] [font-weight:700] [letter-spacing:.05em] [padding:6px_12px]"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-users" } as any)} /></svg> Buffet para eventos</span><h3>Buffet Infantil</h3><ul><li><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-check" } as any)} /></svg> Salgados fritos</span></li><li><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-check" } as any)} /></svg> Batata frita com cheddar e nuggets</span></li><li><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-check" } as any)} /></svg> Mini hambúrguer e mini pastéis</span></li><li><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-check" } as any)} /></svg> Hot dog e carne louca</span></li><li><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-check" } as any)} /></svg> Mini churros com doce de leite</span></li><li><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-check" } as any)} /></svg> Bolo de corte, beijinhos e brigadeiros</span></li><li><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-check" } as any)} /></svg> Decoração pegue e monte com balões</span></li><li><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-check" } as any)} /></svg> Lembrancinha e 4h de evento</span></li><li><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-check" } as any)} /></svg> Refrigerante, suco e água</span></li><li><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-check" } as any)} /></svg> Garçom, copeira e equipe uniformizada</span></li></ul><a className="btn btn--block [margin-top:auto] [width:100%]" href="https://wa.me/5511947216605?text=Ol%C3%A1%2C%20MALU!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20a%20minha%20festa.%20%F0%9F%8E%88" target="_blank" rel="noopener"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-whatsapp" } as any)} /></svg> Pedir orçamento</a></div></article><article className="combo c-purple reveal is-in flex flex-col [box-shadow:var(--hard)] [overflow:hidden]"><div className="combo__body flex flex-1 flex-col gap-[12px] [padding:22px_24px_26px]"><span className="tag items-center self-start inline-flex gap-[6px] no-underline uppercase [box-shadow:2px_2px_0_var(--ink)] [font-size:.78rem] [font-weight:700] [letter-spacing:.05em] [padding:6px_12px]"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-users" } as any)} /></svg> Buffet para eventos</span><h3>Buffet Strogonoff</h3><ul><li><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-check" } as any)} /></svg> Salgados variados e torrada com patê</span></li><li><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-check" } as any)} /></svg> Strogonoff de carne e de frango</span></li><li><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-check" } as any)} /></svg> Arroz, batata e salada verde</span></li><li><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-check" } as any)} /></svg> Bolo, brigadeiro, beijinho e palha italiana</span></li><li><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-check" } as any)} /></svg> Água, refrigerantes e suco</span></li><li><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-check" } as any)} /></svg> Pegue e monte com balões e lembrancinhas</span></li><li><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-check" } as any)} /></svg> Mesa de café (cortesia)</span></li><li><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-check" } as any)} /></svg> Sorvete, algodão doce ou pipoca gourmet</span></li></ul><a className="btn btn--block [margin-top:auto] [width:100%]" href="https://wa.me/5511947216605?text=Ol%C3%A1%2C%20MALU!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20a%20minha%20festa.%20%F0%9F%8E%88" target="_blank" rel="noopener"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-whatsapp" } as any)} /></svg> Pedir orçamento</a></div></article><article className="combo c-blue reveal is-in flex flex-col [box-shadow:var(--hard)] [overflow:hidden]"><div className="combo__body flex flex-1 flex-col gap-[12px] [padding:22px_24px_26px]"><span className="tag items-center self-start inline-flex gap-[6px] no-underline uppercase [box-shadow:2px_2px_0_var(--ink)] [font-size:.78rem] [font-weight:700] [letter-spacing:.05em] [padding:6px_12px]"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-users" } as any)} /></svg> Buffet sob consulta</span><h3>Feijoada Completa</h3><ul><li><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-check" } as any)} /></svg> Salgados variados e torradas com patê</span></li><li><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-check" } as any)} /></svg> Feijoada completa</span></li><li><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-check" } as any)} /></svg> Bisteca suína, couve, farofa e torresmo</span></li><li><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-check" } as any)} /></svg> Molho apimentado, laranja e vinagrete</span></li><li><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-check" } as any)} /></svg> Bolo de corte com sorvete</span></li><li><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-check" } as any)} /></svg> Mesa de bolo com docinhos</span></li><li><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-check" } as any)} /></svg> Água, refrigerante e suco</span></li></ul><a className="btn btn--block [margin-top:auto] [width:100%]" href="https://wa.me/5511947216605?text=Ol%C3%A1%2C%20MALU!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20a%20minha%20festa.%20%F0%9F%8E%88" target="_blank" rel="noopener"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-whatsapp" } as any)} /></svg> Pedir orçamento</a></div></article><article className="combo c-green reveal is-in flex flex-col [box-shadow:var(--hard)] [overflow:hidden]"><div className="combo__body flex flex-1 flex-col gap-[12px] [padding:22px_24px_26px]"><span className="tag items-center self-start inline-flex gap-[6px] no-underline uppercase [box-shadow:2px_2px_0_var(--ink)] [font-size:.78rem] [font-weight:700] [letter-spacing:.05em] [padding:6px_12px]"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-users" } as any)} /></svg> Buffet sob consulta</span><h3>Churrasco MALU</h3><ul><li><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-check" } as any)} /></svg> Patê de frango, caponata e torrada</span></li><li><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-check" } as any)} /></svg> Contra filé, frango e linguiça</span></li><li><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-check" } as any)} /></svg> 2 tipos de arroz e feijão tropeiro</span></li><li><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-check" } as any)} /></svg> Farofa, salada, maionese e vinagrete</span></li><li><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-check" } as any)} /></svg> Bolo com sorvete e fruta da época</span></li><li><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-check" } as any)} /></svg> Água, suco, refrigerante e café</span></li></ul><a className="btn btn--block [margin-top:auto] [width:100%]" href="https://wa.me/5511947216605?text=Ol%C3%A1%2C%20MALU!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20a%20minha%20festa.%20%F0%9F%8E%88" target="_blank" rel="noopener"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-whatsapp" } as any)} /></svg> Pedir orçamento</a></div></article></div></div></section>
 <section className="section section--white relative" aria-labelledby="sobre-t"><div className="wrap split items-center grid gap-[clamp(28px,5vw,72px)]"><div className="split__media reveal is-in"><img src={playground.url} width="1254" height="1254" alt="150 metros de diversão no salão MALU" loading="lazy" /></div><div><span className="eyebrow items-center inline-flex gap-[8px] mb-[14px] uppercase [box-shadow:3px_3px_0_var(--red)] [font-size:.8rem] [font-weight:800] [letter-spacing:.08em] [padding:7px_14px]"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-heart" } as any)} /></svg> Sobre a MALU</span><h2 id="sobre-t">Festas felizes, com <span className="hl hl--green whitespace-normal [box-shadow:4px_4px_0_var(--ink)] [line-height:1] [margin:.06em_0] [padding:.04em_.2em_.08em]">carinho</span></h2><p className="lead [font-size:clamp(1.05rem,.5vw_+_.95rem,1.22rem)]">A MALU Festas e Eventos tem nota 4.9 no Google, com elogios ao atendimento, à pontualidade e à qualidade do espaço e dos brinquedos.</p><ul className="check-list grid gap-[10px] list-none [margin:0_0_1.6em]"><li><svg className="icon p-[4px] [margin-top:1px]" aria-hidden="true"><use {...({ href: "#i-check" } as any)} /></svg> Atendimento atencioso do começo ao fim</li><li><svg className="icon p-[4px] [margin-top:1px]" aria-hidden="true"><use {...({ href: "#i-check" } as any)} /></svg> Equipe uniformizada, garçom e copeira</li><li><svg className="icon p-[4px] [margin-top:1px]" aria-hidden="true"><use {...({ href: "#i-check" } as any)} /></svg> Ótimo custo-benefício</li><li><svg className="icon p-[4px] [margin-top:1px]" aria-hidden="true"><use {...({ href: "#i-check" } as any)} /></svg> Também alugamos brinquedos para eventos</li></ul><a className="btn btn--purple" href="https://wa.me/5511947216605?text=Ol%C3%A1%2C%20MALU!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20a%20minha%20festa.%20%F0%9F%8E%88" target="_blank" rel="noopener">Reservar minha data <svg className="icon" aria-hidden="true"><use {...({ href: "#i-arrow" } as any)} /></svg></a></div></div></section>
 <section id="localizacao" className="section section--sky relative" aria-labelledby="area-t"><div className="wrap split items-center grid gap-[clamp(28px,5vw,72px)]"><div><span className="eyebrow items-center inline-flex gap-[8px] mb-[14px] uppercase [box-shadow:3px_3px_0_var(--red)] [font-size:.8rem] [font-weight:800] [letter-spacing:.08em] [padding:7px_14px]"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-pin" } as any)} /></svg> Onde estamos</span><h2 id="area-t">Venha conhecer o <span className="hl whitespace-normal [box-shadow:4px_4px_0_var(--ink)] [line-height:1] [margin:.06em_0] [padding:.04em_.2em_.08em]">salão MALU</span></h2><p className="lead [font-size:clamp(1.05rem,.5vw_+_.95rem,1.22rem)]">Rua João Pedro de Andrade, 49 - Jardim das Oliveiras, Itapecerica da Serra - SP</p><a className="btn btn--blue" href="https://www.google.com/maps/search/?api=1&query=Rua%20Jo%C3%A3o%20Pedro%20de%20Andrade%2C%2049%20-%20Jardim%20das%20Oliveiras%2C%20Itapecerica%20da%20Serra%20-%20SP" target="_blank" rel="noopener">Abrir no Google Maps <svg className="icon" aria-hidden="true"><use {...({ href: "#i-arrow" } as any)} /></svg></a></div><div className="reveal is-in"><div className="map aspect-[16/10] [box-shadow:var(--hard-lg)] [overflow:hidden]"><iframe src="https://www.google.com/maps?q=Rua%20Jo%C3%A3o%20Pedro%20de%20Andrade%2C%2049%20-%20Jardim%20das%20Oliveiras%2C%20Itapecerica%20da%20Serra%20-%20SP&output=embed" title="Mapa: MALU Festas e Eventos" loading="lazy" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen className="h-full w-full border-0" /></div><div className="combo c-purple reveal is-in [margin-top:24px] [box-shadow:var(--hard)] [overflow:hidden]"><img src="/assets/file_0000000029c4820eacac28a79c6fb377~2.jpg" alt="Fachada do salão MALU Festas e Eventos" loading="lazy" className="block w-full h-auto" /></div></div></div></section>
-<section className="section relative" aria-labelledby="faq-t"><div className="wrap"><div className="section-head max-w-[760px] text-center [margin:0_auto_clamp(32px,4vw,52px)]"><span className="eyebrow items-center inline-flex gap-[8px] mb-[14px] uppercase [box-shadow:3px_3px_0_var(--red)] [font-size:.8rem] [font-weight:800] [letter-spacing:.08em] [padding:7px_14px]"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-sparkles" } as any)} /></svg> Tire suas dúvidas</span><h2 id="faq-t">Dúvidas frequentes</h2></div><div className="faq grid gap-[12px] max-w-[860px] [margin:0_auto]"><details><summary>Quantas pessoas o buffet atende?</summary><div className="faq__a"><p>Os pacotes de buffet infantil e strogonoff atendem eventos a partir de 30 pessoas. Para outros tamanhos, fale com a gente no WhatsApp.</p></div></details><details><summary>Quanto tempo dura a festa?</summary><div className="faq__a"><p>O buffet infantil inclui 4 horas de evento. Consulte a possibilidade de horas extras.</p></div></details><details><summary>O que tem no salão?</summary><div className="faq__a"><p>Salão completo, Wi-Fi grátis, 10 brinquedos, 10 jogos de mesa, som, piscina, banheiros masculino e feminino e área de churrasqueira com geladeira e freezer.</p></div></details><details><summary>Vocês alugam brinquedos para fora?</summary><div className="faq__a"><p>Sim! Além das festas no salão, também alugamos brinquedos para eventos. Peça seu orçamento no WhatsApp.</p></div></details></div></div></section>
+<section className="section relative" aria-labelledby="faq-t"><div className="wrap"><div className="section-head max-w-[760px] text-center [margin:0_auto_clamp(32px,4vw,52px)]"><span className="eyebrow items-center inline-flex gap-[8px] mb-[14px] uppercase [box-shadow:3px_3px_0_var(--red)] [font-size:.8rem] [font-weight:800] [letter-spacing:.08em] [padding:7px_14px]"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-sparkles" } as any)} /></svg> Tire suas dúvidas</span><h2 id="faq-t">Dúvidas frequentes</h2></div><div className="faq grid gap-[12px] max-w-[860px] [margin:0_auto]"><details><summary>Quantas pessoas o buffet atende?</summary><div className="faq__a"><p>Os pacotes de buffet infantil e strogonoff atendem eventos a partir de 30 pessoas. Para outros tamanhos, consulte a MALU pelo WhatsApp.</p></div></details><details><summary>Quanto tempo dura a festa?</summary><div className="faq__a"><p>O buffet infantil inclui 4 horas de evento. A possibilidade de horas extras deve ser consultada diretamente com a MALU.</p></div></details><details><summary>O que tem no salão?</summary><div className="faq__a"><p>O salão oferece Wi-Fi, 10 brinquedos, 10 jogos de mesa, som, piscina, banheiros masculino e feminino e área de churrasqueira com geladeira e freezer.</p></div></details><details><summary>Vocês alugam brinquedos para fora?</summary><div className="faq__a"><p>Sim. Além das festas realizadas no salão, a MALU também aluga brinquedos para eventos externos. O orçamento é solicitado pelo WhatsApp.</p></div></details><details><summary>Quais opções de buffet estão disponíveis?</summary><div className="faq__a"><p>O site apresenta buffet infantil, buffet de strogonoff, feijoada completa e churrasco MALU. Consulte a equipe para confirmar detalhes e disponibilidade de cada opção.</p></div></details><details><summary>Onde fica a MALU Festas e Eventos?</summary><div className="faq__a"><p>A MALU fica na Rua João Pedro de Andrade, 49, no Jardim das Oliveiras, em Itapecerica da Serra, São Paulo.</p></div></details><details><summary>O salão tem piscina e churrasqueira?</summary><div className="faq__a"><p>Sim. O espaço conta com piscina e área de churrasqueira equipada com geladeira e freezer.</p></div></details><details><summary>Como pedir um orçamento ou consultar uma data?</summary><div className="faq__a"><p>Entre em contato pelo WhatsApp (11) 94721-6605 e informe os detalhes da festa para solicitar um orçamento e consultar a disponibilidade.</p></div></details><details><summary>Quais são os principais itens incluídos na estrutura?</summary><div className="faq__a"><p>O site informa 10 brinquedos, 10 jogos de mesa, piscina, som, Wi-Fi e banheiros masculino e feminino, além da área de churrasqueira.</p></div></details></div></div></section>
 <section id="contato" className="section relative" style={{ paddingTop: "0px" }}><div className="wrap"><div className="cta-band reveal is-in items-center grid gap-[28px] p-[clamp(36px,5vw,64px)] [box-shadow:12px_12px_0_var(--ink)] [overflow:hidden]"><div><h2>Bora deixar a festa inesquecível?</h2><p>Fale com a MALU e garanta sua data. WhatsApp (11) 94721-6605 • Instagram @malufestaseventos.</p></div><div className="btn-row items-center flex flex-wrap gap-[14px]"><a className="btn btn--wa btn--lg" href="https://wa.me/5511947216605?text=Ol%C3%A1%2C%20MALU!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20a%20minha%20festa.%20%F0%9F%8E%88" rel="noopener" target="_blank"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-whatsapp" } as any)} /></svg> WhatsApp</a><a className="btn btn--purple btn--lg" href="https://www.instagram.com/malufestaseventos/" rel="noopener" target="_blank"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-instagram" } as any)} /></svg> Instagram</a></div></div></div></section>
       </main>
 <div className="pointer-events-none relative [margin:clamp(40px,6vw,80px)_0_-30px] [overflow:hidden] [padding:30px_0] [z-index:6]" aria-hidden="true"><div className="marquee marquee--blue ml-[-2%] w-[104%] [box-shadow:0_8px_0_rgba(20,24,61,.18)] [padding:14px_0]"><div className="marquee__track flex [width:max-content]"><span>Festas<i>★</i>Eventos<i>★</i>Divulgações<i>★</i>Nota 4.9 no Google<i>★</i>Buffet completo<i>★</i>Piscina no local<i>★</i></span><span>Festas<i>★</i>Eventos<i>★</i>Divulgações<i>★</i>Nota 4.9 no Google<i>★</i>Buffet completo<i>★</i>Piscina no local<i>★</i></span></div></div></div>
