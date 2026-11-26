@@ -36,3 +36,7 @@
 .cart-total > span { font-size: .88rem; font-weight: 700; }
 .cart-total > strong { font-size: 1.2rem; font-weight: 900; }
 .cart-total > small { grid-column: 1 / -1; color: var(--ink-3); font-size: .75rem; line-height: 1.35; }
+
+/* Mantém o cabeçalho preso ao topo durante a rolagem. */
+body { overflow-x: clip; }
+.site-header { position: sticky !important; top: 0 !important; z-index: 60; }
