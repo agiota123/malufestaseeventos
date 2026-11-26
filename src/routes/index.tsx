@@ -359,6 +359,7 @@ function Index() {
       <style>{capturedCSS + repairCSS}</style>
       {introVisible && (
         <div className="malu-intro" role="status" aria-label="MALU Festas e Eventos">
+          <p className="malu-intro__welcome">MALU Festas e Eventos, temos tudo o que você precisa em um só lugar!</p>
           <button
             type="button"
             onClick={event => { event.preventDefault(); event.stopPropagation(); setIntroVisible(false); }}
