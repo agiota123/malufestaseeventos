@@ -50,8 +50,7 @@ const HOME_STRUCTURED_DATA = {
         "availableLanguage": "Portuguese"
       },
       "sameAs": [
-        "https://www.instagram.com/malufestaseventos/",
-        "https://www.google.com/maps/search/?api=1&query=Rua%20Jo%C3%A3o%20Pedro%20de%20Andrade%2C%2049%20-%20Jardim%20das%20Oliveiras%2C%20Itapecerica%20da%20Serra%20-%20SP"
+        "https://www.instagram.com/malufestaseeventos/"
       ],
       "knowsAbout": [
         "salão de festas",
@@ -62,7 +61,8 @@ const HOME_STRUCTURED_DATA = {
         "locação de brinquedos para eventos",
         "festas familiares",
         "estrutura para eventos"
-      ]
+      ],
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Rua%20Jo%C3%A3o%20Pedro%20de%20Andrade%2C%2049%20-%20Jardim%20das%20Oliveiras%2C%20Itapecerica%20da%20Serra%20-%20SP"
     },
     {
       "@type": "WebSite",
@@ -474,7 +474,7 @@ function Index() {
         <div className="hero__text">
           <span className="eyebrow items-center inline-flex gap-[8px] mb-[14px] uppercase [box-shadow:3px_3px_0_var(--red)] [font-size:.8rem] [font-weight:800] [letter-spacing:.08em] [padding:7px_14px]"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-sparkles" } as any)} /></svg> Festas • Eventos • Divulgações</span>
           <h1>Salão de festas com buffet e <span className="hl whitespace-normal [box-shadow:4px_4px_0_var(--ink)] [line-height:1] [margin:.06em_0] [padding:.04em_.2em_.08em]">diversão</span></h1>
-          <p className="lead max-w-[560px] [font-size:clamp(1.05rem,.5vw_+_.95rem,1.22rem)]">MALU Festas e Eventos é um salão de festas com buffet, brinquedos e estrutura para eventos familiares no Jardim das Oliveiras, em Itapecerica da Serra (SP). O espaço reúne piscina, churrasqueira, Wi-Fi, som e opções de cardápio para celebrações no local.</p>
+          <p className="lead max-w-[560px] [font-size:clamp(1.05rem,.5vw_+_.95rem,1.22rem)]"><strong>Resumo:</strong> MALU Festas e Eventos é um salão de festas com buffet, brinquedos e estrutura para eventos familiares no Jardim das Oliveiras, em Itapecerica da Serra (SP). O espaço reúne piscina, churrasqueira, Wi-Fi, som e opções de cardápio para celebrações no local.</p>
           <div className="btn-row items-center flex flex-wrap gap-[14px]"><a className="btn btn--wa btn--lg" href="https://wa.me/5511947216605?text=Ol%C3%A1%2C%20MALU!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20a%20minha%20festa.%20%F0%9F%8E%88" rel="noopener" target="_blank"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-whatsapp" } as any)} /></svg> Falar no WhatsApp</a><a className="btn btn--purple btn--lg" href="https://www.instagram.com/malufestaseventos/" rel="noopener" target="_blank"><svg className="icon" aria-hidden="true"><use {...({ href: "#i-instagram" } as any)} /></svg> Instagram</a></div>
           <div className="hero__trust flex flex-wrap mt-[28px] [font-size:.92rem] [font-weight:500] [gap:10px_18px]"><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-shield" } as any)} /></svg> Wi-Fi grátis</span><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-sparkles" } as any)} /></svg> Som de qualidade</span><span><svg className="icon" aria-hidden="true"><use {...({ href: "#i-pin" } as any)} /></svg> Jardim das Oliveiras</span></div>
         </div>
