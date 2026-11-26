@@ -873,7 +873,7 @@ a.tag:hover{filter:brightness(.97);color:var(--c-d)}.qs .dd-ico{width:38px;heigh
   left: 72%;
   top: 38%;
   margin: -1300px 0 0 -1300px;
-  background: repeating-conic-gradient(#f9cfe2 0 7.5deg,#cbb6ef 7.5deg 15deg);
+  background: repeating-conic-gradient(#dccdf6 0 7.5deg,#c7b0ee 7.5deg 15deg);
   animation: sunspin 140s linear infinite;
   pointer-events: none;
 }
@@ -1088,7 +1088,7 @@ a.tag:hover{filter:brightness(.97);color:var(--c-d)}.qs .dd-ico{width:38px;heigh
 
 
 /* MA.lu hero: light pink + lilac rays, dark text for contrast */
-.hero--impacto{background:#cbb6ef;color:var(--ink)}
+.hero--impacto{background:#c7b0ee;color:var(--ink)}
 .hero--impacto h1,.hero--impacto .hero__trust{color:var(--ink)}
 .hero--impacto .lead{color:var(--ink-2)}
 .hero--impacto .lead strong{color:var(--ink)}
