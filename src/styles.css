@@ -453,7 +453,7 @@ button:active {
   isolation: isolate;
   background: #fffaf3;
   animation: malu-intro-exit 2s cubic-bezier(.72, 0, .24, 1) forwards;
-  pointer-events: none;
+  pointer-events: auto;
 }
 .malu-intro__content {
   position: relative;
