@@ -40,3 +40,7 @@
 /* Mantém o cabeçalho preso ao topo durante a rolagem. */
 body { overflow-x: clip; }
 .site-header { position: sticky !important; top: 0 !important; z-index: 60; }
+
+/* Destaque amarelo no botão do carrinho, mantendo as barrinhas no estilo original. */
+.site-header .cart-toggle { background: var(--yellow) !important; color: var(--ink) !important; border: 2px solid var(--ink); box-shadow: 3px 3px 0 var(--red); }
+.site-header .cart-toggle:hover { background: var(--yellow-d) !important; color: var(--ink) !important; }
