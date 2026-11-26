@@ -629,8 +629,4 @@ button:active {
   font-weight: 800;
   letter-spacing: -.035em;
   line-height: 1.12;
-  color: #111;
-  -webkit-text-stroke: 2.5px #fff;
-  paint-order: stroke fill;
-  text-shadow: 0 3px 0 rgba(255,255,255,.9);
 }
