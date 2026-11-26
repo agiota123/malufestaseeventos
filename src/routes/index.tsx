@@ -289,7 +289,7 @@ function Index() {
     `Tipo de evento: ${eventType.trim() || "Não informado"}`,
     "",
     "Poderiam confirmar o valor final e a disponibilidade?"
-  ].join("\\n");
+  ].join("\n");
   useEffect(() => {
     try {
       const saved: unknown = JSON.parse(sessionStorage.getItem("tio-titi-quote") || "[]");
