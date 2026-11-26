@@ -94,8 +94,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.png", type: "image/png", sizes: "32x32" },
-      { rel: "apple-touch-icon", href: "/favicon.png", sizes: "180x180" },
+      { rel: "icon", href: "/assets/file_00000000e9ac820e91c8c324bf226277.png", type: "image/png", sizes: "32x32" },
+      { rel: "apple-touch-icon", href: "/assets/file_00000000e9ac820e91c8c324bf226277.png", sizes: "180x180" },
     ],
   }),
   shellComponent: RootShell,
