@@ -722,7 +722,7 @@ a.tag:hover{filter:brightness(.97);color:var(--c-d)}.qs .dd-ico{width:38px;heigh
   padding-top: clamp(48px,6vw,72px);
   padding-bottom: 36px;
 }
-.footer-brand img{width:120px;margin-bottom:16px}.footer-brand p{color:#c8cdf0;max-width:300px}
+.footer-brand img{width:120px;margin-bottom:16px;mix-blend-mode:multiply}.footer-brand p{color:#c8cdf0;max-width:300px}
 .footer-label {
   color: #fff;
 }
