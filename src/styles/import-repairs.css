@@ -24,3 +24,7 @@
 .cart-item { background: var(--card); border: 2px solid var(--ink); }
 .cart-item img { border: 2px solid var(--ink); }
 .qty { border: 2px solid var(--ink); }
+
+.add-rental { width: 100%; justify-content: center; margin-top: 10px; }
+.cart-toggle { position: relative; flex: 0 0 46px; padding: 0; }
+.cart-toggle__count { position: absolute; top: -7px; right: -7px; min-width: 21px; height: 21px; padding: 0 5px; display: grid; place-items: center; border: 2px solid var(--bg); border-radius: 999px; background: var(--red); color: #fff; font-size: .7rem; font-weight: 800; line-height: 1; }
