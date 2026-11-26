@@ -634,3 +634,13 @@ button:active {
   paint-order: stroke fill;
   text-shadow: 0 3px 0 rgba(255,255,255,.9);
 }
+
+
+/* Override the dark hero's default white heading with the requested cartoon lettering. */
+.hero--impacto .hero__text h1,
+.hero--impacto .hero__text h1 .hl {
+  color: #111 !important;
+  -webkit-text-stroke: 2.5px #fff;
+  paint-order: stroke fill;
+  text-shadow: 0 3px 0 rgba(255,255,255,.9);
+}
