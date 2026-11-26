@@ -567,7 +567,21 @@ function useImportedLayout() {
   useEffect(() => {
     const revealTargets = new Set<HTMLElement>(
       document.querySelectorAll<HTMLElement>(
-        "main section .section-head, main section .toy-card, main section .step, main section .combo, main section .faq details, main section .stat, main section .highlight, main section .cta-band, main section .split > div, main section > .wrap > div"
+        [
+          "main section .section-head",
+          "main section .toy-card",
+          "main section .step",
+          "main section .combo",
+          "main section .faq details",
+          "main section .stat",
+          "main section .highlight",
+          "main section .cta-band",
+          "main section .split > *",
+          "main section .gallery > *",
+          "main section .grid > *",
+          "main section .wrap > .section-head",
+          "main section > .wrap > div"
+        ].join(", ")
       )
     );
     const revealItems = Array.from(revealTargets);
@@ -585,8 +599,6 @@ function useImportedLayout() {
         item.style.transitionDelay = `${(index % 4) * 85}ms`;
         revealObserver.observe(item);
       });
-      // Reveal everything if the page is opened in an environment without a working observer.
-      window.setTimeout(() => revealItems.forEach((item) => item.classList.add("is-in")), 3500);
     } else {
       revealItems.forEach((item) => item.classList.add("is-in"));
     }
