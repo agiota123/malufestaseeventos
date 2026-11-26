@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useRef } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import repairCSS from "../styles/import-repairs.css?raw";
-import { SITE_URL, BRAND_DESCRIPTION } from "../lib/site";
+import { SITE_URL, BRAND_NAME, HOME_TITLE, HOME_META_DESCRIPTION, OG_IMAGE_URL } from "../lib/site";
 import capturedCSS from "../styles/pages/index.css?raw";
 const logo = { url: "/assets/malu-logo.webp" };
 const sinuca = { url: "/assets/malu-sinuca-hd.webp" };
@@ -18,12 +18,12 @@ const HOME_STRUCTURED_DATA = {
   "@graph": [
     {
       "@type": "LocalBusiness",
-      "@id": "https://malufestas.vercel.app/#business",
+      "@id": `${SITE_URL}/#business`,
       "name": "MALU Festas e Eventos",
       "alternateName": "MALU",
-      "url": "https://malufestas.vercel.app/",
-      "logo": "https://malufestas.vercel.app/assets/malu-logo.webp",
-      "image": "https://malufestas.vercel.app/assets/malu-logo.webp",
+      "url": `${SITE_URL}/`,
+      "logo": `${SITE_URL}/assets/malu-logo.webp`,
+      "image": `${SITE_URL}/assets/malu-logo.webp`,
       "description": "MALU Festas e Eventos é um salão de festas com buffet, brinquedos e estrutura para eventos familiares no Jardim das Oliveiras, em Itapecerica da Serra (SP).",
       "telephone": "+55-11-94721-6605",
       "address": {
@@ -66,39 +66,39 @@ const HOME_STRUCTURED_DATA = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://malufestas.vercel.app/#website",
-      "url": "https://malufestas.vercel.app/",
+      "@id": `${SITE_URL}/#website`,
+      "url": `${SITE_URL}/`,
       "name": "MALU Festas e Eventos",
       "inLanguage": "pt-BR",
       "publisher": {
-        "@id": "https://malufestas.vercel.app/#business"
+        "@id": `${SITE_URL}/#business`
       }
     },
     {
       "@type": "WebPage",
-      "@id": "https://malufestas.vercel.app/#webpage",
-      "url": "https://malufestas.vercel.app/",
+      "@id": `${SITE_URL}/#webpage`,
+      "url": `${SITE_URL}/`,
       "name": "MALU Festas e Eventos | Salão de festas com buffet e brinquedos",
       "description": "MALU Festas e Eventos é um salão de festas com buffet, brinquedos e estrutura para eventos familiares no Jardim das Oliveiras, em Itapecerica da Serra (SP).",
       "inLanguage": "pt-BR",
       "isPartOf": {
-        "@id": "https://malufestas.vercel.app/#website"
+        "@id": `${SITE_URL}/#website`
       },
       "about": {
-        "@id": "https://malufestas.vercel.app/#business"
+        "@id": `${SITE_URL}/#business`
       },
       "dateModified": "2026-11-25",
       "breadcrumb": {
-        "@id": "https://malufestas.vercel.app/#breadcrumb"
+        "@id": `${SITE_URL}/#breadcrumb`
       }
     },
     {
       "@type": "Service",
-      "@id": "https://malufestas.vercel.app/#service-salao",
+      "@id": `${SITE_URL}/#service-salao`,
       "name": "Locação de salão de festas com buffet e brinquedos",
       "serviceType": "Locação de salão de festas com estrutura para eventos",
       "provider": {
-        "@id": "https://malufestas.vercel.app/#business"
+        "@id": `${SITE_URL}/#business`
       },
       "areaServed": {
         "@type": "City",
@@ -107,20 +107,20 @@ const HOME_STRUCTURED_DATA = {
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://malufestas.vercel.app/#breadcrumb",
+      "@id": `${SITE_URL}/#breadcrumb`,
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Início",
-          "item": "https://malufestas.vercel.app/"
+          "item": `${SITE_URL}/`
         }
       ]
     },
     {
       "@type": "FAQPage",
-      "@id": "https://malufestas.vercel.app/#faq",
-      "url": "https://malufestas.vercel.app/#faq-t",
+      "@id": `${SITE_URL}/#faq`,
+      "url": `${SITE_URL}/#faq-t`,
       "mainEntity": [
         {
           "@type": "Question",
@@ -202,7 +202,27 @@ const HOME_STRUCTURED_DATA = {
 // GEO: inserir código de verificação do Bing Webmaster Tools em msvalidate.01 quando fornecido.
 // GEO: inserir código de verificação do Google Search Console em google-site-verification quando fornecido.
 export const Route = createFileRoute("/")({
-  head: () => ({ links: [{ rel: "canonical", href: SITE_URL + "/" }], meta: [{"title": "MALU Festas e Eventos | Salão de festas com buffet e brinquedos"}, {"name": "description", "content": BRAND_DESCRIPTION}, {"property": "og:title", "content": "MALU Festas e Eventos"}, {"property": "og:description", "content": BRAND_DESCRIPTION}, {"property": "og:type", "content": "website"}, {"name": "twitter:card", "content": "summary_large_image"}] }),
+  head: () => ({
+    links: [{ rel: "canonical", href: `${SITE_URL}/` }],
+    meta: [
+      { title: HOME_TITLE },
+      { name: "description", content: HOME_META_DESCRIPTION },
+      { property: "og:title", content: HOME_TITLE },
+      { property: "og:description", content: HOME_META_DESCRIPTION },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE_URL}/` },
+      { property: "og:site_name", content: BRAND_NAME },
+      { property: "og:locale", content: "pt_BR" },
+      { property: "og:image", content: OG_IMAGE_URL },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "MALU Festas e Eventos — salão de festas com buffet em Itapecerica da Serra" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: HOME_TITLE },
+      { name: "twitter:description", content: HOME_META_DESCRIPTION },
+      { name: "twitter:image", content: OG_IMAGE_URL },
+    ],
+  }),
   staticData: { importedDocument: { html: { "className": "js", "lang": "pt-BR" }, body: {  } } },
   component: Index,
 });
