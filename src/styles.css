@@ -452,7 +452,7 @@ button:active {
   overflow: hidden;
   isolation: isolate;
   background: #fffaf3;
-  animation: malu-intro-exit 2.5s cubic-bezier(.72, 0, .24, 1) forwards;
+  animation: malu-intro-exit 2.2s cubic-bezier(.72, 0, .24, 1) forwards;
   pointer-events: none;
 }
 .malu-intro__content {
