@@ -383,6 +383,15 @@ function Index() {
             Pular
           </button>
           <div className="malu-intro__burst" aria-hidden="true" />
+          <div className="malu-intro__party" aria-hidden="true">
+            <span className="malu-intro__balloon malu-intro__balloon--one" />
+            <span className="malu-intro__balloon malu-intro__balloon--two" />
+            <span className="malu-intro__balloon malu-intro__balloon--three" />
+            <span className="malu-intro__balloon malu-intro__balloon--four" />
+            <span className="malu-intro__blower malu-intro__blower--one" />
+            <span className="malu-intro__blower malu-intro__blower--two" />
+            <span className="malu-intro__blower malu-intro__blower--three" />
+          </div>
           <div className="malu-intro__confetti" aria-hidden="true">
             {Array.from({ length: 14 }, (_, i) => <i key={i} />)}
           </div>
