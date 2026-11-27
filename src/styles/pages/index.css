@@ -1099,3 +1099,48 @@ a.tag:hover{filter:brightness(.97);color:var(--c-d)}.qs .dd-ico{width:38px;heigh
 @media (max-width:860px){.site-header .logo img{height:64px}.header-wa{font-size:.82rem;padding-inline:12px}}
 @media (max-width:400px){.site-header .logo img{height:54px}}
 .site-header .wrap{min-height:100px;height:auto}@media (max-width:860px){.site-header .wrap{min-height:80px}}
+
+
+/* Ajustes de navegação e alinhamento das seções do salão */
+@media (min-width: 961px) {
+  .site-header .nav-brinquedos { display: none !important; }
+  .site-header .header-actions { margin-left: 12px; gap: 12px; }
+  .site-header .header-actions .cart-toggle {
+    display: grid;
+    width: 46px;
+    height: 46px;
+    flex: 0 0 46px;
+    position: relative;
+    border-radius: 14px;
+    background: var(--ink);
+    color: #fff;
+    border: 0;
+    place-items: center;
+    cursor: pointer;
+  }
+  .site-header .header-actions .cart-toggle .icon { width: 23px; height: 23px; }
+}
+.salon-feature-grid {
+  width: 100%;
+  max-width: 1120px;
+  margin-inline: auto;
+  justify-content: center;
+}
+@media (min-width: 961px) {
+  .salon-feature-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (min-width: 641px) and (max-width: 960px) {
+  .salon-feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+.fun-gallery {
+  width: 100%;
+  max-width: 1120px;
+  margin-inline: auto;
+  justify-content: center;
+}
+@media (min-width: 961px) {
+  .fun-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (min-width: 641px) and (max-width: 960px) {
+  .fun-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
