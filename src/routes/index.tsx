@@ -672,7 +672,7 @@ function Index() {
     </div>
     <div className="mx-auto grid max-w-[900px] grid-cols-1">
       <article className="combo c-yellow divulga-card flex flex-col [box-shadow:var(--hard)] [overflow:hidden]">
-        <img src="/assets/1795806325521.jpg" alt="Carro de som da MALU para divulgação de comércios e eventos" loading="lazy" decoding="async" className="divulga-card__image" />
+        <img src="/assets/1795808613423.jpg" alt="Carro de som da MALU para divulgação de comércios e eventos" loading="lazy" decoding="async" className="divulga-card__image" />
         <div className="combo__body flex flex-1 flex-col gap-[16px] [padding:22px_24px_26px]">
           <div>
             <span className="tag items-center self-start inline-flex gap-[6px] uppercase [box-shadow:2px_2px_0_var(--ink)] [font-size:.78rem] [font-weight:700] [letter-spacing:.05em] [padding:6px_12px]">Divulgações</span>
