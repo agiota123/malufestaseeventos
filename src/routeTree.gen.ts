@@ -41,6 +41,11 @@ const JogosParaFestaRoute = JogosParaFestaRouteImport.update({
   path: '/jogos-para-festa',
   getParentRoute: () => rootRouteImport,
 } as any)
+const VideoSorveteRoute = VideoSorveteRouteImport.update({
+  id: '/video-sorvete',
+  path: '/video-sorvete',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -48,6 +53,7 @@ export interface FileRoutesByFullPath {
   '/brinquedos-aquaticos': typeof BrinquedosAquaticosRoute
   '/brinquedos-inflaveis': typeof BrinquedosInflaveisRoute
   '/jogos-para-festa': typeof JogosParaFestaRoute
+  '/video-sorvete': typeof VideoSorveteRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -55,6 +61,7 @@ export interface FileRoutesByTo {
   '/brinquedos-aquaticos': typeof BrinquedosAquaticosRoute
   '/brinquedos-inflaveis': typeof BrinquedosInflaveisRoute
   '/jogos-para-festa': typeof JogosParaFestaRoute
+  '/video-sorvete': typeof VideoSorveteRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -63,6 +70,7 @@ export interface FileRoutesById {
   '/brinquedos-aquaticos': typeof BrinquedosAquaticosRoute
   '/brinquedos-inflaveis': typeof BrinquedosInflaveisRoute
   '/jogos-para-festa': typeof JogosParaFestaRoute
+  '/video-sorvete': typeof VideoSorveteRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -72,6 +80,7 @@ export interface FileRouteTypes {
     | '/brinquedos-aquaticos'
     | '/brinquedos-inflaveis'
     | '/jogos-para-festa'
+    | '/video-sorvete'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -79,6 +88,7 @@ export interface FileRouteTypes {
     | '/brinquedos-aquaticos'
     | '/brinquedos-inflaveis'
     | '/jogos-para-festa'
+    | '/video-sorvete'
   id:
     | '__root__'
     | '/'
@@ -86,6 +96,7 @@ export interface FileRouteTypes {
     | '/brinquedos-aquaticos'
     | '/brinquedos-inflaveis'
     | '/jogos-para-festa'
+    | '/video-sorvete'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -94,6 +105,7 @@ export interface RootRouteChildren {
   BrinquedosAquaticosRoute: typeof BrinquedosAquaticosRoute
   BrinquedosInflaveisRoute: typeof BrinquedosInflaveisRoute
   JogosParaFestaRoute: typeof JogosParaFestaRoute
+  VideoSorveteRoute: typeof VideoSorveteRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -133,6 +145,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof JogosParaFestaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/video-sorvete': {
+      id: '/video-sorvete'
+      path: '/video-sorvete'
+      fullPath: '/video-sorvete'
+      preLoaderRoute: typeof VideoSorveteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -142,6 +161,7 @@ const rootRouteChildren: RootRouteChildren = {
   BrinquedosAquaticosRoute: BrinquedosAquaticosRoute,
   BrinquedosInflaveisRoute: BrinquedosInflaveisRoute,
   JogosParaFestaRoute: JogosParaFestaRoute,
+  VideoSorveteRoute: VideoSorveteRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
