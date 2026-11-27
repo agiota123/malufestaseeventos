@@ -15,6 +15,7 @@ import { Route as BrinquedosAquaticosRouteImport } from './routes/brinquedos-aqu
 import { Route as BrinquedosInflaveisRouteImport } from './routes/brinquedos-inflaveis'
 import { Route as JogosParaFestaRouteImport } from './routes/jogos-para-festa'
 import { Route as VideoSorveteRouteImport } from './routes/video-sorvete'
+import { Route as FotosUtensiliosBuffetRouteImport } from './routes/fotos-utensilios-buffet'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -46,6 +47,11 @@ const VideoSorveteRoute = VideoSorveteRouteImport.update({
   path: '/video-sorvete',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FotosUtensiliosBuffetRoute = FotosUtensiliosBuffetRouteImport.update({
+  id: '/fotos-utensilios-buffet',
+  path: '/fotos-utensilios-buffet',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -54,6 +60,7 @@ export interface FileRoutesByFullPath {
   '/brinquedos-inflaveis': typeof BrinquedosInflaveisRoute
   '/jogos-para-festa': typeof JogosParaFestaRoute
   '/video-sorvete': typeof VideoSorveteRoute
+  '/fotos-utensilios-buffet': typeof FotosUtensiliosBuffetRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +69,7 @@ export interface FileRoutesByTo {
   '/brinquedos-inflaveis': typeof BrinquedosInflaveisRoute
   '/jogos-para-festa': typeof JogosParaFestaRoute
   '/video-sorvete': typeof VideoSorveteRoute
+  '/fotos-utensilios-buffet': typeof FotosUtensiliosBuffetRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,6 +79,7 @@ export interface FileRoutesById {
   '/brinquedos-inflaveis': typeof BrinquedosInflaveisRoute
   '/jogos-para-festa': typeof JogosParaFestaRoute
   '/video-sorvete': typeof VideoSorveteRoute
+  '/fotos-utensilios-buffet': typeof FotosUtensiliosBuffetRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -81,6 +90,7 @@ export interface FileRouteTypes {
     | '/brinquedos-inflaveis'
     | '/jogos-para-festa'
     | '/video-sorvete'
+    | '/fotos-utensilios-buffet'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -89,6 +99,7 @@ export interface FileRouteTypes {
     | '/brinquedos-inflaveis'
     | '/jogos-para-festa'
     | '/video-sorvete'
+    | '/fotos-utensilios-buffet'
   id:
     | '__root__'
     | '/'
@@ -97,6 +108,7 @@ export interface FileRouteTypes {
     | '/brinquedos-inflaveis'
     | '/jogos-para-festa'
     | '/video-sorvete'
+    | '/fotos-utensilios-buffet'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -106,6 +118,7 @@ export interface RootRouteChildren {
   BrinquedosInflaveisRoute: typeof BrinquedosInflaveisRoute
   JogosParaFestaRoute: typeof JogosParaFestaRoute
   VideoSorveteRoute: typeof VideoSorveteRoute
+  FotosUtensiliosBuffetRoute: typeof FotosUtensiliosBuffetRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -152,6 +165,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof VideoSorveteRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/fotos-utensilios-buffet': {
+      id: '/fotos-utensilios-buffet'
+      path: '/fotos-utensilios-buffet'
+      fullPath: '/fotos-utensilios-buffet'
+      preLoaderRoute: typeof FotosUtensiliosBuffetRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -162,6 +182,7 @@ const rootRouteChildren: RootRouteChildren = {
   BrinquedosInflaveisRoute: BrinquedosInflaveisRoute,
   JogosParaFestaRoute: JogosParaFestaRoute,
   VideoSorveteRoute: VideoSorveteRoute,
+  FotosUtensiliosBuffetRoute: FotosUtensiliosBuffetRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
