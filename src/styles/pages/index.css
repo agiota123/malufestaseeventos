@@ -1144,3 +1144,36 @@ a.tag:hover{filter:brightness(.97);color:var(--c-d)}.qs .dd-ico{width:38px;heigh
 @media (min-width: 641px) and (max-width: 960px) {
   .fun-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+
+/* Galeria horizontal dos cardápios: imagens maiores, inteiras e fáceis de ler. */
+.buffet-menu-gallery {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 10px 16px;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: auto;
+  scrollbar-color: var(--ink) rgba(29, 35, 80, .14);
+  -webkit-overflow-scrolling: touch;
+}
+.buffet-menu-gallery::-webkit-scrollbar { height: 10px; }
+.buffet-menu-gallery::-webkit-scrollbar-track { background: rgba(29, 35, 80, .14); border-radius: 999px; }
+.buffet-menu-gallery::-webkit-scrollbar-thumb { background: var(--ink); border-radius: 999px; }
+.buffet-menu-image {
+  display: block;
+  flex: 0 0 100%;
+  width: 100%;
+  height: clamp(360px, 38vw, 540px);
+  min-width: 0;
+  border-radius: 12px;
+  background: #fff;
+  object-fit: contain;
+  scroll-snap-align: start;
+}
+@media (max-width: 640px) {
+  .buffet-menu-gallery { gap: 8px; padding: 8px 8px 14px; }
+  .buffet-menu-image { height: min(480px, 118vw); }
+}
