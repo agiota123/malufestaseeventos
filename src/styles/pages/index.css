@@ -216,6 +216,8 @@
 .hero__img--1 {
   border-radius: 46% 54% 40% 60%/52% 44% 56% 48%;
 }
+.hero__img--1 { height: auto; }
+.hero__img--1 img { height: auto; object-fit: contain; }
 
 .hero__img--2 {
   border-radius: 50%;
