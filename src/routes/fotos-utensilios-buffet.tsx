@@ -38,10 +38,15 @@ function FotosUtensiliosBuffetPage() {
           <h1 className="text-3xl font-black sm:text-5xl">Utensílios para Buffet</h1>
           <p className="mx-auto mt-3 max-w-[720px] text-base sm:text-lg">Tudo para montar seu buffet completo! Alugamos réchauds para alimentos quentes e frios, jogos de talheres, conjuntos de mesas, toalhas para mesas e cadeiras, fitas de cetim para cadeiras e muito mais. Tudo o que você precisa para seu evento em um só lugar!</p>
         </header>
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+        <div className="flex items-center justify-between gap-3">
+          <p className="text-sm font-extrabold uppercase tracking-wide">Galeria de fotos</p>
+          <p className="text-sm font-semibold">13 fotos · Deslize para o lado <span aria-hidden="true">→</span></p>
+        </div>
+        <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain pb-5 [scrollbar-width:thin] [scrollbar-color:#1d2350_#ffe7a3] [-webkit-overflow-scrolling:touch]" aria-label="Galeria horizontal de utensílios para buffet">
           {photos.map((photo, index) => (
-            <a key={photo} href={photo} target="_blank" rel="noopener" className="overflow-hidden rounded-2xl border-[3px] border-[#1d2350] bg-white shadow-[4px_4px_0_#ffc83d]">
-              <img src={photo} alt={`Utensílios para buffet — foto ${index + 1}`} loading="lazy" decoding="async" className="aspect-square w-full object-cover transition-transform duration-300 hover:scale-105" />
+            <a key={photo} href={photo} target="_blank" rel="noopener" className="group w-[82vw] max-w-[420px] shrink-0 snap-center overflow-hidden rounded-2xl border-[3px] border-[#1d2350] bg-white shadow-[4px_4px_0_#ffc83d] sm:w-[58vw] lg:w-[calc(50%-8px]">
+              <img src={photo} alt={`Utensílios para buffet — foto ${index + 1}`} loading="lazy" decoding="async" className="aspect-[4/3] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
+              <span className="block px-4 py-3 text-sm font-extrabold">Foto {index + 1} de {photos.length} <span className="float-right">Ampliar ↗</span></span>
             </a>
           ))}
         </div>
