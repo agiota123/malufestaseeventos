@@ -11,7 +11,7 @@ const sinuca = { url: "/assets/malu-sinuca-hd.webp" };
 const som = { url: "/assets/malu-som-hd.webp" };
 const banheiro = { url: "/assets/malu-banheiro-hd.webp" };
 const cama = { url: "/assets/malu-cama-elastica-hd.webp" };
-const touroHero = { url: "/site-assets/764368b970767f77.webp" };
+const touroHero = { url: "/assets/1795788353962.jpg" };
 const salaoHero = { url: "/assets/1795745172824~2.jpg" };
 const playground = { url: "/assets/IMG-20261126-WA0034.jpg" };
 
