@@ -14,6 +14,7 @@ import { Route as BrinquedosRouteImport } from './routes/brinquedos'
 import { Route as BrinquedosAquaticosRouteImport } from './routes/brinquedos-aquaticos'
 import { Route as BrinquedosInflaveisRouteImport } from './routes/brinquedos-inflaveis'
 import { Route as JogosParaFestaRouteImport } from './routes/jogos-para-festa'
+import { Route as VideoSorveteRouteImport } from './routes/video-sorvete'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
