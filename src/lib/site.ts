@@ -5,4 +5,4 @@ export const BRAND_DESCRIPTION =
 export const HOME_TITLE = "Salão de Festas em Itapecerica da Serra com Buffet | MALU";
 export const HOME_META_DESCRIPTION =
   "Conheça o salão de festas da MALU em Itapecerica da Serra, com buffet, piscina, brinquedos e churrasqueira. Consulte datas e peça seu orçamento pelo WhatsApp.";
-export const OG_IMAGE_URL = `${SITE_URL}/og-image.svg`;
+export const OG_IMAGE_URL = `${SITE_URL}/assets/malu-logo.webp`;
