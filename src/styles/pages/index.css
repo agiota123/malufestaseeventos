@@ -1203,6 +1203,10 @@ a.tag:hover{filter:brightness(.97);color:var(--c-d)}.qs .dd-ico{width:38px;heigh
   box-shadow: 3px 3px 0 var(--ink);
   font-size: 1.25rem;
   animation: buffetSwipeNudge 1.15s ease-in-out infinite;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
 }
 @keyframes buffetSwipeNudge {
   0%, 100% { transform: translateX(0); }
