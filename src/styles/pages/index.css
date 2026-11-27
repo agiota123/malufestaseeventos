@@ -1177,3 +1177,43 @@ a.tag:hover{filter:brightness(.97);color:var(--c-d)}.qs .dd-ico{width:38px;heigh
   .buffet-menu-gallery { gap: 8px; padding: 8px 8px 14px; }
   .buffet-menu-image { height: min(480px, 118vw); }
 }
+
+
+/* Sinalização visual de rolagem nas galerias com mais de uma imagem. */
+.buffet-gallery-hint {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin: -5px 12px 12px;
+  color: var(--ink);
+  font-size: .88rem;
+  font-weight: 850;
+  letter-spacing: .01em;
+}
+.buffet-gallery-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 30px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: #ffc83d;
+  box-shadow: 3px 3px 0 var(--ink);
+  font-size: 1.25rem;
+  animation: buffetSwipeNudge 1.15s ease-in-out infinite;
+}
+@keyframes buffetSwipeNudge {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(7px); }
+}
+.sorvete-machine-photo {
+  display: block;
+  height: clamp(250px, 32vw, 410px);
+  background: #fff;
+  object-fit: contain;
+}
+@media (max-width: 640px) {
+  .sorvete-machine-photo { height: min(330px, 82vw); }
+}
